@@ -1,0 +1,3809 @@
+﻿    'Private Sub btnAsnGonder_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAsnGonder.Click
+
+    '    Dim sASNDir As String = ""
+    '    Dim sSDRODID As String = ""
+    '    Dim sRCVODID As String = ""
+    '    Dim sSDRODCD As String = ""
+    '    Dim sRCVODCD As String = ""
+    '    Dim sASNODID As String = ""
+    '    Dim sASNODCD As String = ""
+    '    Dim sISSUER As String = ""
+    '    Dim sTDT4 As String = ""
+    '    Dim sCarrier As String = ""
+    '    Dim sDHAABZ As String = ""
+    '    Dim sPlaka As String = ""
+    '    Dim sDUNS As String = ""
+    '    Dim sSQL As String = ""
+    '    Dim sTDT3 As String = ""
+    '    Dim sPlant As String = ""
+    '    Dim sUSERF3 As String = ""
+    '    Dim sPlantSequence As String = ""
+    '    Dim sB9CD As String = ""
+    '    Dim sTDT2 As String = ""
+    '    Dim sUSERF2 As String = ""
+    '    Dim sLieferDrm As String = ""
+    '    Dim sError As String = ""
+    '    Dim sTDT1 As String = ""
+    '    Dim sMKKOD As String = ""
+    '    Dim sShipNo As String = ""
+    '    Dim sPickList As String = ""
+    '    Dim sFatura As String = ""
+    '    Dim sConv As String = ""
+    '    Dim sCustomer As String = ""
+    '    Dim sASN_No As String = ""
+    '    Dim sTermCode As String = ""
+    '    Dim sTOD As String = ""
+    '    Dim sTrnQual As String = ""
+    '    Dim sCarrierID As String = ""
+    '    Dim sMURNKOD As String = ""
+    '    Dim sKontrat As String = ""
+    '    Dim sMusteriKodu As String = ""
+    '    Dim sLine As String = ""
+    '    Dim sMPKOD As String = ""
+    '    Dim sMKPKOD As String = ""
+    '    Dim sMSPKOD As String = ""
+    '    Dim sGate As String = ""
+    '    Dim sBGM As String = ""
+    '    Dim sDTM As String = ""
+    '    Dim sNAD1 As String = ""
+    '    Dim sTime As String = ""
+    '    Dim sDTMP As String = ""
+    '    Dim sMEA As String = ""
+    '    Dim sMEAC As String = ""
+    '    Dim sMEAU As String = ""
+    '    Dim sRFF As String = ""
+    '    Dim sNAD As String = ""
+    '    Dim sQTYU As String = ""
+    '    Dim sRAdr As String = ""
+    '    Dim FILE_NAME As String = ""
+    '    Dim sGir As String = ""
+    '    Dim sBirim As String = ""
+    '    Dim sCrdTim As String = ""
+    '    Dim sPusNo As String = ""
+    '    Dim sDunsSifir As String = ""
+    '    Dim sTarih As String = ""
+
+    '    Dim sASNTIP As String = ""
+
+    '    Dim bOk As Boolean
+
+    '    Dim nASN_No As Integer = 0
+    '    Dim nRowP As Integer = 0
+    '    Dim nYolSuresi As Integer = 0
+    '    Dim nBrtAgr As Integer = 0
+    '    Dim nNetAgr As Integer = 0
+    '    Dim nGCount As Integer = 0
+    '    Dim nKapAdet As Integer = 0
+    '    Dim nHacim As Integer = 0
+    '    Dim nYolSure As Integer = 0
+    '    Dim nKumMiktarTop As Integer = 0
+    '    Dim nKumMiktar As Integer = 0
+    '    Dim nMsgNo As Integer = 0
+    '    Dim nUNH As Integer = 0
+    '    Dim nPac As Integer = 0
+    '    Dim nLin As Integer = 0
+    '    Dim nRff As Integer = 0
+    '    Dim nCpsCounter As Integer = 0
+    '    Dim nSatir As Integer = 0
+    '    Dim nLine As Integer = 0
+    '    Dim nKutuSayi As Integer = 0
+    '    Dim nMiktar As Integer = 0
+    '    Dim nRffAat As Integer = 0
+    '    Dim nGir As Integer = 0
+    '    Dim nIlkKutuNo As Integer = 0
+    '    Dim nIlkPaletNo As Integer = 0
+
+    '    Dim sQuery As String = ""
+
+    '    Dim dsPLANTPRM, dsSHPPACK, dsKontrtPf, dsItmPack, dstr_sevk_detail, dstr_sevk_detail1 As DataSet
+
+    '    Dim db As New Core.Data(My.Settings.ConnectionString.ToString)
+
+    '    Dim objWriter As System.IO.StreamWriter
+
+    '    Dim checkedRows() As Janus.Windows.GridEX.GridEXRow
+
+    '    checkedRows = Me.grdDesAdv.GetCheckedRows()
+
+    '    'FILE_NAME = "testedi.txt"
+
+    '    'If (IO.File.Exists(FILE_NAME)) Then IO.File.Delete(FILE_NAME)
+
+    '    'objWriter = New System.IO.StreamWriter(FILE_NAME)
+
+    '    If checkedRows.Length = 0 Then
+
+
+    '    Else
+
+    '        If MessageBox.Show("Dikkat!..Seçilen Çeki Listeleri için ASN Dosyası oluşturulacaktır. Onaylıyor musunuz?...", "Ekip Mapics", MessageBoxButtons.YesNo) = Windows.Forms.DialogResult.Yes Then
+
+    '            sASNDir = sLookup("EDIASNDIR", "EDIPRM", " SIRKET='" & My.Settings.Company & "'")
+
+    '            Dim row As Janus.Windows.GridEX.GridEXRow
+
+    '            For Each row In checkedRows
+
+    '                sSDRODID = ""
+    '                sRCVODID = ""
+    '                sSDRODCD = ""
+    '                sRCVODCD = ""
+    '                sASNODID = ""
+    '                sASNODCD = ""
+    '                sISSUER = ""
+    '                sCarrier = ""
+    '                sDHAABZ = ""
+    '                sPlaka = ""
+    '                sDUNS = ""
+    '                sASNTIP = ""
+    '                sLieferDrm = ""
+    '                sPlant = row.Cells("SHIPTO").Text
+    '                'Sender,Receiver odette ID, Material Issuer
+
+    '                sSQL = "SELECT SDRODID,RCVODID,SDRODCD,RCVODCD,ASNODID,ASNODCD,ISSUER,DUNSID, " & _
+    '                            " USERF1,USERF2,USERF3,LIEFERDRM,TTIME, PLANTSEQUENCE, B9CD " & _
+    '                        " FROM PLANTPRM " & _
+    '                            " WHERE CANB='" & row.Cells("CUST").Text & "' AND PlantSequence=" & sPlant
+
+    '                dsPLANTPRM = db.RunSql(sSQL, "PLANTPRM")
+
+    '                If Not dsPLANTPRM Is Nothing Then
+
+    '                    If dsPLANTPRM.Tables("PLANTPRM").Rows.Count > 0 Then
+
+    '                        For i As Integer = 0 To dsPLANTPRM.Tables("PLANTPRM").Rows.Count - 1
+
+    '                            With dsPLANTPRM.Tables("PLANTPRM").Rows(i)
+
+    '                                sSDRODID = Trim(.Item("SDRODID").ToString)
+
+    '                                sASNODID = Trim(.Item("ASNODID").ToString)
+
+    '                                sRCVODID = Trim(.Item("RCVODID").ToString)
+
+    '                                sASNODCD = Trim(.Item("ASNODCD").ToString)
+
+    '                                sSDRODCD = Trim(.Item("SDRODCD").ToString)
+
+    '                                sRCVODCD = Trim(.Item("RCVODCD").ToString)
+
+    '                                sISSUER = Trim(.Item("ISSUER").ToString)
+
+    '                                sDUNS = Trim(.Item("DUNSID").ToString)
+
+    '                                sASNTIP = Trim(.Item("USERF1").ToString)
+
+    '                                sUSERF2 = Trim(.Item("USERF2").ToString)
+
+    '                                sLieferDrm = Trim(.Item("LIEFERDRM").ToString)
+
+    '                                nYolSuresi = .Item("TTIME").ToString
+
+    '                                sUSERF3 = Trim(.Item("USERF3").ToString)
+
+    '                                sPlantSequence = Trim(.Item("PLANTSEQUENCE").ToString)
+
+    '                                sB9CD = Trim(.Item("B9CD").ToString)
+
+    '                            End With
+
+    '                        Next i
+
+    '                    End If
+
+    '                End If
+
+    '                sASNTIP = Trim(sASNTIP)
+
+    '                If sLieferDrm = "" Then
+
+    '                    sLieferDrm = "0"
+
+    '                End If
+
+    '                sError = ""
+
+    '                If RTrim(sASNTIP) = "" Then
+
+    '                    sError = sError & " ASN Tipi Tanımlı Değil"
+
+    '                End If
+
+    '                If RTrim(sASNTIP) = "OTOSAN" Then
+
+    '                    If (sSDRODID = "") Then
+
+    '                        sError = " ODETTE ID Tanımlı Değil."
+
+    '                    End If
+
+    '                Else
+    '                    If (sSDRODID = "") Or (sRCVODID = "") Or (sASNODID = "") Then
+
+    '                        sError = " ODETTE ID Tanımlı Değil."
+
+    '                    End If
+
+
+    '                    If sDUNS = "" Then
+
+    '                        sError = sError & " DUNS No Tanımlı Değil."
+
+    '                    End If
+
+    '                    If Not ((IO.Directory.Exists(sASNDir)) Or (IO.Directory.Exists(sASNDir & "\" & sASNODID))) Then
+
+    '                        sError = sError & " ASN Directory Yok."
+
+    '                    End If
+
+    '                End If
+
+    '                sSQL = " SELECT COUNT(*) " & _
+    '                            " FROM SHPPACK S LEFT OUTER JOIN " & _
+    '                                    " KONTRTPFJL K ON  K.SITE=S.COMNO AND K.CUST=S.CUST AND " & _
+    '                                            " K.b9cd = S.SHIPTO And K.KAPI = S.KAPI And K.BZMITM = S.ITNBR " & _
+    '                            " WHERE S.PICKNO='" & CStr(row.Cells("PICKNO").Text) & "' AND K.ITEM is null"
+
+    '                Dim a As Integer = db.RunSql(sSQL, True)
+
+    '                If a = 0 Then
+
+    '                    sError = sError & " Müşteri Malzeme Kodu Tanımsız"
+
+    '                End If
+
+    '                sSQL = " SELECT I.MKKOD,I.MPKOD,I.MSPKOD,I.MKPKOD," & _
+    '                                " S.KKOD,S.PKOD,S.SPKOD,S.KPKOD,S.KSAY,S.PSAY,S.SPMIK,S.KPMIK " & _
+    '                         " FROM  SHPPACK S LEFT OUTER JOIN ITMPACK " & _
+    '                                " I ON  I.AMBKOD=S.AMBKOD AND I.ITNBR=S.ITNBR " & _
+    '                         " WHERE S.PICKNO='" & CStr(row.Cells("PICKNO").Text) & "'"
+
+
+    '                dsSHPPACK = db.RunSql(sSQL, "SHPPACK")
+
+    '                If Not dsSHPPACK Is Nothing Then
+
+    '                    If dsSHPPACK.Tables("SHPPACK").Rows.Count > 0 Then
+
+    '                        For i As Integer = 0 To dsSHPPACK.Tables("SHPPACK").Rows.Count - 1
+
+    '                            With dsSHPPACK.Tables("SHPPACK").Rows(i)
+
+    '                                If (.Item("KSAY").ToString <> 0) And (.Item("MKKOD").ToString = "") Then
+
+    '                                    sError = sError & " Müşteri Kutu Kodu Tanımsız"
+
+    '                                End If
+
+    '                                If (.Item("PSAY").ToString <> 0) And (.Item("MPKOD").ToString = "") Then
+
+    '                                    sError = sError & " Müşteri Palet Kodu Tanımsız"
+
+    '                                End If
+
+    '                                If (.Item("KPKOD").ToString <> "") Then
+
+    '                                    If (.Item("KPMIK").ToString <> 0) And (.Item("MKPKOD").ToString = "") Then
+
+    '                                        sError = sError & " Müşteri Kapak Kodu Tanımsız"
+
+    '                                    End If
+
+    '                                End If
+
+    '                                If (.Item("SPKOD").ToString <> "") Then
+
+    '                                    If (.Item("SPMIK").ToString <> 0) And (.Item("MSPKOD").ToString = "") Then
+
+    '                                        sError = sError & " Müşteri Separatör Kodu Tanımsız"
+
+    '                                    End If
+
+    '                                End If
+
+    '                                sMKKOD = .Item("MKKOD").ToString
+
+    '                            End With
+
+    '                        Next i
+
+    '                    End If
+
+    '                End If
+
+    '                If ((Trim(sASNTIP) = "OPEL") Or (Trim(sASNTIP) = "DELPHI") Or (Trim(sASNTIP) = "SAAB-YDK")) And (sISSUER = "") Then
+
+    '                    sError = sError & " Material Issuer Tanımlı Değil"
+
+    '                End If
+
+    '                If sError <> "" Then
+
+    '                    mError.Text = mError.Text & "PickList :" & CStr(row.Cells("PICKNO").Text) & "  ASN Mesajı Oluşturulamadı. " & sError & vbNewLine
+
+    '                    'objWriter.Close()
+
+    '                    Exit Sub
+
+    '                End If
+
+    '            Next row ' For-do
+
+    '            Dim sTumShipNo As New ArrayList
+
+    '            bOk = True
+
+    '            For Each row In checkedRows
+
+    '                '******************************************************************
+    '                sSDRODID = ""
+    '                sRCVODID = ""
+    '                sSDRODCD = ""
+    '                sRCVODCD = ""
+    '                sASNODID = ""
+    '                sASNODCD = ""
+    '                sISSUER = ""
+    '                sCarrier = ""
+    '                sDHAABZ = ""
+    '                sPlaka = ""
+    '                sDUNS = ""
+
+    '                sShipNo = CStr(row.Cells("SHPNO").Text)
+
+    '                sTumShipNo.Add(sShipNo)
+
+    '                sPickList = CStr(row.Cells("PICKNO").Text)
+
+    '                sFatura = CStr(row.Cells("DHGGNB").Text)
+
+    '                sPlant = row.Cells("SHIPTO").Text
+
+    '                sCustomer = row.Cells("CUST").Text
+
+    '                sLieferDrm = "0"
+
+    '                sB9CD = row.Cells("B9CD").Text
+
+    '                'Sender,Receiver odette ID, Material Issuer
+    '                sSQL = "SELECT SDRODID,RCVODID,SDRODCD,RCVODCD,ASNODID,ASNODCD,ISSUER,DUNSID, " & _
+    '                            " USERF1,USERF2,USERF3,LIEFERDRM,TTIME, PLANTSEQUENCE, B9CD " & _
+    '                        " FROM PLANTPRM " & _
+    '                        " WHERE CANB='" & row.Cells("CUST").Text & _
+    '                            "' AND PlantSequence=" & sPlant
+
+    '                dsPLANTPRM = Nothing
+
+    '                dsPLANTPRM = db.RunSql(sSQL, "PLANTPRM")
+
+    '                If Not dsPLANTPRM Is Nothing Then
+
+    '                    If dsPLANTPRM.Tables("PLANTPRM").Rows.Count > 0 Then
+
+    '                        For i As Integer = 0 To dsPLANTPRM.Tables("PLANTPRM").Rows.Count - 1
+
+    '                            With dsPLANTPRM.Tables("PLANTPRM").Rows(i)
+
+    '                                sSDRODID = Trim(.Item("SDRODID").ToString)
+
+    '                                sASNODID = Trim(.Item("ASNODID").ToString)
+
+    '                                sRCVODID = Trim(.Item("RCVODID").ToString)
+
+    '                                sASNODCD = Trim(.Item("ASNODCD").ToString)
+
+    '                                sSDRODCD = Trim(.Item("SDRODCD").ToString)
+
+    '                                sRCVODCD = Trim(.Item("RCVODCD").ToString)
+
+    '                                sISSUER = Trim(.Item("ISSUER").ToString)
+
+    '                                sDUNS = Trim(.Item("DUNSID").ToString)
+
+    '                                sASNTIP = Trim(.Item("USERF1").ToString)
+
+    '                                sUSERF2 = Trim(.Item("USERF2").ToString)
+
+    '                                sLieferDrm = Trim(.Item("LIEFERDRM").ToString)
+
+    '                                nYolSuresi = .Item("TTIME").ToString
+
+    '                                sUSERF3 = Trim(.Item("USERF3").ToString)
+
+    '                                sPlantSequence = Trim(.Item("PLANTSEQUENCE").ToString)
+
+    '                                sB9CD = Trim(.Item("B9CD").ToString)
+
+    '                            End With
+
+    '                        Next i
+
+    '                    End If
+
+    '                End If
+
+
+
+
+    '                '******************************************************************
+    '                If (sError = "") Then
+
+    '                    If chkAsnYeni.Checked = True Then
+
+    '                        'ASN Numarası
+    '                        nASN_No = nLookup("MAX(ASNNO)", "ASN_NO", "") + 1
+
+    '                        db.RunSql(" UPDATE ASN_NO SET ASNNO=ASNNO+1")
+
+    '                        sASN_No = CStr(nASN_No).PadLeft(10, "0")
+
+    '                    Else
+
+    '                        nASN_No = nLookup("ASNNO", "SHPPACK", " PICKNO='" & CStr(row.Cells("PICKNO").Text) & " AND ASNDRM<>9")
+
+    '                        sASN_No = CStr(nASN_No).PadLeft(10, "0")
+
+    '                    End If
+
+    '                    'Nakliyeci, Plaka Numarası .
+    '                    sSQL = " SELECT DHCDTX,DHAABZ,DHHWTX " & _
+    '                                " FROM SHPPACK  " & _
+    '                                    " WHERE COMNO='" & My.Settings.Company & "'" & _
+    '                                    " AND CUST='" & sCustomer & _
+    '                                    "' AND SHIPTO='" & Trim(sPlant) & _
+    '                                    "' AND SHPNO='" & row.Cells("SHPNO").Text & "'"
+
+
+    '                    dsSHPPACK = Nothing
+
+    '                    dsSHPPACK = db.RunSql(sSQL, "SHPPACK")
+
+    '                    If Not dsSHPPACK Is Nothing Then
+
+    '                        If dsSHPPACK.Tables("SHPPACK").Rows.Count > 0 Then
+
+    '                            For i As Integer = 0 To dsSHPPACK.Tables("SHPPACK").Rows.Count - 1
+
+    '                                With dsSHPPACK.Tables("SHPPACK").Rows(i)
+
+    '                                    sCarrier = .Item("DHCDTX").ToString
+
+    '                                    sDHAABZ = .Item("DHAABZ").ToString
+
+    '                                    sPlaka = .Item("DHHWTX").ToString
+
+    '                                End With
+
+    '                            Next i
+
+    '                        End If
+
+    '                    End If
+
+
+
+    '                    'FOB,CIF,EXW Bilgisi
+    '                    sTermCode = sLookup("DEAAB6", "SHPPACK", " COMNO='" & My.Settings.Company & "'" & _
+    '                                        " AND CUST='" & sCustomer & "' AND SHIPTO='" & sPlant & "'")
+
+    '                    If (sTermCode = "FOB") Or (sTermCode = "EXW") Then
+
+    '                        sTrnQual = "12"
+
+    '                    Else
+
+    '                        If sTermCode = "CIF" Then
+
+    '                            sTrnQual = "25"
+
+    '                        Else
+
+    '                            sTrnQual = "12"
+
+    '                        End If
+
+    '                    End If
+
+
+    '                    'Brüt Ağırlık, Net Ağırlık, Kap Adedi Hesaplama
+    '                    nBrtAgr = 0
+    '                    nNetAgr = 0
+    '                    nKapAdet = 0
+    '                    nHacim = 0
+    '                    sSQL = " SELECT SUM(BRTAGR) AS BAGR ,SUM(NETAGR) AS NAGR,  " & _
+    '                                    "  SUM(HKSAY) AS HKUTU,SUM(PSAY) AS PSAYI, SUM(HACIM) AS HCM " & _
+    '                                " FROM SHPPACK " & _
+    '                                    " WHERE COMNO='" & My.Settings.Company & "'" & _
+    '                                            " AND CUST='" & row.Cells("CUST").Text & "'" & _
+    '                                            " AND PICKNO='" & CStr(row.Cells("PICKNO").Text) & "' AND ASNDRM<>9"
+    '                    dsSHPPACK = Nothing
+
+    '                    dsSHPPACK = db.RunSql(sSQL, "SHPPACK")
+
+    '                    If Not dsSHPPACK Is Nothing Then
+
+    '                        If dsSHPPACK.Tables("SHPPACK").Rows.Count > 0 Then
+
+    '                            For i As Integer = 0 To dsSHPPACK.Tables("SHPPACK").Rows.Count - 1
+
+    '                                With dsSHPPACK.Tables("SHPPACK").Rows(i)
+
+    '                                    nBrtAgr = Int(.Item("BAGR").ToString)
+
+    '                                    nNetAgr = Int(.Item("NAGR").ToString)
+
+    '                                    nKapAdet = .Item("HKUTU").ToString + .Item("PSAYI").ToString
+
+    '                                    nHacim = Int(.Item("HCM").ToString)
+
+    '                                End With
+
+    '                            Next i
+
+    '                        End If
+
+    '                    End If
+
+
+    '                    ' *********************************** OTOSAN - XML  ****************************
+    '                    If Trim(sASNTIP) = "OTOSAN" Then
+
+    '                        sSQL = "SELECT * " & _
+    '                                    "FROM SHPPACK " & _
+    '                                        " WHERE COMNO='" & My.Settings.Company & "'" & _
+    '                                        " AND SHPNO='" & CStr(row.Cells("SHPNO").Text) & "'" & _
+    '                                        " AND SHIPTO='" & row.Cells("SHPNO").Text & "' AND ASNDRM<>9"
+
+    '                        dsSHPPACK = Nothing
+
+    '                        dsSHPPACK = db.RunSql(sSQL, "SHPPACK")
+
+    '                        If Not dsSHPPACK Is Nothing Then
+
+    '                            If dsSHPPACK.Tables("SHPPACK").Rows.Count > 0 Then
+
+    '                                For i As Integer = 0 To dsSHPPACK.Tables("SHPPACK").Rows.Count - 1
+
+    '                                    nYolSure = nLookup("TTIME", "PLANTPRM", " CANB='" & CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("CUST").ToString) & "'" & _
+    '                                                    " AND B9CD='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("SHIPTO").ToString)
+
+    '                                    sCarrierID = sLookup("DEF1CD", "MBDEREP", "' DEAENB='" & My.Settings.Company & "'" & _
+    '                                                        " AND DECANB='" & sCustomer & "' AND DEB9CD='" & sPlant & "'")
+
+    '                                    sSQL = "SELECT ITEM,KNTRT,REFADI " & _
+    '                                                " FROM KONTRTPF " & _
+    '                                                    " WHERE SITE='" & My.Settings.Company & "' AND CUST='" & sCustomer & "' AND SHIPTO='" & sPlant & "'" & _
+    '                                                    " AND KAPI='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KAPI").ToString & "' AND BZMITM='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString
+
+    '                                    dsKontrtPf = db.RunSql(sQuery, "KONTRTPF")
+
+    '                                    If Not dsKontrtPf Is Nothing Then
+
+    '                                        If dsKontrtPf.Tables("KONTRTPF").Rows.Count > 0 Then
+
+    '                                            For k As Integer = 0 To dsKontrtPf.Tables("KONTRTPF").Rows.Count - 1
+
+    '                                                With dsKontrtPf.Tables("KONTRTPF").Rows(k)
+
+    '                                                    sMURNKOD = .Item("ITEM").ToString
+
+    '                                                    sKontrat = .Item("KNTRT").ToString
+
+    '                                                End With
+
+    '                                            Next k
+
+    '                                        End If
+
+    '                                    End If
+
+
+    '                                    If chkAsnYeni.Checked = True Then
+
+    '                                        nKumMiktar = nLookup("ASNKUM", "OFFITEMBL", " AENBK='" & My.Settings.Company & "'" & _
+    '                                                                                                  " AND CANBK='" & sCustomer & " AND B9CDK='" & sPlant & "' AND AITXK='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString) & "'"
+
+    '                                        nKumMiktarTop = nKumMiktar + dsSHPPACK.Tables("SHPPACK").Rows(i).Item("SHIPMIK").AsInteger
+
+    '                                        sSQL = " UPDATE OFFITEMBL" & _
+    '                                                    " SET ASNKUM=" & CStr(nKumMiktarTop) & _
+    '                                                    " WHERE AENBK='" & My.Settings.Company & "'" & _
+    '                                                        " AND CANBK='" & sCustomer & "' AND B9CDK='" & sPlant & "' AND AITXK='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString & "'"
+
+    '                                        db.RunSql(sSQL)
+
+    '                                    Else
+
+    '                                        nKumMiktar = dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ASNMIK").AsInteger - dsSHPPACK.Tables("SHPPACK").Rows(i).Item("SHIPMIK").AsInteger
+
+    '                                        nKumMiktarTop = dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ASNMIK").AsInteger
+
+    '                                    End If
+
+    '                                    AsnXmlInsert(sMURNKOD, dsSHPPACK.Tables("SHPPACK").Rows(i).Item("SHIPMIK").ToString, "PP")
+
+    '                                    If chkAsnYeni.Checked = True Then
+
+    '                                        sSQL = "UPDATE SHPPACK " & _
+    '                                              " SET ASNDRM=1, ASNNO=" & CStr(nASN_No) & _
+    '                                                    " ASNMIK=" & CStr(nKumMiktarTop) & _
+    '                                              " WHERE COMNO='" & My.Settings.Company & "'" & _
+    '                                                    " AND CUST='" & sCustomer & "'" & _
+    '                                                    " AND PICKNO='" & sPickList & "'" & _
+    '                                                    " AND SHIPTO='" & sPlant & "'" & _
+    '                                                    " AND KAPI='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KAPI").ToString & "'" & _
+    '                                                    " AND ITNBR='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString & "'" & _
+    '                                                    " AND ASNDRM<>9 "
+
+    '                                        db.RunSql(sSQL, True)
+
+    '                                    End If
+
+    '                                    ' Koli Bulunuyor
+
+    '                                    sSQL = "SELECT Count(*) FROM ITEMDIM" & _
+    '                                                " WHERE itnbr = '" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KKOD").ToString & "'" & _
+    '                                                        " AND   ayntip ='1'"
+
+    '                                    Dim KayitSayisi As Integer = db.RunSql(sSQL, True)
+
+
+    '                                    If KayitSayisi <> 0 Then
+
+    '                                        sMusteriKodu = sLookup("MKKOD", "ITMPACK", "itnbr = '" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString & "'" & _
+    '                                                            " AND   ambkod = '" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("AMBKOD").ToString & "'")
+
+
+    '                                        sSQL = " SELECT Count(*) " & _
+    '                                                        " FROM XMLASN " & _
+    '                                                        " WHERE NO_PART = '" & sMusteriKodu & "'" & _
+    '                                                            " AND ASN_NUMBER = '" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("IRSNO").ToString & "'"
+
+    '                                        Dim XmlKayitSayisi As Integer = db.RunSql(sSQL, True)
+
+    '                                        If XmlKayitSayisi = 0 Then
+
+    '                                            'Insert
+    '                                            AsnXmlInsert(sMusteriKodu, dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KSAY").ToString, "CT")
+
+    '                                        Else
+
+    '                                            'Update
+    '                                            AsnXmlUpdate(sMusteriKodu, dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KSAY").ToString)
+
+    '                                        End If
+
+    '                                    End If ' if
+
+
+    '                                    ' Palet Bulunuyor
+
+    '                                    sSQL = "SELECT Count(*) " & _
+    '                                            " FROM ITEMDIM " & _
+    '                                                " WHERE itnbr = '" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("PKOD").ToString & "'" & _
+    '                                                " AND   ayntip = '1'"
+
+    '                                    Dim ItemDimKayitSayisi As Integer = db.RunSql(sSQL, True)
+
+    '                                    If ItemDimKayitSayisi <> 0 Then
+
+    '                                        sMusteriKodu = sLookup("MPKOD", "ITMPACK", "itnbr = '" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString & "'" & _
+    '                                                        " AND   ambkod = '" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("AMBKOD").ToString & "'")
+
+
+    '                                        sSQL = "SELECT count(*) " & _
+    '                                                " FROM XMLASN " & _
+    '                                                    " WHERE NO_PART = '" & sMusteriKodu & "'" & _
+    '                                                        " AND ASN_NUMBER = '" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("IRSNO").ToString & "'"
+
+
+    '                                        Dim XmlKayitSayisi As Integer = db.RunSql(sSQL, True)
+
+    '                                        If XmlKayitSayisi = 0 Then
+
+    '                                            'Insert
+    '                                            AsnXmlInsert(sMusteriKodu, dsSHPPACK.Tables("SHPPACK").Rows(i).Item("PSAY").ToString, "CT")
+
+    '                                        Else
+
+    '                                            'Update
+    '                                            AsnXmlUpdate(sMusteriKodu, dsSHPPACK.Tables("SHPPACK").Rows(i).Item("PSAY").ToString)
+
+    '                                        End If
+
+    '                                    End If ' if
+
+    '                                    ' Kapak Bulunuyor
+
+    '                                    sSQL = " SELECT count(*) " & _
+    '                                                " FROM ITEMDIM " & _
+    '                                                " WHERE itnbr = '" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KPKOD").ToString & "'" & _
+    '                                                    " AND   ayntip = '1'"
+
+    '                                    ItemDimKayitSayisi = Nothing
+
+    '                                    ItemDimKayitSayisi = db.RunSql(sSQL, True)
+
+    '                                    If ItemDimKayitSayisi <> 0 Then
+
+    '                                        sMusteriKodu = sLookup("MKPKOD", "ITMPACK", "itnbr = '" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString & "'" & _
+    '                                                             " AND   ambkod = '" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("AMBKOD").ToString & "'")
+
+    '                                        sSQL = "SELECT count(*) " & _
+    '                                                    "FROM XMLASN " & _
+    '                                                        " WHERE NO_PART = '" & sMusteriKodu & "'" & _
+    '                                                            " AND ASN_NUMBER = '" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("IRSNO").ToString & "'"
+
+    '                                        Dim XmlKayitSayisi As Integer = db.RunSql(sSQL, True)
+
+    '                                        If XmlKayitSayisi = 0 Then
+
+    '                                            'Insert
+    '                                            AsnXmlInsert(sMusteriKodu, dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KPMIK").ToString, "CT")
+
+    '                                        Else
+
+    '                                            'Update
+    '                                            AsnXmlUpdate(sMusteriKodu, dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KPMIK").ToString)
+
+    '                                        End If
+    '                                    End If ' if
+
+    '                                    ' Separator Bulunuyor
+
+    '                                    sSQL = "SELECT count(*) " & _
+    '                                                " FROM ITEMDIM " & _
+    '                                                " WHERE itnbr = '" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("SPKOD").ToString & "'" & _
+    '                                                    " AND   ayntip = '1'"
+
+    '                                    ItemDimKayitSayisi = Nothing
+
+    '                                    ItemDimKayitSayisi = db.RunSql(sSQL, True)
+
+    '                                    If ItemDimKayitSayisi <> 0 Then
+
+
+    '                                        sMusteriKodu = sLookup("MSPKOD", "ITMPACK", "itnbr = '" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString & "'" & _
+    '                                                                " AND   ambkod = '" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("AMBKOD").ToString & "'")
+
+    '                                        sSQL = "SELECT Count(*) " & _
+    '                                                    " FROM XMLASN " & _
+    '                                                        " WHERE NO_PART = '" & sMusteriKodu & "'" & _
+    '                                                            " AND ASN_NUMBER = '" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("IRSNO").ToString & "'"
+
+    '                                        Dim XmlKayitSayisi As Integer = db.RunSql(sSQL, True)
+
+    '                                        If XmlKayitSayisi = 0 Then
+
+    '                                            'Insert
+    '                                            AsnXmlInsert(sMusteriKodu, dsSHPPACK.Tables("SHPPACK").Rows(i).Item("SPMIK").ToString, "CT")
+
+    '                                        Else
+
+    '                                            'Update
+    '                                            AsnXmlUpdate(sMusteriKodu, dsSHPPACK.Tables("SHPPACK").Rows(i).Item("SPMIK").ToString)
+
+    '                                        End If
+
+    '                                    End If ' if
+
+    '                                Next i
+
+    '                            End If
+
+    '                        End If
+    '                        ' *********************************** DESADV D97 A  ****************************
+    '                        'Opel, Opel Yedek Parça, Saab Yedek Parça ,Robert Bosch,Lear, Delphi
+    '                    ElseIf (Trim(sASNTIP) = "OPEL") Or (Trim(sASNTIP) = "SAAB-YDK") Or (Trim(sASNTIP) = "OPEL-YDK") Or (Trim(sASNTIP) = "SKODA") Or _
+    '                                (Trim(sASNTIP) = "LEAR") Or (Trim(sASNTIP) = "RBOSCH") Or (Trim(sASNTIP) = "VDO") Or (sASNTIP = "DELPHI") Then
+
+    '                        FILE_NAME = sASNDir & "\" & sSDRODID & "\" & "A" & sASN_No & "." & sB9CD
+
+    '                        If Not System.IO.Directory.Exists(sASNDir & "\" & sSDRODID) Then
+
+    '                            System.IO.Directory.CreateDirectory(sASNDir & "\" & sSDRODID)
+
+    '                        End If
+
+    '                        If (IO.File.Exists(FILE_NAME)) Then IO.File.Delete(FILE_NAME)
+
+    '                        objWriter = New System.IO.StreamWriter(FILE_NAME)
+
+    '                        sLine = "UNB " & sRCVODID.PadRight(35, " ") & " " & sRCVODCD.PadRight(4, " ") & " " & "".PadRight(14, " ") & " " & _
+    '                               sASNODID.PadRight(35, " ") & " " & sASNODCD.PadRight(4, " ") & " " & "".PadRight(14, " ") & " " & _
+    '                               FormatDateTime(Now.Date, DateFormat.ShortDate) & " " & Now.ToString("HHmm") & " " & _
+    '                               sASN_No.PadRight(14, " ")
+
+    '                        objWriter.WriteLine(sLine)
+
+    '                        sSQL = " SELECT * " & _
+    '                                   " FROM SHPPACK " & _
+    '                                   " WHERE COMNO='" & My.Settings.Company & "' " & _
+    '                                               " AND PICKNO='" & CStr(row.Cells("PICKNO").Text) & "'" & _
+    '                                               " AND SHIPTO='" & row.Cells("SHPNO").Text & "' AND ASNDRM<>9 "
+    '                        dsSHPPACK = Nothing
+
+    '                        dsSHPPACK = db.RunSql(sSQL, "SHPPACK")
+
+    '                        If Not dsSHPPACK Is Nothing Then
+
+    '                            If dsSHPPACK.Tables("SHPPACK").Rows.Count > 0 Then
+
+    '                                nMsgNo = 1
+
+    '                                nUNH = 0
+
+    '                                nLin = 1
+
+    '                                sPickList = CStr(row.Cells("PICKNO").Text)
+
+    '                                sFatura = CStr(row.Cells("DHGGNB").Text)
+
+    '                                For i As Integer = 0 To dsSHPPACK.Tables("SHPPACK").Rows.Count - 1
+
+    '                                    nRff = 1
+
+    '                                    nCpsCounter = 1
+
+    '                                    sGate = dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KAPI").ToString
+
+    '                                    sMPKOD = ""
+
+    '                                    sMKKOD = ""
+
+    '                                    sMSPKOD = ""
+
+    '                                    sMKPKOD = ""
+
+    '                                    sMURNKOD = ""
+
+    '                                    'Müşteri Kutu, Palet, Separator, Kapak Kodları
+    '                                    sSQL = " SELECT MKKOD,MPKOD,MSPKOD,MKPKOD FROM ITMPACK" & _
+    '                                                  " WHERE AMBKOD='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("AMBKOD").ToString & _
+    '                                                  "' AND ITNBR='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString & "'"
+    '                                    dsItmPack = Nothing
+
+    '                                    dsItmPack = db.RunSql(sSQL, "ITMPACK")
+
+    '                                    If Not dsItmPack Is Nothing Then
+
+    '                                        If dsItmPack.Tables("ITMPACK").Rows.Count > 0 Then
+
+    '                                            sMPKOD = dsItmPack.Tables("ITMPACK").Rows(0).Item("MPKOD").ToString
+    '                                            sMKKOD = dsItmPack.Tables("ITMPACK").Rows(0).Item("MKKOD").ToString
+    '                                            sMSPKOD = dsItmPack.Tables("ITMPACK").Rows(0).Item("MSPKOD").ToString
+    '                                            sMKPKOD = dsItmPack.Tables("ITMPACK").Rows(0).Item("MKPKOD").ToString
+
+    '                                        End If
+
+    '                                    End If
+
+    '                                    'Müşteri Ürün Kodu, Adı
+    '                                    sSQL = " SELECT ITEM,KNTRT,REFADI " & _
+    '                                                  " FROM KONTRTPF" & _
+    '                                                  " WHERE SITE='" & My.Settings.Company & _
+    '                                                    "' AND CUST='" & sCustomer & _
+    '                                                    "' AND SHIPTO='" & sPlant & _
+    '                                                    "' AND KAPI='" & sGate & _
+    '                                                    "' AND BZMITM='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString & "'"
+
+    '                                    dsKontrtPf = Nothing
+
+    '                                    dsKontrtPf = db.RunSql(sSQL, "KONTRTPF")
+
+    '                                    If Not dsKontrtPf Is Nothing Then
+
+    '                                        If dsKontrtPf.Tables("KONTRTPF").Rows.Count > 0 Then
+
+    '                                            sMURNKOD = dsKontrtPf.Tables("KONTRTPF").Rows(0).Item("ITEM").ToString
+
+    '                                            sKontrat = dsKontrtPf.Tables("KONTRTPF").Rows(0).Item("KNTRT").ToString
+
+    '                                        End If
+
+    '                                    End If
+
+    '                                    nSatir = 1
+
+    '                                    sLine = "UNH " & CStr(nMsgNo).PadRight(14, " ") & " " & "DESADV".PadRight(6, " ") & " " & "D".PadRight(3, " ") & " " & _
+    '                                                  "97A".PadRight(3, " ") & " " & "UN".PadRight(2, " ")
+
+    '                                    If sASNTIP = "VDO" Then sLine = sLine & " " & "A01051".PadRight(6, " ")
+
+    '                                    objWriter.WriteLine(sLine)
+
+    '                                    nSatir = nSatir + 1
+
+    '                                    nUNH = nUNH + 1
+
+    '                                    sBGM = "351"
+
+    '                                    If sLieferDrm = "0" Then
+
+    '                                        sLine = "BGM " & sBGM.PadRight(3, " ") & "".PadRight(9, " ") & "".PadRight(35, " ") & " " & sPickList.PadRight(35, " ")
+
+    '                                    ElseIf sLieferDrm = "1" Then
+
+    '                                        sLine = "BGM " & sBGM.PadRight(3, " ") & "".PadRight(9, " ") & "".PadRight(35, " ") & " " & sFatura.PadRight(35, " ")
+
+    '                                    End If
+
+    '                                    If sASNTIP <> "VDO" Then sLine = sLine & "".PadRight(18, " ") & "9".PadRight(3, " ")
+
+    '                                    objWriter.WriteLine(sLine)
+
+    '                                    nSatir = nSatir + 1
+
+    '                                    If (sASNTIP = "OPEL-YDK") Then
+
+    '                                        sDTM = FormatDateTime(Now.Date, DateFormat.ShortDate)
+    '                                        sLine = "DTM " & "137".PadRight(3, " ") & " " & sDTM.PadRight(35, " ") & " " & "102".PadRight(3, " ")
+
+    '                                    Else
+
+    '                                        sDTM = Now.Date.ToString("yyyyMMdd") & Now.ToString("HHmm")
+    '                                        sLine = "DTM " & "137".PadRight(3, " ") & " " & sDTM.PadRight(35, " ") & " " & "203".PadRight(3, " ")
+
+    '                                    End If
+
+    '                                    objWriter.WriteLine(sLine)
+
+    '                                    nSatir = nSatir + 1
+
+    '                                    If sASNTIP <> "VDO" Then
+
+    '                                        sDTMP = Now.Date.ToString("YYYYMMDD") & Now.ToString("HHmm")
+
+    '                                        sLine = "DTM " & "11".PadRight(3, " ") & " " & sDTM.PadRight(35, " ") & " " & "203".PadRight(3, " ")
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                    End If
+
+    '                                    If sASNTIP = "DELPHI" Then
+
+    '                                        sDTM = DateAdd(DateInterval.Day, nYolSuresi, Now.Date) & Now.ToString("HHmm")
+
+    '                                        sLine = "DTM " & "132".PadRight(3, " ") & " " & sDTM.PadRight(35, " ") & " " & "203".PadRight(3, " ")
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                    End If
+
+    '                                    '********** GROSS WEIGHT *********
+    '                                    If (sASNTIP = "RBOSCH") Then
+
+    '                                        sMEA = "WT"
+
+    '                                    Else
+
+    '                                        sMEA = "AAX"
+
+    '                                    End If
+
+    '                                    If (sASNTIP = "OPEL") Or (sASNTIP = "DELPHI") Or (sASNTIP = "SAAB-YDK") Or (sASNTIP = "OPEL-YDK") Then
+    '                                        sMEAC = "G"
+    '                                    ElseIf (sASNTIP = "RBOSCH") Or (sASNTIP = "LEAR") Or (sASNTIP = "SKODA") Or (sASNTIP = "VW") Or (sASNTIP = "AUDI") Or (sASNTIP = "RENAULT") Or (sASNTIP = "VDO") Then
+    '                                        sMEAC = "AAD"
+    '                                    End If
+
+    '                                    'if (sASNTip='SAAB-YDK") then sMEAU='KD'
+    '                                    'else
+    '                                    sMEAU = "KGM"
+
+    '                                    If sASNTIP = "RENAULT" Then
+
+    '                                        sLine = "MEA " & sMEA.PadRight(3, " ") & " " & sMEAC.PadRight(3, " ") & "".PadRight(80, " ") & sMEAU.PadRight(3, " ") & " " & CStr(nBrtAgr).PadLeft(18, "0")
+
+    '                                    ElseIf sASNTIP = "VDO" Then
+
+    '                                        sLine = "MEA " & sMEA.PadRight(3, " ") & " " & sMEAC.PadRight(3, " ") & "".PadRight(94, " ") & sMEAU.PadRight(3, " ") & " " & CStr(nBrtAgr).PadRight(18, " ")
+
+    '                                    Else
+
+    '                                        sLine = "MEA " & sMEA.PadRight(3, " ") & " " & sMEAC.PadRight(3, " ") & "".PadRight(94, " ") & sMEAU.PadRight(3, " ") & " " & CStr(nBrtAgr).PadLeft(18, "0")
+
+    '                                    End If
+
+    '                                    objWriter.WriteLine(sLine)
+
+    '                                    nSatir = nSatir + 1
+
+    '                                    '********** NET WEIGHT *********
+    '                                    If (sASNTIP <> "OPEL-YDK") And (sASNTIP <> "RENAULT") And (sASNTIP <> "VDO") Then
+
+    '                                        If (sASNTIP = "OPEL") Or (sASNTIP = "DELPHI") Or (sASNTIP = "OPEL-YDK") Or (sASNTIP = "RENAULT") Or (sASNTIP = "SAAB-YDK") Then
+    '                                            sMEAC = "N"
+    '                                        ElseIf (sASNTIP = "RBOSCH") Then
+    '                                            sMEAC = "AAF"
+    '                                        ElseIf (sASNTIP = "LEAR") Then
+    '                                            sMEAC = "AAC"
+    '                                        ElseIf (sASNTIP = "SKODA") Or (sASNTIP = "VW") Or (sASNTIP = "AUDI") Then
+    '                                            sMEAC = "AAL"
+    '                                        End If
+
+    '                                        sLine = "MEA " & sMEA.PadRight(3, " ") & " " & sMEAC.PadRight(3, " ") & "".PadRight(94, " ") & sMEAU.PadRight(3, " ") & " " & CStr(nNetAgr).PadLeft(18, "0")
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                    End If
+
+    '                                    '********** KAP ADEDI *********
+    '                                    If (sASNTIP <> "OPEL-YDK") And (sASNTIP <> "RENAULT") And (sASNTIP <> "VDO") And (sASNTIP <> "SAAB-YDK") Then  ' 'SAAB-YDK' da MEA SQ segmentinin kaldırılması istendi. KADER 15/03/2005 Salı
+
+    '                                        If (sASNTIP = "RBOSCH") Then
+
+    '                                            sMEA = "CT'"
+
+    '                                        Else
+
+    '                                            sMEA = "AAX"
+
+    '                                        End If
+
+    '                                        If (sASNTIP = "LEAR") Then
+
+    '                                            sMEAC = "ABJ"
+
+    '                                        Else
+
+    '                                            sMEAC = "SQ"
+
+    '                                        End If
+
+    '                                        If (sASNTIP = "OPEL") Or (sASNTIP = "DELPHI") Or (sASNTIP = "OPEL-YDK") Or (sASNTIP = "SAAB-YDK") Or (sASNTIP = "RENAULT") Then
+
+    '                                            sMEAU = "C62"
+
+    '                                        ElseIf (sASNTIP = "RBOSCH") Or (sASNTIP = "SKODA") Or (sASNTIP = "VW") Or (sASNTIP = "AUDI") Then
+
+    '                                            sMEAU = "NMP"
+
+    '                                        ElseIf (sASNTIP = "LEAR") Then
+
+    '                                            sMEAU = "MTQ'"
+
+    '                                        End If
+
+    '                                        If (sASNTIP <> "LEAR") Then
+
+    '                                            sLine = "MEA " & sMEA.PadRight(3, " ") & " " & sMEAC.PadRight(3, " ") & "".PadRight(94, " ") & sMEAU.PadRight(3, " ") & " " & CStr(nKapAdet).PadLeft(18, "0")
+
+    '                                            objWriter.WriteLine(sLine)
+
+    '                                            nSatir = nSatir + 1
+
+    '                                        End If
+
+    '                                        If (sASNTIP = "LEAR") Then
+
+    '                                            sLine = "MEA " & sMEA.PadRight(3, " ") & " " & sMEAC.PadRight(3, " ") & "".PadRight(94, " ") & sMEAU.PadRight(3, " ") & " " & CStr(nHacim).PadLeft(18, "0")
+
+    '                                            objWriter.WriteLine(sLine)
+
+    '                                            nSatir = nSatir + 1
+
+    '                                        End If
+
+    '                                    End If
+
+    '                                    If (sASNTIP <> "LEAR") And (sASNTIP <> "RENAULT") And (sASNTIP <> "VDO") Then
+
+    '                                        If (sASNTIP = "RBOSCH") Then
+
+    '                                            sRFF = "SRN"
+
+    '                                        ElseIf (sASNTIP = "SKODA") Or (sASNTIP = "VW") Or (sASNTIP = "AUDI") Then
+
+    '                                            sRFF = "AAO"
+
+    '                                        Else
+
+    '                                            sRFF = "CN"
+
+    '                                        End If
+
+    '                                        sLine = "RFF " & sRFF.PadRight(3, " ") & " " & sCarrier.PadRight(35, " ")
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                    End If
+
+    '                                    If (sASNTIP = "SKODA") Then
+
+    '                                        sLine = "NAD " & "BY".PadRight(3, " ") & " " & "SKODA".PadRight(35, " ") & "".PadRight(5, " ") & "91".PadRight(3, " ")
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                    End If
+
+    '                                    If (sASNTIP <> "OPEL-YDK") And (sISSUER <> "") Then
+
+    '                                        sLine = "NAD " & "MI".PadRight(3, " ") & " "
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                    End If
+
+    '                                    If sASNTIP = "RENAULT" Then
+
+    '                                        sNAD = "SE"
+
+    '                                        sLine = "NAD " & sNAD.PadRight(3, " ") & " " & sDUNS.PadRight(35, " ")
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        sLine = "RFFA " & "ADE".PadRight(3, " ") & " " & sDUNS.PadRight(35, " ")
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                    End If
+
+    '                                    If sASNTIP = "VDO' then" Then
+
+    '                                        sNAD = "CZ'"
+
+    '                                        sLine = "NAD " & sNAD.PadRight(3, " ") & " " & sDUNS.PadRight(35, " ") & "".PadRight(5, " ") & "92".PadRight(3, " ")
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        sNAD = "SE'"
+
+    '                                        sLine = "NAD " & sNAD.PadRight(3, " ") & " " & sDUNS.PadRight(35, " ") & "".PadRight(5, " ") & "92".PadRight(3, " ")
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                    End If
+
+    '                                    If (sASNTIP = "RBOSCH") Then
+
+    '                                        sNAD = "DP'"
+
+    '                                    ElseIf (sASNTIP = "SKODA") Or (sASNTIP = "VW") Or (sASNTIP = "AUDI") Or (sASNTIP = "RENAULT") Or (sASNTIP = "VDO") Then
+
+    '                                        sNAD = "CN'"
+
+    '                                    Else
+
+    '                                        sNAD = "ST'"
+
+    '                                    End If
+
+    '                                    If sASNTIP <> "RENAULT' then" Then
+
+    '                                        If sASNTIP = "OPEL-YDK' then" Then
+
+    '                                            sLine = "NAD " & sNAD.PadRight(3, " ") & " " & sB9CD.PadRight(35, " ") & "".PadRight(5, " ") & "92".PadRight(3, " ")
+
+    '                                        Else
+
+    '                                            sLine = "NAD " & sNAD.PadRight(3, " ") & " " & sB9CD.PadRight(35, " ") & "".PadRight(5, " ") & "92".PadRight(3, " ")
+
+    '                                        End If
+
+    '                                    Else
+
+    '                                        If sB9CD = "TU" Then
+
+    '                                            sNAD1 = "09317801299870101"
+
+    '                                        ElseIf sB9CD = "TK" Then
+
+    '                                            sNAD1 = "09317801299870102"
+
+    '                                        ElseIf sB9CD = "BU" Then
+
+    '                                            sNAD1 = "09317801299870104"
+
+    '                                        ElseIf sB9CD = "RV" Then
+
+    '                                            sNAD1 = "09317801299870100"
+
+    '                                        End If
+
+    '                                        sLine = "NAD " & sNAD.PadRight(3, " ") & " " & sNAD1.PadRight(35, " ") & "".PadRight(189, " ") & sB9CD.PadRight(35, " ")
+
+    '                                    End If
+
+    '                                    objWriter.WriteLine(sLine)
+
+    '                                    nSatir = nSatir + 1
+
+    '                                    sLine = "LOC " & "11".PadRight(3, " ") & " " & sGate.PadRight(25, " ")
+
+    '                                    objWriter.WriteLine(sLine)
+
+    '                                    nSatir = nSatir + 1
+
+    '                                    If (sASNTIP <> "RENAULT") And (sASNTIP <> "VDO") Then
+
+    '                                        If (sASNTIP = "RBOSCH") Then
+
+    '                                            sNAD = "SE"
+
+    '                                        End If
+
+    '                                    Else
+
+    '                                        sNAD = "SU'"
+
+    '                                    End If
+
+    '                                    If sASNTIP = "OPEL-YDK' then" Then
+
+    '                                        sLine = "NAD " & sNAD.PadRight(3, " ") & " " & sDUNS.PadRight(35, " ") & "".PadRight(5, " ") & "92".PadRight(3, " ")
+
+    '                                    Else
+    '                                        sLine = "NAD " & sNAD.PadRight(3, " ") & " " & sDUNS.PadRight(35, " ") & "".PadRight(5, " ") & "16".PadRight(3, " ")
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+    '                                    End If
+
+    '                                    If (sASNTIP = "LEAR") Then
+
+    '                                        sLine = "CTA " & "SU".PadRight(3, " ") & " " & "".PadRight(19, " ") & sISSUER.PadRight(35, " ")
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                    End If
+
+    '                                    If (sASNTIP = "LEAR") Or (sASNTIP = "RBOSCH") Then
+
+    '                                        If (sASNTIP = "RBOSCH") Then
+
+    '                                            sTOD = "6"
+
+    '                                        Else
+
+    '                                            sTOD = " "
+
+    '                                        End If
+
+    '                                        sLine = "TOD " & sTOD.PadRight(3, " ") & "".PadRight(5, " ") & sTermCode.PadRight(3, " ") & "".PadRight(9, " ") & "".PadRight(70, " ")
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                    End If
+
+    '                                    If (sASNTIP = "RBOSCH") Then
+
+
+    '                                        sConv = sPlaka
+    '                                    Else
+    '                                        sConv = "'"
+    '                                    End If
+
+    '                                    If (sASNTIP = "RBOSCH") Then
+    '                                        sTDT1 = sTermCode
+    '                                    Else
+    '                                        sTDT1 = "'"
+
+    '                                    End If
+    '                                    If (sASNTIP = "RBOSCH") Then
+
+    '                                        sTDT2 = "31"
+
+    '                                    Else
+
+    '                                        sTDT2 = " "
+
+    '                                    End If
+
+    '                                    If (sASNTIP = "SKODA") Or (sASNTIP = "VW") Or (sASNTIP = "AUDI") Then
+
+    '                                        sTDT1 = sTermCode
+
+    '                                    Else
+
+    '                                        sTDT1 = ""
+
+    '                                    End If
+    '                                    If (sASNTIP = "RBOSCH") Then
+    '                                        sTDT3 = sCarrier
+    '                                    Else
+    '                                        sTDT3 = ""
+    '                                    End If
+    '                                    If (sASNTIP <> "RBOSCH") Then
+    '                                        sTDT4 = sCarrier
+    '                                    Else
+    '                                        sTDT4 = ""
+    '                                    End If
+    '                                    'if (sMKod='LR") then sTrnQual=''
+
+    '                                    If sASNTIP = "VDO" Then
+
+    '                                        sLine = "TDT " & sTrnQual.PadRight(3, " ") & " " & sConv.PadRight(17, " ") & " " & sDHAABZ.PadRight(3, " ")
+
+    '                                    Else
+
+    '                                        sLine = "TDT " & sTrnQual.PadRight(3, " ") & " " & sConv.PadRight(17, " ") & " " & sDHAABZ.PadRight(3, " ") & " " & sTDT1.PadRight(17, " ") & " " & sTDT2.PadRight(8, " ") & " " & sTDT3.PadRight(17, " ") & " " & sTDT4.PadRight(17, " ") & " " & "".PadRight(3, " ") & " " & "92".PadRight(3, " ")
+
+    '                                    End If
+
+    '                                    objWriter.WriteLine(sLine)
+
+    '                                    nSatir = nSatir + 1
+
+    '                                    If (sASNTIP = "RBOSCH") Then
+
+    '                                        sLine = "LOCB" & "5".PadRight(3, " ") & " " & sGate.PadRight(25, " ") & "".PadRight(5, " ") & "91".PadRight(3, " ")
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                    End If
+    '                                    If (sASNTIP = "OPEL") Or (sASNTIP = "DELPHI") Or (sASNTIP = "SAAB-YDK") Or (sASNTIP = "OPEL-YDK") Or (sASNTIP = "SKODA") Or (sASNTIP = "VW") Or (sASNTIP = "AUDI") Or (sASNTIP = "RENAULT") Then
+
+    '                                        If sPlaka = "" Then
+
+    '                                            sPlaka = "UNKNOWN"
+
+    '                                        End If
+
+    '                                        sLine = "EQD " & "TE".PadRight(3, " ") & " " & sPlaka.PadRight(17, " ")
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                    End If
+
+    '                                    nMiktar = dsSHPPACK.Tables("SHPPACK").Rows(i).Item("SHIPMIK").ToString
+
+    '                                    nKutuSayi = dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KSAY").ToString
+
+    '                                    If chkAsnYeni.Checked = True Then
+
+    '                                        nKumMiktar = nLookup("ASNKUM", "OFFITEMBL", " AENBK='" & My.Settings.Company & "' AND CANBK='" & sCustomer & "' AND B9CDK='" & sPlant & "' AND AITXK='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString & "'")
+
+    '                                        nKumMiktar = nKumMiktar + nMiktar
+
+    '                                        sSQL = " UPDATE " & "OFFITEMBL" & " SET ASNKUM=" & CStr(nKumMiktar) & " WHERE AENBK='" & My.Settings.Company & "'" & _
+    '                                                    " AND CANBK='" & sCustomer & "' AND B9CDK='" & sPlant & "' AND AITXK='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString & "'"
+
+    '                                        db.RunSql(sSQL, True)
+
+    '                                    Else
+
+    '                                        nKumMiktar = nLookup("ASNMIK", "SHPPACK", " COMNO='" & My.Settings.Company & "'" & _
+    '                                            " AND PICKNO='" & CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("PICKNO").ToString) & "' AND SHPNO='" & CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("SHPNO").ToString) & "'" & _
+    '                                            " AND SHIPTO='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("SHIPTO").ToString & "' AND KAPI='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KAPI").ToString & "'" & _
+    '                                            " AND ITNBR='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString & "' AND ASNDRM<>9 ")
+
+    '                                    End If
+
+    '                                    If (sASNTIP = "RBOSCH") Then
+
+    '                                        sLine = "CPS " & "1".PadRight(12, " ") & "".PadRight(14, " ")
+
+    '                                    Else
+
+    '                                        sLine = "CPS " & CStr(nCpsCounter).PadRight(12, " ") & "".PadRight(14, " ") & "1".PadRight(3, " ")
+
+    '                                        nCpsCounter = nCpsCounter + 1
+
+    '                                    End If
+
+    '                                    objWriter.WriteLine(sLine)
+
+    '                                    nSatir = nSatir + 1
+
+    '                                    If (sASNTIP = "RBOSCH") Then
+
+    '                                        sLine = "PAC " & CStr(nKutuSayi).PadLeft(8, "0") & "3".PadRight(13, " ") & "PA".PadRight(17, " ") & "".PadRight(45, " ") & "X".PadRight(3, " ") & " " & sMKKOD.PadRight(36, " ") & "BP".PadRight(3, " ") & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("PSAY").ToString.PadRight(35, " ") & "SA".PadRight(3, " ")
+
+    '                                    Else
+
+    '                                        sLine = "PAC " & CStr(nKutuSayi).PadLeft(8, "0") & "".PadRight(13, " ") & sMKKOD.PadRight(17, " ")
+
+    '                                    End If
+
+    '                                    If sASNTIP = "VDO" Then
+
+    '                                        sLine = sLine & "".PadRight(5, " ") & "92".PadRight(17, " ")
+
+    '                                    End If
+
+    '                                    objWriter.WriteLine(sLine)
+
+    '                                    nSatir = nSatir + 1
+
+    '                                    If (sASNTIP = "RBOSCH") Then
+
+    '                                        sLine = "MEAB" & "LL".PadRight(3, " ") & " " & "HM".PadRight(3, " ") & "".PadRight(94, " ") & "NMP".PadRight(3, " ") & " " & CStr(0).PadLeft(18, "0")
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                    End If
+
+    '                                    sBirim = sLookup("STKOB", "SHPPACK", " COMNO='" & My.Settings.Company & "'" & " AND SHPNO='" & CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("SHPNO").ToString) & "'" & " AND ITNBR='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString.Trim & "'")
+
+    '                                    If sBirim = "AD" Then
+
+    '                                        sQTYU = "PCE"
+
+    '                                    ElseIf sBirim = "KG" Then
+
+    '                                        sQTYU = "KGM"
+
+    '                                    ElseIf sBirim = "MT" Then
+
+    '                                        sQTYU = "MTR"
+
+    '                                    End If
+
+    '                                    If (sASNTIP = "OPEL-YDK") Then
+
+    '                                        sQTYU = "C62"
+
+    '                                    ElseIf (sASNTIP = "RBOSCH") Then
+
+    '                                        sQTYU = ""
+
+    '                                    End If
+
+    '                                    If (sASNTIP = "RBOSCH") Or (sASNTIP = "LEAR") Or (sASNTIP = "OPEL-YDK") Or (sASNTIP = "SKODA") Or (sASNTIP = "VW") Or (sASNTIP = "AUDI") Or (sASNTIP = "RENAULT") Or (sASNTIP = "VDO") Or (sASNTIP = "DELPHI") Then
+
+    '                                        sLine = "QTY " & "52".PadRight(3, " ") & " " & CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KMIK").ToString).PadLeft(12, "0") & ".000" & " " & sQTYU.PadRight(3, " ")
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                    End If
+
+    '                                    If (sASNTIP = "RENAULT") Or (sASNTIP = "VDO") Or (sASNTIP = "DELPHI") Then  ' KADER Delphi'de(DELPHI) PCI segmenti yokmus.  11/03/2005 Cuma
+
+    '                                        sLine = "PCI " & "17".PadRight(3, " ")
+    '                                        ' if sASNTip='VDO' then sLine=sLine& "".Padright(365," ","R")&("1',3," ","R")& "".Padright(5," ","R")&("10',3," ","R")
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                    End If
+
+    '                                    If (sASNTIP = "RENAULT") Then
+
+    '                                        sLine = "RFFB" & "AAT".PadRight(3, " ") & " " & CStr(nRff).PadRight(1, " ")
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                    End If
+
+    '                                    If (sASNTIP = "RENAULT") Or (sASNTIP = "VDO") Or (sASNTIP = "DELPHI") Then  ' KADER Delphi'de(DELPHI) GIR segmenti yokmus.  11/03/2005 Cuma
+
+    '                                        For nGCount = 1 To Int(nKutuSayi)
+
+    '                                            sGir = CStr(nRff).PadRight(1, " ") & CStr(nGCount).PadLeft(3, "0")
+
+    '                                            If sASNTIP = "DELPHI" Then
+
+    '                                                sLine = "GIR " & "3".PadRight(3, " ") & " " & sGir.PadRight(35, " ") & " " & "AW".PadRight(3, " ")  ' KADER Delphi'de bu segmentte ML yerine AW olması istendi 11/03/2005 Cuma
+
+    '                                            Else
+
+    '                                                sLine = "GIR " & "3".PadRight(3, " ") & " " & sGir.PadRight(35, " ") & " " & "ML".PadRight(3, " ")
+
+    '                                            End If
+
+    '                                            objWriter.WriteLine(sLine)
+
+    '                                            nSatir = nSatir + 1
+
+    '                                        Next nGCount
+
+    '                                        nRff = nRff + 1
+
+    '                                    End If
+
+    '                                    If (sASNTIP = "RBOSCH") Then
+
+    '                                        sLine = "LIN " & CStr(nLin).PadRight(6, " ") & "".PadRight(5, " ") & sMURNKOD.PadRight(35, " ") & " " & "IN".PadRight(3, " ") & "".PadRight(5, " ") & "92".PadRight(3, " ")
+
+    '                                    ElseIf (sASNTIP = "OPEL-YDK") Then
+
+    '                                        sLine = "LIN " & CStr(nLin).PadRight(6, " ") & "".PadRight(5, " ") & sMURNKOD.PadRight(35, " ") & " " & "IN".PadRight(3, " ")
+
+    '                                    ElseIf (sASNTIP = "VDO") Then
+
+    '                                        sLine = "LIN " & CStr(nLin).PadRight(6, " ") & "".PadRight(5, " ") & sMURNKOD.PadRight(35, " ") & " " & "IN".PadRight(3, " ") & "".PadRight(20, " ") & "0".PadRight(2, " ")
+
+    '                                    Else
+
+    '                                        sLine = "LIN " & "".PadRight(11, " ") & sMURNKOD.PadRight(35, " ") & " " & "IN".PadRight(3, " ")
+
+    '                                    End If
+
+    '                                    objWriter.WriteLine(sLine)
+
+    '                                    nSatir = nSatir + 1
+
+    '                                    nLin = nLin + 1
+
+    '                                    '********** NET WEIGHT *********
+    '                                    If (sASNTIP = "VDO") Then
+
+    '                                        sMEA = "PD"
+
+
+    '                                        If (sASNTIP = "VDO") Then
+
+    '                                            sMEAC = "AAL"
+
+    '                                        End If
+
+    '                                        sLine = "MEAC" & sMEA.PadRight(3, " ") & " " & sMEAC.PadRight(3, " ") & "".PadRight(94, " ") & sMEAU.PadRight(3, " ") & " " & CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("NETAGR").ToString).PadRight(18, " ")
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                    End If
+
+    '                                    If (sASNTIP = "OPEL") Or (sASNTIP = "DELPHI") Or (sASNTIP = "SAAB-YDK") Or (sASNTIP = "OPEL-YDK") Then sQTYU = "C62"
+
+    '                                    If (sASNTIP = "OPEL") Or (sASNTIP = "DELPHI") Or (sASNTIP = "SAAB-YDK") Or (sASNTIP = "SKODA") Or (sASNTIP = "VW") Or (sASNTIP = "AUDI") Or (sASNTIP = "RENAULT") Then
+
+    '                                        sLine = "QTYA" & "3".PadRight(3, " ") & " " & CStr(nKumMiktar).PadLeft(12, "0") & ".000" & " " & sQTYU.PadRight(3, " ")
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                    End If
+
+    '                                    sLine = "QTYA" & "12".PadRight(3, " ") & " " & CStr(nMiktar).PadRight(12, "0") & ".000" & " " & sQTYU.PadRight(3, " ")
+
+    '                                    objWriter.WriteLine(sLine)
+
+    '                                    nSatir = nSatir + 1
+
+    '                                    If (sASNTIP = "OPEL-YDK") Or (sASNTIP = "VDO") Then
+
+    '                                        sLine = "ALIA" & "TR".PadRight(3, " ")
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                    End If
+
+    '                                    sLine = "RFFC" & "ON".PadRight(3, " ") & " " & sKontrat.PadRight(35, " ")
+
+    '                                    objWriter.WriteLine(sLine)
+
+    '                                    nSatir = nSatir + 1
+
+    '                                    'Palet
+    '                                    If dsSHPPACK.Tables("SHPPACK").Rows(i).Item("PSAY").ToString <> 0 Then
+
+    '                                        sLine = "CPS " & "2".PadRight(12, " ") & "".PadRight(14, " ") & "3".PadRight(3, " ")
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        sLine = "PAC " & CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("PSAY").ToString).PadLeft(8, "0") & "".PadRight(13, " ") & sMPKOD.PadRight(17, " ")
+
+    '                                        If sASNTIP = "VDO" Then sLine = sLine & "".PadRight(5, " ") & "92".PadRight(17, " ")
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        If (sASNTIP = "RENAULT") Or (sASNTIP = "VDO") Then                       ' KADER Delphi'de(DELPHI) PCI sadece ambalajlarda kaldırıldı 08/06/2005 Carsamba
+
+    '                                            sLine = "PCI " & "17".PadRight(3, " ")
+
+    '                                            'if sASNTip='VDO' then sLine=sLine& "".Padright(365," ","R")&("1',3," ","R")& "".Padright(5," ","R")&("10',3," ","R")
+
+    '                                            objWriter.WriteLine(sLine)
+
+    '                                            nSatir = nSatir + 1
+
+    '                                        End If
+
+    '                                        If (sASNTIP = "RENAULT") Then
+
+    '                                            sLine = "RFFB" & "AAT".PadRight(3, " ") & " " & CStr(nRff).PadRight(1, " ")
+
+    '                                            objWriter.WriteLine(sLine)
+
+    '                                            nSatir = nSatir + 1
+
+    '                                        End If
+    '                                        If (sASNTIP = "RENAULT") Or (sASNTIP = "VDO") Then                        ' KADER Delphi'de(DELPHI) GIR sadece ambalajlarda kaldırıldı 08/06/2005 Carcamba
+
+    '                                            For nGCount = 1 To Int(nKutuSayi)
+
+    '                                                sGir = CStr(nRff).PadRight(1, " ") & CStr(nGCount).PadLeft(3, "0")
+
+    '                                                If sASNTIP = "DELPHI" Then
+
+    '                                                    sLine = "GIR " & "3".PadRight(3, " ") & " " & sGir.PadRight(35, " ") & " " & "AW".PadRight(3, " ")   ' KADER Delphi'de bu segmentte ML yerine AW olması istendi 11/03/2005 Cuma
+
+    '                                                Else
+
+    '                                                    sLine = "GIR " & "3".PadRight(3, " ") & " " & sGir.PadRight(35, " ") & " " & "ML".PadRight(3, " ")
+
+    '                                                End If
+
+    '                                                objWriter.WriteLine(sLine)
+
+    '                                                nSatir = nSatir + 1
+
+    '                                            Next nGCount
+
+    '                                            nRff = nRff + 1
+
+    '                                        End If
+
+    '                                    End If
+
+    '                                    'Kapak
+    '                                    If dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KPMIK").ToString <> 0 Then
+
+    '                                        sLine = "CPS " & "3".PadRight(12, " ") & "".PadRight(14, " ") & "3".PadRight(3, " ")
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        sLine = "PAC " & CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KPMIK").ToString).PadLeft(8, "0") & "".PadRight(13, " ") & sMKPKOD.PadRight(17, " ")
+
+    '                                        If sASNTIP = "VDO" Then sLine = sLine & "".PadRight(5, " ") & "92".PadRight(17, " ")
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        If (sASNTIP = "RENAULT") Or (sASNTIP = "VDO") Then ' KADER Delphi'de(DELPHI) PCI sadece ambalajlardan kaldırıldı  08/06/2005 carsamba
+
+    '                                            sLine = "PCI " & "17".PadRight(3, " ")
+
+    '                                            'if sASNTip='VDO' then sLine=sLine& "".Padright(365," ","R")&("1',3," ","R")& "".Padright(5," ","R")&("10',3," ","R")
+
+    '                                            objWriter.WriteLine(sLine)
+
+    '                                            nSatir = nSatir + 1
+
+    '                                        End If
+
+    '                                        If (sASNTIP = "RENAULT") Then
+
+    '                                            sLine = "RFFB" & "AAT".PadRight(3, " ") & " " & CStr(nRff).PadRight(1, " ")
+
+    '                                            objWriter.WriteLine(sLine)
+
+    '                                            nSatir = nSatir + 1
+
+    '                                        End If
+
+    '                                        If (sASNTIP = "RENAULT") Or (sASNTIP = "VDO") Then  ' KADER Delphi'de(DELPHI) GIR sadece ambalajlardan kaldırıldı.  08/06/2005 Carsamba
+
+    '                                            For nGCount = 1 To Int(nKutuSayi)
+
+    '                                                sGir = CStr(nRff).PadRight(1, " ") & CStr(nGCount).PadLeft(3, "0")
+
+    '                                                If sASNTIP = "DELPHI" Then
+
+    '                                                    sLine = "GIR " & "3".PadRight(3, " ") & " " & sGir.PadRight(35, " ") & " " & "AW".PadRight(3, " ") ' KADER Delphi'de bu segmentte ML yerine AW olması istendi 08/03/2005 Salı
+
+    '                                                Else
+
+    '                                                    sLine = "GIR " & "3".PadRight(3, " ") & " " & sGir.PadRight(35, " ") & " " & "ML".PadRight(3, " ")
+
+    '                                                End If
+
+    '                                                objWriter.WriteLine(sLine)
+
+    '                                                nSatir = nSatir + 1
+
+    '                                            Next nGCount
+
+    '                                            nRff = nRff + 1
+
+
+    '                                        End If
+
+    '                                    End If
+
+    '                                    'Separator
+    '                                    If dsSHPPACK.Tables("SHPPACK").Rows(i).Item("SPMIK").ToString <> 0 Then
+
+    '                                        sLine = "CPS " & "4".PadRight(12, " ") & "".PadRight(14, " ") & "2".PadRight(3, " ")
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        sLine = "PAC " & CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("SPMIK").ToString).PadLeft(8, "0") & "".PadRight(13, " ") & sMSPKOD.PadRight(17, " ")
+
+    '                                        If sASNTIP = "VDO" Then sLine = sLine & "".PadRight(5, " ") & "92".PadRight(17, " ")
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        If (sASNTIP = "RENAULT") Or (sASNTIP = "VDO") Then ' KADER Delphi'de(DELPHI) PCI sadece ambalajlardan kaldırıldı.  08/06/2005 Carsamba
+
+    '                                            sLine = "PCI " & "17".PadRight(3, " ")
+    '                                            'if sASNTip='VDO' then sLine=sLine& "".Padright(365," ","R")&("1',3," ","R")& "".Padright(5," ","R")&("10',3," ","R")
+
+    '                                            objWriter.WriteLine(sLine)
+
+    '                                            nSatir = nSatir + 1
+
+    '                                        End If
+
+    '                                        If (sASNTIP = "RENAULT") Then
+
+    '                                            sLine = "RFFB" & "AAT".PadRight(3, " ") & " " & CStr(nRff).PadRight(1, " ")
+
+    '                                            objWriter.WriteLine(sLine)
+
+    '                                            nSatir = nSatir + 1
+
+    '                                        End If
+
+    '                                        If (sASNTIP = "RENAULT") Or (sASNTIP = "VDO") Then  ' KADER Delphi'de(DELPHI) GIR sadece ambalajlardan kaldırıldı.  08/06/2005 Carsamba
+
+    '                                            For nGCount = 1 To Int(nKutuSayi)
+
+    '                                                sGir = CStr(nRff).PadRight(1, " ") & CStr(nGCount).PadLeft(3, "0")
+
+    '                                                If sASNTIP = "DELPHI" Then
+
+    '                                                    sLine = "GIR " & "3".PadRight(3, " ") & " " & sGir.PadRight(35, " ") & " " & "AW".PadRight(3, " ") ' KADER Delphi'de bu segmentte ML yerine AW olması istendi 11/03/2005 Cuma
+
+    '                                                Else
+
+    '                                                    sLine = "GIR " & "3".PadRight(3, " ") & " " & sGir.PadRight(35, " ") & " " & "ML".PadRight(3, " ")
+
+    '                                                End If
+
+    '                                                objWriter.WriteLine(sLine)
+
+    '                                                nSatir = nSatir + 1
+
+    '                                            Next nGCount
+
+    '                                            nRff = nRff + 1
+
+    '                                        End If
+
+    '                                    End If
+
+    '                                    sLine = "UNT " & CStr(nSatir).PadLeft(6, "0") & " " & CStr(nMsgNo).PadRight(14, " ")
+    '                                    objWriter.WriteLine(sLine)
+    '                                    nSatir = nSatir + 1
+
+    '                                    nMsgNo = nMsgNo + 1
+    '                                    'end
+
+    '                                    If chkAsnYeni.Checked = True Then
+    '                                        sSQL = " UPDATE SHPPACK  SET ASNDRM=1, ASNNO='" & CStr(nASN_No) & "'" & _
+    '                                                      " ,ASNMIK=" & CStr(nKumMiktar) & _
+    '                                        " WHERE COMNO='" & My.Settings.Company & "' AND CUST='" & sCustomer & "' AND PICKNO='" & sPickList & "'" & _
+    '                                                " AND SHIPTO='" & sPlant & "' AND KAPI='" & sGate & "'" & _
+    '                                                " AND ITNBR='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString & "' AND ASNDRM<>9"
+
+    '                                        db.RunSql(sSQL, True)
+
+    '                                    End If
+
+    '                                Next i
+
+    '                            End If
+
+    '                        End If
+
+    '                        sLine = "UNZ " & CStr(nUNH).PadLeft(6, "0") & " " & sASN_No.PadRight(14, " ")
+
+    '                        'WriteLn(fMessages,sLine) nSatir = nSatir + 1
+
+    '                        objWriter.Close()
+
+    '                        '********************VW AUDI -- DESADV D98 A******************************
+    '                    ElseIf (sASNTIP = "VW") Or (sASNTIP = "AUDI") Then
+
+    '                        FILE_NAME = sASNDir & "\" & sSDRODID & "\" & "A" & sASN_No & "." & sB9CD
+
+    '                        objWriter = New System.IO.StreamWriter(FILE_NAME)
+
+    '                        If IO.File.Exists(FILE_NAME) Then IO.File.Delete(FILE_NAME)
+
+    '                        sLine = "UNB+UNOA:2+" & sRCVODID & "+" & sASNODID & "+" & Now.Date.ToString("YYMMDD") & ":" & Now.ToString("HHmm") & "+" & sASN_No & "'"
+
+    '                        objWriter.WriteLine(sLine)
+
+    '                        nMsgNo = 1
+
+    '                        nLine = 0
+
+    '                        nRff = 1
+
+    '                        sSQL = " SELECT * FROM SHPPACK " & _
+    '                                " WHERE COMNO='" & My.Settings.Company & "'" & _
+    '                                    " AND PICKNO='" & CStr(row.Cells("PICKNO").Text) & "'" & _
+    '                                    " AND SHIPTO='" & row.Cells("SHPNO").Text & "' AND ASNDRM<>9"
+
+    '                        dsSHPPACK = Nothing
+
+    '                        dsSHPPACK = db.RunSql(sSQL, "SHPPACK")
+
+    '                        If Not dsSHPPACK Is Nothing Then
+
+    '                            If dsSHPPACK.Tables("SHPPACK").Rows.Count > 0 Then
+
+    '                                nMsgNo = 1
+
+    '                                nUNH = 0
+
+    '                                nSatir = 1
+
+    '                                sPickList = CStr(row.Cells("PICKNO").Text)
+
+    '                                sFatura = CStr(row.Cells("DHGGNB").Text)
+
+    '                                sGate = dsSHPPACK.Tables("SHPPACK").Rows(0).Item("KAPI").ToString
+
+    '                                If nMsgNo = 1 Then
+
+    '                                    sLine = "UNH+" & CStr(nMsgNo) & "+DESADV:D:98A:UN" & "'"
+
+    '                                    objWriter.WriteLine(sLine)
+
+    '                                    nSatir = nSatir + 1
+
+    '                                    nUNH = nUNH + 1
+
+    '                                    nMsgNo = nMsgNo + 1
+
+    '                                    If sLieferDrm = "0" Then
+
+    '                                        sLine = "BGM+351+" & sPickList & "::+9" & "'"
+
+    '                                    ElseIf sLieferDrm = "1" Then
+
+    '                                        sLine = "BGM+351+" & sFatura & "::+9" & "'"
+
+    '                                    End If
+
+    '                                    objWriter.WriteLine(sLine)
+
+    '                                    nSatir = nSatir + 1
+
+    '                                    sDTM = Now.Date.ToString("yyyyMMdd") & Now.ToString("HHmm")
+
+    '                                    sLine = "DTM+137:" & sDTM & ":203" & "'"
+
+    '                                    objWriter.WriteLine(sLine)
+
+    '                                    nSatir = nSatir + 1
+
+    '                                    sLine = "DTM+11:" & sDTM & ":203" & "'"
+
+    '                                    objWriter.WriteLine(sLine)
+
+    '                                    nSatir = nSatir + 1
+
+    '                                    nYolSure = nLookup("TTIME", "PLANTPRM", " CANB='" & dsSHPPACK.Tables("SHPPACK").Rows(0).Item("CUST").ToString & _
+    '                                                    "' AND B9CD='" & dsSHPPACK.Tables("SHPPACK").Rows(0).Item("SHIPTO").ToString & "'")
+
+    '                                    sDTM = CDate(DateAdd(DateInterval.Day, nYolSure, Now.Date)) & Now.ToString("HHmm")
+
+    '                                    sLine = "DTM+191:" & sDTM & ":203" & "'"
+
+    '                                    objWriter.WriteLine(sLine)
+
+    '                                    nSatir = nSatir + 1
+
+    '                                    '********** GROSS WEIGHT *********
+    '                                    sMEA = "AAX"
+
+    '                                    sMEAC = "AAD"
+
+    '                                    sMEAU = "KGM"
+
+    '                                    sLine = "MEA+AAX+AAD+KGM:" & CStr(nBrtAgr) & "'"
+
+    '                                    objWriter.WriteLine(sLine)
+
+    '                                    nSatir = nSatir + 1
+
+    '                                    sLine = "MEA+AAX+AAL+KGM:" & CStr(nNetAgr) & "'"
+
+    '                                    objWriter.WriteLine(sLine)
+
+    '                                    nSatir = nSatir + 1
+
+    '                                    sLine = "MEA+AAX+SQ+NMP:" & CStr(nKapAdet) & "'"
+
+    '                                    objWriter.WriteLine(sLine)
+
+    '                                    nSatir = nSatir + 1
+
+    '                                    'sLine='RFF+AAO:'+Cstr(FieldByName("SHPNO").tostring)+''''
+    '                                    '                                                                                                       objWriter.WriteLine(sLine)
+    '                                    '                                                                                                       nSatir = nSatir + 1
+
+    '                                    sLine = "NAD+FW+" & sCarrier & "::92" & "'"
+
+    '                                    objWriter.WriteLine(sLine)
+
+    '                                    nSatir = nSatir + 1
+
+    '                                    If (sASNTIP = "VW") Then
+
+    '                                        sLine = "NAD+BY+VW::92" & "'"
+
+    '                                    ElseIf (sASNTIP = "AUDI") Then
+
+    '                                        sLine = "NAD+BY+AUDI::92" & "'"
+
+    '                                    End If
+
+    '                                    objWriter.WriteLine(sLine)
+
+    '                                    nSatir = nSatir + 1
+
+    '                                    sLine = "NAD+CN+" & sB9CD & "::92" & "'"
+
+    '                                    objWriter.WriteLine(sLine)
+
+    '                                    nSatir = nSatir + 1
+
+    '                                    sLine = "NAD+CZ+" & sDUNS & "::92" & "'"
+
+    '                                    objWriter.WriteLine(sLine)
+
+    '                                    nSatir = nSatir + 1
+
+    '                                    sLine = "LOC+9+" & sDUNS & "0" & "::92" & "'"
+
+    '                                    objWriter.WriteLine(sLine)
+
+    '                                    nSatir = nSatir + 1
+
+    '                                    sLine = "TDT+" & sTrnQual & "++" & sDHAABZ & "+9+" & sCarrier & "::92+++UNKNOWN:146:5+1" & "'"
+
+    '                                    objWriter.WriteLine(sLine)
+
+    '                                    nSatir = nSatir + 1
+
+    '                                    If sPlaka = "" Then sPlaka = "UNKNOWN"
+
+    '                                    sLine = "EQD+TE+" & sPlaka & ":146" & "'"
+
+    '                                    objWriter.WriteLine(sLine)
+
+    '                                    nSatir = nSatir + 1
+    '                                End If
+
+
+    '                                For i As Integer = 0 To dsSHPPACK.Tables("SHPPACK").Rows.Count - 1
+
+    '                                    sMPKOD = ""
+    '                                    sMKKOD = ""
+    '                                    sMSPKOD = ""
+    '                                    sMKPKOD = ""
+    '                                    sMURNKOD = ""
+
+    '                                    'Müşteri Kutu, Palet, Separator, Kapak Kodları
+    '                                    sSQL = " SELECT MKKOD,MPKOD,MSPKOD,MKPKOD FROM ITMPACK " & _
+    '                                                " WHERE AMBKOD='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("AMBKOD").ToString & _
+    '                                                "' AND ITNBR='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString & "'"
+    '                                    dsItmPack = Nothing
+
+    '                                    dsItmPack = db.RunSql(sSQL, "ITMPACK")
+
+    '                                    If Not dsItmPack Is Nothing Then
+
+    '                                        If dsItmPack.Tables("ITMPACK").Rows.Count > 0 Then
+
+    '                                            sMPKOD = dsItmPack.Tables("ITMPACK").Rows(0).Item("MPKOD").ToString
+
+    '                                            sMKKOD = dsItmPack.Tables("ITMPACK").Rows(0).Item("MKKOD").ToString
+
+    '                                            sMSPKOD = dsItmPack.Tables("ITMPACK").Rows(0).Item("MSPKOD").ToString
+
+    '                                            sMKPKOD = dsItmPack.Tables("ITMPACK").Rows(0).Item("MKPKOD").ToString
+
+    '                                        End If
+
+    '                                    End If
+
+    '                                    'Müşteri Ürün Kodu, Adı
+    '                                    sSQL = " SELECT ITEM,KNTRT,REFADI FROM KONTRTPF" & _
+    '                                                " WHERE SITE='" & My.Settings.Company & "' AND CUST='" & sCustomer & "' AND SHIPTO='" & sPlant & "'" & _
+    '                                                    " AND KAPI='" & sGate & "' AND BZMITM='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString & "'"
+    '                                    dsKontrtPf = Nothing
+
+    '                                    dsKontrtPf = db.RunSql(sSQL, "KONTRTPF")
+
+    '                                    If Not dsKontrtPf Is Nothing Then
+
+    '                                        If dsKontrtPf.Tables("KONTRTPF").Rows.Count > 0 Then
+
+    '                                            sMURNKOD = dsKontrtPf.Tables("KONTRTPF").Rows(0).Item("ITEM").ToString
+
+    '                                            sKontrat = dsKontrtPf.Tables("KONTRTPF").Rows(0).Item("KNTRT").ToString
+
+    '                                        End If
+
+    '                                    End If
+
+
+    '                                    nMiktar = dsSHPPACK.Tables("SHPPACK").Rows(i).Item("SHIPMIK").ToString
+
+    '                                    sBirim = sLookup("STKOB", "SHPPACK", " COMNO='" & My.Settings.Company & _
+    '                                                    "' AND SHPNO='" & CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("SHPNO").ToString) & _
+    '                                                    "' AND ITNBR='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString & "'")
+
+    '                                    If sBirim = "AD" Then
+
+    '                                        sQTYU = "PCE"
+
+    '                                    ElseIf sBirim = "KG" Then
+
+    '                                        sQTYU = "KGM"
+
+    '                                    ElseIf sBirim = "MT" Then
+
+    '                                        sQTYU = "MTR"
+
+    '                                    End If
+
+    '                                    If chkAsnYeni.Checked = True Then
+
+    '                                        nKumMiktar = nLookup("ASNKUM", "OFFITEMBL", " AENBK='" & My.Settings.Company & "' AND CANBK='" & sCustomer & "' AND B9CDK='" & sPlant & _
+    '                                                            "' AND AITXK='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString & "'")
+
+    '                                        nKumMiktar = nKumMiktar + nMiktar
+
+    '                                        sSQL = " UPDATE OFFITEMBL SET ASNKUM='" & CStr(nKumMiktar) & _
+    '                                                " WHERE AENBK='" & My.Settings.Company & "'" & _
+    '                                                    " AND CANBK='" & sCustomer & _
+    '                                                    "' AND B9CDK='" & sPlant & _
+    '                                                    "' AND AITXK='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString & "'"
+
+    '                                        db.RunSql(sSQL, True)
+
+    '                                    Else
+
+    '                                        nKumMiktar = nLookup("ASNMIK", "SHPPACK", " COMNO='" & My.Settings.Company & _
+    '                                                        "' AND PICKNO='" & CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("PICKNO").ToString) & _
+    '                                                        "' AND SHPNO='" & CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("SHPNO").ToString) & _
+    '                                                        "' AND SHIPTO='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("SHIPTO").ToString & _
+    '                                                        "' AND KAPI='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KAPI").ToString & _
+    '                                                        "' AND ITNBR='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString & "' AND ASNDRM<>9")
+
+    '                                    End If
+
+    '                                    If (dsSHPPACK.Tables("SHPPACK").Rows(i).Item("HKSAY").ToString <> 0) Or (dsSHPPACK.Tables("SHPPACK").Rows(i).Item("PSAY").ToString = 0) Then
+
+    '                                        sLine = "CPS+" & CStr(nRff).PadLeft(6, "0") & "++4" & "'"
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        If (dsSHPPACK.Tables("SHPPACK").Rows(i).Item("HKSAY").ToString <> 0) Then
+
+    '                                            If sLookup("AYNTIP", "ITEMDIM", " ITNBR='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KKOD").ToString) & "'" = "1" Then
+
+    '                                                sLine = "PAC+" & CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("HKSAY").ToString) & "+::11+" & sMKKOD & "::92" & "'"
+
+    '                                            Else
+
+    '                                                sLine = "PAC+" & CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("HKSAY").ToString) & "+::12+" & sMKKOD & "::92" & "'"
+
+    '                                            End If
+
+    '                                            objWriter.WriteLine(sLine)
+
+    '                                            nSatir = nSatir + 1
+
+    '                                            sLine = "QTY+52:" & CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KMIK").ToString) & ":" & sQTYU & "'"
+
+    '                                            objWriter.WriteLine(sLine)
+
+    '                                            nSatir = nSatir + 1
+
+    '                                            sLine = "PCI+17+++S::10" & "'"
+
+    '                                            objWriter.WriteLine(sLine)
+
+    '                                            nSatir = nSatir + 1
+
+    '                                            If dsSHPPACK.Tables("SHPPACK").Rows(i).Item("HKSAY").ToString = 1 Then
+
+    '                                                sLine = "GIN+ML+" & CStr(nRff).PadRight(1, " ") & "1".PadLeft(3, "0") & "'"
+
+    '                                            Else
+
+    '                                                sLine = "GIN+ML+" & CStr(nRff).PadRight(1, " ") & "1".PadLeft(3, "0") & ":" & CStr(nRff).PadRight(1, " ") & CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("HKSAY").ToString).PadRight(3, "0") & "'"
+
+    '                                            End If
+
+    '                                            objWriter.WriteLine(sLine)
+
+    '                                            nSatir = nSatir + 1
+
+    '                                        ElseIf (dsSHPPACK.Tables("SHPPACK").Rows(i).Item("PSAY").ToString = 0) Then
+
+    '                                            If sLookup("AYNTIP", "ITEMDIM", " ITNBR='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KKOD").ToString) & "'" = "1" Then
+
+    '                                                sLine = "PAC+" & CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KSAY").ToString) & "+::11+" & sMKKOD & "::92" & "'"
+
+    '                                            Else
+
+    '                                                sLine = "PAC+" & CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KSAY").ToString) & "+::12+" & sMKKOD & "::92" & "'"
+
+    '                                            End If
+
+    '                                            sLine = "QTY+52:" & CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KMIK").ToString) & ":" & sQTYU & "'"
+
+    '                                            objWriter.WriteLine(sLine)
+
+    '                                            nSatir = nSatir + 1
+
+    '                                            sLine = "PCI+17+++S::10" & "'"
+
+    '                                            objWriter.WriteLine(sLine)
+
+    '                                            nSatir = nSatir + 1
+
+    '                                            If dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KSAY").ToString = 1 Then
+
+    '                                                sLine = "GIN+ML+" & CStr(nRff).PadRight(1, " ") & "1".PadLeft(3, "0") & "'"
+
+    '                                            Else
+
+    '                                                sLine = "GIN+ML+" & CStr(nRff).PadRight(1, " ") & "1".PadLeft(3, "0") & ":" & CStr(nRff).PadRight(1, " ") & CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KSAY").ToString).PadRight(3, "0") & "'"
+
+    '                                            End If
+
+    '                                            objWriter.WriteLine(sLine)
+
+    '                                            nSatir = nSatir + 1
+
+    '                                        End If
+
+    '                                        sLine = "LIN+++" & sMURNKOD & ":" & "IN" & "'"
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        nLine = nLine + 1
+
+    '                                        sLine = "PIA+1+" & sKontrat & ":ON" & "'"
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        sLine = "IMD+C+63+::5" & "'"
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        nKutuSayi = dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KSAY").ToString - dsSHPPACK.Tables("SHPPACK").Rows(i).Item("HKSAY").ToString
+
+    '                                        If (dsSHPPACK.Tables("SHPPACK").Rows(i).Item("HKSAY").ToString <> 0) Then
+
+    '                                            sLine = "QTY+1:" & CStr(nMiktar - (nKutuSayi * dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KMIK").ToString)) & ":" & sQTYU & "'"
+
+    '                                        ElseIf (dsSHPPACK.Tables("SHPPACK").Rows(i).Item("PSAY").ToString = 0) Then
+
+    '                                            sLine = "QTY+1:" & CStr(nMiktar) & ":" & sQTYU & "'"
+
+    '                                        End If
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        sLine = "ALI+TR+1+7" & "'"
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        sLine = "RFF+AAU:" & CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("PICKNO").ToString) & ":" & CStr(nLine) & "'"
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        sLine = "DTM+171:" & ConvertDate(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("SEVKTAR").ToString).ToString("yyyyMMdd") & ":102" & "'"
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        sLine = "LOC+11+" & sGate & "::92" & "'"
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        sLine = "LOC+19+" & sB9CD & "::92" & "'"
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        nRff = nRff + 1
+    '                                    End If
+
+    '                                    'Palet
+    '                                    If dsSHPPACK.Tables("SHPPACK").Rows(i).Item("PSAY").ToString <> 0 Then
+
+    '                                        sLine = "CPS+" & CStr(nRff).PadLeft(6, "0") & "++3" & "'"
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        If (dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KPMIK").ToString <> 0) And (dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KPKOD").ToString <> "") Then
+
+    '                                            If sLookup("AYNTIP", "ITEMDIM", " ITNBR='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KPKOD").ToString & "'") = "1" Then
+
+    '                                                sLine = "PAC+" & CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KPMIK").ToString) & "+:37:11+" & sMKPKOD & "::92" & "'"  ' Kapak ve seperatorlerde sadece 37 bilgisi olmalıymis. KADER 30/05/2005 Pazartesi
+
+    '                                            Else
+
+    '                                                sLine = "PAC+" & CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KPMIK").ToString) & "+:37:12+" & sMKPKOD & "::92" & "'"
+
+    '                                            End If
+
+    '                                            objWriter.WriteLine(sLine)
+
+    '                                            nSatir = nSatir + 1
+
+    '                                        End If
+
+    '                                        If sLookup("AYNTIP", "ITEMDIM", " ITNBR='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("PKOD").ToString) & "'" = "1" Then
+
+    '                                            sLine = "PAC+" & CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("PSAY").ToString) & "+::11+" & sMPKOD & "::92" & "'"
+
+    '                                        Else
+
+    '                                            sLine = "PAC+" & CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("PSAY").ToString) & "+::12+" & sMPKOD & "::92" & "'"
+
+    '                                        End If
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        sLine = "PCI+17+++M::10" & "'"
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        If dsSHPPACK.Tables("SHPPACK").Rows(i).Item("PSAY").ToString = 1 Then
+
+    '                                            sLine = "GIN+ML+" & CStr(nRff).PadRight(1, " ") & "1".PadLeft(3, "0") & "'"
+
+    '                                        Else
+
+    '                                            sLine = "GIN+ML+" & CStr(nRff).PadRight(1, " ") & "1".PadLeft(3, "0") & ":" & CStr(nRff).PadRight(1, " ") & CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("PSAY").ToString).PadLeft(3, "0") & "'"
+
+    '                                        End If
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        nRff = nRff + 1
+
+    '                                        sLine = "CPS+" & CStr(nRff).PadLeft(6, "0") & "+" & CStr(nRff - 1).PadLeft(6, "0") & "+1" & "'"
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        nKutuSayi = dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KSAY").ToString - dsSHPPACK.Tables("SHPPACK").Rows(i).Item("HKSAY").ToString
+
+    '                                        If sLookup("AYNTIP", "ITEMDIM", " ITNBR='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KKOD").ToString & "'") = "1" Then
+
+    '                                            sLine = "PAC+" & CStr(nKutuSayi) & "+::11+" & sMKKOD & "::92" & "'"
+
+    '                                        Else
+
+    '                                            sLine = "PAC+" & CStr(nKutuSayi) & "+::12+" & sMKKOD & "::92" & "'"
+
+    '                                        End If
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        sLine = "QTY+52:" & CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KMIK").ToString) & ":" & sQTYU & "'"
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        sLine = "PCI+17+++S::10" & "'"
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        If nKutuSayi = 1 Then
+
+    '                                            sLine = "GIN+ML+" & CStr(nRff).PadRight(1, " ") & "1".PadLeft(3, "0") & "'"
+
+    '                                        Else
+
+    '                                            sLine = "GIN+ML+" & CStr(nRff) & "1".PadLeft(3, "0") & ":" & CStr(nRff) & CStr(nKutuSayi).PadLeft(3, "0") & "'"
+
+    '                                        End If
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        nRff = nRff + 1
+
+    '                                        sLine = "LIN+++" & sMURNKOD & ":" & "IN" & "'"
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        nLine = nLine + 1
+
+    '                                        sLine = "PIA+1+" & sKontrat & ":ON" & "'"
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        sLine = "IMD+C+63+::5" & "'"
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        sLine = "QTY+1:" & CStr(nKutuSayi * dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KMIK").ToString) & ":" & sQTYU & "'"
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        sLine = "ALI+TR+1+7" & "'"
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        sLine = "RFF+AAU:" & CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("PICKNO").ToString) & ":" & CStr(nLine) & "'"
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        sLine = "DTM+171:" & ConvertDate(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("SEVKTAR").ToString) & ":102" & "'"
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        sLine = "LOC+11+" & sGate & "::92" & "'"
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        sLine = "LOC+19+" & sB9CD & "::92" & "'"
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                    End If
+
+    '                                    If chkAsnYeni.Checked = True Then
+
+    '                                        sSQL = " UPDATE SHPPACK SET ASNDRM=1, ASNNO='" & CStr(nASN_No) & "'" & _
+    '                                                   " ,ASNMIK=" & CStr(nKumMiktar) & _
+    '                                               " WHERE COMNO='" & My.Settings.Company & "' AND CUST='" & sCustomer & "' AND PICKNO='" & sPickList & "'" & _
+    '                                                   " AND SHIPTO='" & sPlant & "' AND KAPI='" & sGate & "'" & _
+    '                                                    " AND ITNBR='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString & "' AND ASNDRM<>9 "
+
+    '                                        db.RunSql(sSQL, True)
+
+
+    '                                    End If
+
+    '                                Next i
+
+    '                            End If
+
+    '                        End If
+
+    '                        sLine = "UNT+" & CStr(nSatir) & "+" & CStr(nMsgNo - 1) & "'"
+
+    '                        objWriter.WriteLine(sLine)
+
+    '                        nSatir = nSatir + 1
+
+    '                        sLine = "UNZ+" & CStr(nUNH) & "+" & sASN_No & "'"
+
+    '                        objWriter.WriteLine(sLine)
+
+    '                        nSatir = nSatir + 1
+
+    '                        objWriter.Close()
+
+    '                        '***************************** RENAULT DELFOR D96 A *****************************
+    '                    ElseIf (sASNTIP = "RENAULT") Then
+
+    '                        If sTumShipNo.Count > 1 Then
+
+    '                            For i As Integer = 0 To sTumShipNo.Count - 1
+
+    '                                If sShipNo = sTumShipNo(i) Then
+
+
+    '                                    bOk = False
+
+    '                                End If
+
+    '                            Next i
+
+    '                        ElseIf sTumShipNo.Count = 1 Then
+
+    '                            bOk = True
+
+    '                        End If
+
+
+    '                        If bOk = True Then
+    '                            'Brüt Ağırlık, Net Ağırlık, Kap Adedi Hesaplama
+    '                            nBrtAgr = 0
+
+    '                            nNetAgr = 0
+
+    '                            nKapAdet = 0
+
+    '                            nHacim = 0
+
+    '                            sSQL = " SELECT SUM(BRTAGR) AS BAGR ,SUM(NETAGR) AS NAGR,SUM(HKSAY) AS HKUTU,SUM(PSAY) AS PSAYI, SUM(HACIM) AS HCM " & _
+    '                                                        " FROM SHPPACK " & _
+    '                                                        " WHERE COMNO='" & My.Settings.Company & "'" & _
+    '                                                        " AND   CUST='" & row.Cells("CUST").Text & "'" & _
+    '                                                        " AND   SHPNO='" & sShipNo & "' AND ASNDRM<>9"
+    '                            dsSHPPACK = Nothing
+
+    '                            dsSHPPACK = db.RunSql(sSQL, "SHPPACK")
+
+    '                            If Not dsSHPPACK Is Nothing Then
+
+    '                                If dsSHPPACK.Tables("SHPPACK").Rows.Count > 0 Then
+
+    '                                    nBrtAgr = Int(dsSHPPACK.Tables("SHPPACK").Rows(0).Item("BAGR").ToString)
+
+    '                                    nNetAgr = Int(dsSHPPACK.Tables("SHPPACK").Rows(0).Item("NAGR").ToString)
+
+    '                                    nKapAdet = dsSHPPACK.Tables("SHPPACK").Rows(0).Item("HKUTU").ToString + dsSHPPACK.Tables("SHPPACK").Rows(0).Item("PSAYI").ToString
+
+    '                                    nHacim = Int(dsSHPPACK.Tables("SHPPACK").Rows(0).Item("HCM").ToString)
+
+    '                                End If
+
+    '                            End If
+
+    '                            nSatir = 1
+
+    '                            nRffAat = 1
+
+    '                            nGir = 1
+
+    '                            FILE_NAME = sASNDir & "\" & "A" & sASN_No & "." & sB9CD
+
+
+
+    '                            If IO.File.Exists(FILE_NAME) Then IO.File.Delete(FILE_NAME)
+
+    '                            objWriter = New System.IO.StreamWriter(FILE_NAME)
+
+    '                            sLine = "UNB+UNOA:1+" & Trim(sRCVODID) & "+" & Trim(sASNODID) & "+" & Now.Date.ToString("yyyyMMdd") & ":" & Now.ToString("HHmm") & "+" & Trim(sASN_No) & "'"
+    '                            '                            '+'+Trim(sASN_No)+'++++++1'''
+
+
+    '                            objWriter.WriteLine(sLine)
+
+    '                            nSatir = nSatir + 1
+
+    '                            nMsgNo = 1
+
+    '                            sSQL = " SELECT * FROM SHPPACK " & _
+    '                                         " WHERE COMNO='" & My.Settings.Company & "'" & _
+    '                                            " AND SHPNO ='" & sShipNo & "'" & _
+    '                                            " AND SHIPTO='" & Trim(row.Cells("SHIPTO").Text) & "' AND ASNDRM<>9"
+
+    '                            '                             ' AND PICKNO='+Cstr(GridView1.GetRowCellValue[nRowP,3])+
+
+    '                            dsSHPPACK = Nothing
+
+    '                            dsSHPPACK = db.RunSql(sSQL, "SHPPACK")
+
+    '                            If Not dsSHPPACK Is Nothing Then
+
+    '                                If dsSHPPACK.Tables("SHPPACK").Rows.Count > 0 Then
+
+    '                                    nMsgNo = 1
+
+    '                                    nUNH = 0
+
+    '                                    nRff = 1
+
+    '                                    sPickList = dsSHPPACK.Tables("SHPPACK").Rows(0).Item("PICKNO").ToString
+
+    '                                    sFatura = CStr(row.Cells("DHGGNB").Text)
+
+    '                                    sGate = ""
+
+    '                                    For i As Integer = 0 To dsSHPPACK.Tables("SHPPACK").Rows.Count - 1
+
+    '                                        If sGate <> dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KAPI").ToString Then
+
+    '                                            sLine = "UNH+" & CStr(nMsgNo) & "+DESADV:D:96A:UN:A01052'"           'Autoliv'de A01052
+
+    '                                            objWriter.WriteLine(sLine)
+
+    '                                            nSatir = nSatir + 1
+
+    '                                            nUNH = nUNH + 1
+
+    '                                            nMsgNo = nMsgNo + 1
+
+    '                                            sBGM = "351"
+
+    '                                            If (sLieferDrm = "0") Or (sLieferDrm = "") Then
+
+    '                                                sLine = "BGM+351+" & Trim(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("SHPNO").ToString) & "'"
+
+    '                                            ElseIf sLieferDrm = "1" Then
+
+    '                                                sLine = "BGM+351+" & Trim(sFatura) & "'"
+
+    '                                            End If
+
+    '                                            objWriter.WriteLine(sLine)
+
+    '                                            nSatir = nSatir + 1
+
+    '                                            sCrdTim = sLookup("MAX(CRDTIM)", "SHPPACK", " COMNO='" & My.Settings.Company & "'" & _
+    '                                                        " AND PICKNO='" & CStr(row.Cells("PICKNO").Text) & "'" & _
+    '                                                        " AND SHIPTO='" & row.Cells("SHIPTO").Text & "' AND ASNDRM<>9")
+
+    '                                            sLine = "DTM+11:" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("SEVKTAR").ToString + Mid(sCrdTim, 1, 4) & ":203" & "'"
+
+    '                                            objWriter.WriteLine(sLine)
+
+    '                                            nSatir = nSatir + 1
+
+    '                                            sDTM = DateAdd(DateInterval.Day, nYolSuresi, Now.Date).ToString("yyyyMMdd") & Mid(sCrdTim, 1, 4)
+
+    '                                            'sDTM=FormatDateTime("YYYYMMDD",(date+nYolSuresi))+copy(sCrdTim, 1, 4)
+
+    '                                            sLine = "DTM+132:" & sDTM & ":203" & "'"
+
+    '                                            objWriter.WriteLine(sLine)
+
+    '                                            nSatir = nSatir + 1
+
+    '                                            sDTM = dsSHPPACK.Tables("SHPPACK").Rows(i).Item("CRDDTE").ToString + Mid(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("CRDTIM").ToString, 1, 4)
+
+    '                                            sLine = "DTM+137:" & sDTM & ":203" & "'"
+
+    '                                            objWriter.WriteLine(sLine)
+
+    '                                            nSatir = nSatir + 1
+
+    '                                            '********** GROSS WEIGHT *********
+    '                                            sMEA = "AAX"
+
+    '                                            sMEAC = "AAD"
+
+    '                                            sMEAU = "KGM"
+
+    '                                            sLine = "MEA+AAX+AAD+KGM:" & Trim(CStr(nBrtAgr)) & "'"
+
+    '                                            objWriter.WriteLine(sLine)
+
+    '                                            nSatir = nSatir + 1
+
+    '                                            If Trim(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("PUSNO").ToString).IndexOf("%") = 0 Then
+
+    '                                                sPusNo = Trim(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("PUSNO").ToString)
+
+    '                                            ElseIf Trim(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("PUSNO").ToString).IndexOf("%") = 1 Then
+
+    '                                                sPusNo = Mid(Trim(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("PUSNO").ToString), 1, Trim(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("PUSNO").ToString).IndexOf("%") - 1)
+
+    '                                            Else
+
+    '                                                sPusNo = ""
+
+    '                                            End If
+
+    '                                            sLine = "RFF+CRN:" & sPusNo & "'"
+
+    '                                            objWriter.WriteLine(sLine)
+
+    '                                            nSatir = nSatir + 1
+
+    '                                            sNAD = "SE"
+
+    '                                            sLine = "NAD+" & Trim(sNAD) & "+" & Trim(sRCVODID) & "::10'"
+
+    '                                            objWriter.WriteLine(sLine)
+
+    '                                            nSatir = nSatir + 1
+
+    '                                            sLine = "RFF+ADE:" & Trim(sDUNS).PadLeft(8, "0") & "'"
+
+    '                                            objWriter.WriteLine(sLine)
+
+    '                                            nSatir = nSatir + 1
+
+    '                                            sNAD = "CN"
+
+    '                                            If sB9CD = "TU" Then
+
+    '                                                sNAD1 = "09317801299870101"
+
+    '                                            ElseIf sB9CD = "TK" Then
+
+    '                                                sNAD1 = "09317801299870102"
+
+    '                                            ElseIf sB9CD = "FL" Then
+
+    '                                                sNAD1 = "09317801299871892"
+
+    '                                            ElseIf sB9CD = "BU" Then
+
+    '                                                sNAD1 = "09317801299870104"
+
+    '                                            ElseIf sB9CD = "RV" Then
+
+    '                                                sNAD1 = "09317801299870100"
+
+    '                                            End If
+
+    '                                            sLine = "NAD+" & Trim(sNAD) & "+" & Trim(sNAD1) & "::10'"
+
+    '                                            objWriter.WriteLine(sLine)
+
+    '                                            nSatir = nSatir + 1
+
+    '                                            sGate = dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KAPI").ToString
+
+    '                                            sLine = "LOC+11+" & Trim(sGate) & "'"
+
+    '                                            objWriter.WriteLine(sLine)
+
+    '                                            nSatir = nSatir + 1
+
+    '                                            sDunsSifir = "00" & Trim(sDUNS) & "00" 'Autoliv'de basinda 00 yok = Trim(sDUNS)+'00'"
+
+    '                                            sLine = "NAD+CZ+" & sDunsSifir & "::92" & "'"
+
+    '                                            objWriter.WriteLine(sLine)
+
+    '                                            nSatir = nSatir + 1
+
+    '                                            sTDT4 = sCarrier
+
+    '                                            If sPlaka = "" Then sPlaka = "UNKNOWN"
+
+    '                                            sLine = "EQD+TE+" & Trim(sPlaka) & "'"
+
+    '                                            objWriter.WriteLine(sLine)
+
+    '                                            nSatir = nSatir + 1
+
+    '                                        End If
+
+    '                                        sMPKOD = ""
+
+    '                                        sMKKOD = ""
+
+    '                                        sMSPKOD = ""
+
+    '                                        sMKPKOD = ""
+
+    '                                        sMURNKOD = ""
+
+    '                                        'Müşteri Kutu, Palet, Separator, Kapak Kodları
+    '                                        sSQL = " SELECT MKKOD,MPKOD,MSPKOD,MKPKOD " & _
+    '                                                    " FROM ITMPACK" & _
+    '                                                    " WHERE AMBKOD='" & Trim(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("AMBKOD").ToString) & _
+    '                                                        "' AND ITNBR='" & Trim(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString) & "'"
+
+    '                                        dsItmPack = Nothing
+
+    '                                        dsItmPack = db.RunSql(sSQL, "ITMPACK")
+
+    '                                        If Not dsItmPack Is Nothing Then
+
+    '                                            If dsItmPack.Tables("ITMPACK").Rows.Count > 0 Then
+
+    '                                                sMPKOD = dsItmPack.Tables("ITMPACK").Rows(0).Item("MPKOD").ToString
+
+    '                                                sMKKOD = dsItmPack.Tables("ITMPACK").Rows(0).Item("MKKOD").ToString
+
+    '                                                sMSPKOD = dsItmPack.Tables("ITMPACK").Rows(0).Item("MSPKOD").ToString
+
+    '                                                sMKPKOD = dsItmPack.Tables("ITMPACK").Rows(0).Item("MKPKOD").ToString
+
+    '                                            End If
+
+    '                                        End If
+
+    '                                        'Müşteri Ürün Kodu, Adı
+    '                                        sSQL = " SELECT ITEM,KNTRT,REFADI " & _
+    '                                                    "FROM KONTRTPF " & _
+    '                                                        " WHERE SITE='" & My.Settings.Company & "'" & _
+    '                                                            " AND CUST='" & sCustomer & "'" & _
+    '                                                            " AND SHIPTO='" & sPlantSequence & "'" & _
+    '                                                            " AND KAPI='" & Trim(sGate) & "'" & _
+    '                                                            " AND BZMITM='" & Trim(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString) & "'"
+
+    '                                        dsKontrtPf = Nothing
+
+    '                                        dsKontrtPf = db.RunSql(sSQL, "KONTRTPF")
+
+    '                                        If Not dsKontrtPf Is Nothing Then
+
+    '                                            If dsKontrtPf.Tables("KONTRTPF").Rows.Count > 0 Then
+
+    '                                                sMURNKOD = dsKontrtPf.Tables("KONTRTPF").Rows(0).Item("ITEM").ToString
+
+    '                                                sKontrat = dsKontrtPf.Tables("KONTRTPF").Rows(0).Item("KNTRT").ToString
+
+    '                                            End If
+
+    '                                        End If
+
+
+    '                                        nMiktar = dsSHPPACK.Tables("SHPPACK").Rows(i).Item("SHIPMIK").ToString
+
+    '                                        nKutuSayi = dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KSAY").ToString
+
+    '                                        If chkAsnYeni.Checked = True Then
+
+    '                                            nKumMiktar = nLookup("ASNKUM", "OFFITEMBL", " AENBK='" & My.Settings.Company & "'" & _
+    '                                                                " AND CANBK='" & sCustomer & _
+    '                                                                "' AND B9CDK='" & sPlant & _
+    '                                                                "' AND AITXK='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString & "'")
+
+    '                                            nKumMiktar = nKumMiktar + nMiktar
+
+    '                                            sSQL = " UPDATE OFFITEMBL  SET ASNKUM= " & CStr(nKumMiktar) & _
+    '                                                        " WHERE AENBK='" & My.Settings.Company & "'" & _
+    '                                                            " AND CANBK='" & sCustomer & _
+    '                                                            "' AND B9CDK='" & Trim(sB9CD) & _
+    '                                                            "' AND AITXK='" & Trim(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString) & "'"
+
+    '                                            db.RunSql(sSQL, True)
+
+    '                                        Else
+    '                                            nKumMiktar = nLookup("ASNMIK", "SHPPACK", " COMNO='" & My.Settings.Company & "'" & _
+    '                                                                    " AND PICKNO='" & CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("PICKNO").ToString) & _
+    '                                                                    "' AND SHPNO='" & CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("SHPNO").ToString) & _
+    '                                                                    " AND SHIPTO='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("SHIPTO").ToString & _
+    '                                                                    "' AND KAPI='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KAPI").ToString & "'" & _
+    '                                                                    " AND ITNBR='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString & "' AND ASNDRM<>9")
+
+    '                                        End If
+
+    '                                        sLine = "CPS+" & CStr(nRff) & "++" & "1'"
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        nRff = nRff + 1
+
+    '                                        sLine = "PAC+" & CStr(nKutuSayi) & "++" & Trim(sMKKOD) & "::92'"
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        sBirim = sLookup("STKOB", "SHPPACK", " COMNO='" & My.Settings.Company & "'" & _
+    '                                                            " AND SHPNO='" & CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("SHPNO").ToString) & "'" & _
+    '                                                            " AND ITNBR='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString & "'")
+
+    '                                        If sBirim = "AD" Then
+
+    '                                            sQTYU = "PCE"
+
+    '                                        ElseIf sBirim = "KG" Then
+
+    '                                            sQTYU = "KGM"
+
+    '                                        ElseIf sBirim = "MT" Then
+
+    '                                            sQTYU = "MTR"
+
+    '                                        End If
+
+    '                                        sLine = "QTY+52:" & Trim(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KMIK").ToString) & ":" & Trim(sQTYU) & "'"
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        nIlkKutuNo = dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ETKILKKUTUNO").ToString
+
+    '                                        nIlkPaletNo = dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ETKPALETNO").ToString
+
+    '                                        'Palet var ise
+    '                                        If dsSHPPACK.Tables("SHPPACK").Rows(i).Item("PSAY").ToString <> 0 Then
+
+    '                                            sSQL = "SELECT distinct paletno " & _
+    '                                                        " FROM   tr_sevk_detail " & _
+    '                                                            " WHERE  listno =" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("PICKNO").ToString & _
+    '                                                            " AND    custitem = '" & Trim(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString) & "'" & _
+    '                                                            " AND    stat ='S'" & _
+    '                                                    " ORDER  BY paletno asc"
+
+    '                                            dstr_sevk_detail = Nothing
+
+    '                                            dstr_sevk_detail = db.RunSql(sSQL, "tr_sevk_detail")
+
+    '                                            If Not dstr_sevk_detail Is Nothing Then
+
+    '                                                If dstr_sevk_detail.Tables("tr_sevk_detail").Rows.Count > 0 Then
+
+    '                                                    sLine = "PCI+17'"
+
+    '                                                    objWriter.WriteLine(sLine)
+
+    '                                                    nSatir = nSatir + 1
+
+    '                                                    sLine = "RFF+AAT:" & dstr_sevk_detail.Tables("tr_sevk_detail").Rows(0).Item("paletno").ToString.PadLeft(9, "0") & "'"
+
+    '                                                    objWriter.WriteLine(sLine)
+
+    '                                                    nSatir = nSatir + 1
+
+    '                                                    nRffAat = nRffAat + 1
+
+
+    '                                                    sSQL = "SELECT * " & _
+    '                                                                " FROM   tr_sevk_detail " & _
+    '                                                                    " WHERE  listno = " & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("PICKNO").ToString & _
+    '                                                                    " AND    custitem ='" & Trim(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString) & "'" & _
+    '                                                                    " AND    paletno = " & dstr_sevk_detail.Tables("tr_sevk_detail").Rows(0).Item("PALETNO").ToString & _
+    '                                                                    " AND    stat ='S' " & _
+    '                                                            " ORDER  BY etiketno asc"
+
+
+    '                                                    dstr_sevk_detail1 = Nothing
+
+    '                                                    dstr_sevk_detail1 = db.RunSql(sSQL, "tr_sevk_detail")
+
+    '                                                    If Not dstr_sevk_detail1 Is Nothing Then
+
+    '                                                        If dstr_sevk_detail1.Tables("tr_sevk_detail").Rows.Count > 0 Then
+
+    '                                                            If dstr_sevk_detail1.Tables("tr_sevk_detail").Rows(0).Item("CUSTPO").ToString.IndexOf("%") <> -1 Then
+
+    '                                                                sPusNo = Trim(Mid(dstr_sevk_detail1.Tables("tr_sevk_detail").Rows(0).Item("CUSTPO").ToString, dstr_sevk_detail1.Tables("tr_sevk_detail").Rows(0).Item("CUSTPO").ToString.IndexOf("%") + 1, 35))
+
+    '                                                            Else
+
+    '                                                                sPusNo = ""
+
+    '                                                            End If
+
+    '                                                            If sPusNo = "" Then
+
+    '                                                                sLine = "GIR+3+" & dstr_sevk_detail1.Tables("tr_sevk_detail").Rows(0).Item("etiketNo").ToString.PadLeft(9, "0") & ":ML'"
+
+    '                                                            Else
+
+    '                                                                sLine = "GIR+3+" & dstr_sevk_detail1.Tables("tr_sevk_detail").Rows(0).Item("etiketNo").ToString.PadLeft(9, "0") & ":ML++" & sPusNo & ":BU'"
+
+    '                                                            End If
+
+    '                                                            ' sLine='GIR+3+'&(qryTemp.FieldByName("ETIKETNO").ToString,9,"0","L")+':ML'''
+    '                                                            objWriter.WriteLine(sLine)
+
+    '                                                            nSatir = nSatir + 1
+
+    '                                                            nGir = nGir + 1
+
+    '                                                        End If
+
+    '                                                    End If
+
+    '                                                End If
+
+    '                                            End If
+
+    '                                            'Palet yok ise...
+    '                                        Else
+
+
+    '                                            sSQL = "SELECT * " & _
+    '                                                        " FROM   tr_sevk_detail " & _
+    '                                                            " WHERE  listno =" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("PICKNO").ToString & _
+    '                                                            " AND    custitem = '" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString & "'" & _
+    '                                                            " AND    (paletno is  null or paletno = 0) " & _
+    '                                                            " AND    stat = 'S'" & _
+    '                                                    " ORDER  BY etiketno asc"
+
+
+    '                                            dstr_sevk_detail = Nothing
+
+    '                                            dstr_sevk_detail = db.RunSql(sSQL, "tr_sevk_detail")
+
+    '                                            If Not dstr_sevk_detail Is Nothing Then
+
+    '                                                If dstr_sevk_detail.Tables("tr_sevk_detail").Rows.Count > 0 Then
+
+    '                                                    If dstr_sevk_detail.Tables("tr_sevk_detail").Rows(0).Item("CUSTPO").ToString.IndexOf("%") <> 0 Then
+
+    '                                                        sPusNo = Trim(Mid(dstr_sevk_detail.Tables("tr_sevk_detail").Rows(0).Item("CUSTPO").ToString, dstr_sevk_detail.Tables("tr_sevk_detail").Rows(0).Item("CUSTPO").ToString.IndexOf("%") + 1, 35))
+
+    '                                                    Else
+
+    '                                                        sPusNo = ""
+
+    '                                                    End If
+
+    '                                                    If sPusNo = "" Then
+
+    '                                                        sLine = "GIR+3+" & dstr_sevk_detail.Tables("tr_sevk_detail").Rows(0).Item("ETIKETNO").ToString.PadLeft(9, "0") & ":ML'"
+
+    '                                                    Else
+
+    '                                                        sLine = "GIR+3+" & dstr_sevk_detail.Tables("tr_sevk_detail").Rows(0).Item("ETIKETNO").ToString.PadLeft(9, "0") & ":ML++" & sPusNo & ":BU'"
+
+    '                                                    End If
+
+    '                                                    ' sLine='GIR+3+'&(qryTemp.FieldByName("ETIKETNO").ToString,9,"0","L")+':ML'''
+    '                                                    objWriter.WriteLine(sLine)
+
+    '                                                    nSatir = nSatir + 1
+
+    '                                                    nGir = nGir + nGir
+
+    '                                                End If
+
+    '                                            End If
+
+    '                                        End If
+
+
+    '                                        sLine = "LIN+++" & Trim(sMURNKOD) & ":IN++0'"
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        sLine = "QTY+12:" & CStr(nMiktar) & ":" & sQTYU & "'"
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        sLine = "ALI+TR'"
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        sLine = "RFF+ON:" & Trim(sKontrat) & "'"
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        If chkAsnYeni.Checked = True Then
+
+    '                                            sSQL = " UPDATE SHPPACK " & _
+    '                                                    " SET ASNDRM=1, ASNNO='" & CStr(nASN_No) & "'" & _
+    '                                                            " ,ASNMIK=" & CStr(nKumMiktar) & _
+    '                                                        " WHERE COMNO='" & My.Settings.Company & "'" & _
+    '                                                            " AND   CUST='" & sCustomer & "'" & _
+    '                                                            " AND   PICKNO=" & sPickList & _
+    '                                                            " AND   SHIPTO='" & Trim(sPlant) & "'" & _
+    '                                                            " AND   KAPI='" & Trim(sGate) & "'" & _
+    '                                                            " AND   ITNBR='" & Trim(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString) & "'" & _
+    '                                                            " AND   ASNDRM<>9 "
+
+    '                                            db.RunSql(sSQL, True)
+
+    '                                        End If
+
+    '                                    Next i
+
+    '                                End If
+
+    '                            End If
+
+    '                            sLine = "UNT+" & CStr(nSatir - 1) & "+" & CStr(nMsgNo - 1) & "'"
+
+    '                            objWriter.WriteLine(sLine)
+
+    '                            nSatir = nSatir + 1
+
+    '                            sLine = "UNZ+" & CStr(nUNH) & "+" & sASN_No & "'"
+
+    '                            objWriter.WriteLine(sLine)
+
+    '                            nSatir = nSatir + 1
+
+    '                            objWriter.Close()
+
+    '                        End If
+
+    '                        ' *********************************** ODETTE  AVIEXP ****************************
+    '                    ElseIf (sASNTIP = "PORSCHE") Or (sASNTIP = "SAAB") Or (sASNTIP = "TOFAS") Then
+
+    '                        FILE_NAME = sASNDir & "\" & sSDRODID & "\" & "A" & sASN_No & "." & sB9CD
+
+    '                        objWriter = New System.IO.StreamWriter(FILE_NAME)
+
+    '                        If IO.File.Exists(FILE_NAME) Then IO.File.Delete(FILE_NAME)
+
+    '                        If sB9CD = "THN" Then
+
+    '                            sRAdr = "APM021"
+
+    '                        ElseIf sB9CD = "SDT" Then
+
+    '                            sRAdr = "APM041"
+
+    '                        ElseIf sB9CD = "GBG" Then
+
+    '                            sRAdr = "APM071"
+
+    '                        End If
+
+    '                        If (sASNTIP = "SAAB") Then
+
+    '                            sLine = "UNB " & sRCVODID.PadRight(35, " ") & " " & sRCVODCD.PadRight(4, " ") & " " & "".PadRight(14, " ") & " " & _
+    '                                   sASNODID.PadRight(35, " ") & " " & _
+    '                                   sASNODCD.PadRight(4, " ") & " " & sRAdr.PadRight(14, " ") & " " & _
+    '                                   sASN_No.PadRight(14, " ") & "".PadRight(19, " ") & "AVIEXP-SAAB"
+
+    '                        Else
+
+    '                            sLine = "UNB " & sRCVODID.PadRight(35, " ") & " " & sRCVODCD.PadRight(4, " ") & " " & _
+    '                                                    "".PadRight(14, " ") & " " & sASNODID.PadRight(35, " ") & " " & _
+    '                                                    sASNODCD.PadRight(4, " ") & " " & "".PadRight(14, " ") & " " & sASN_No.PadRight(14, " ")
+
+    '                        End If
+
+    '                        objWriter.WriteLine(sLine)
+
+    '                        sSQL = " SELECT * " & _
+    '                                    " FROM SHPPACK  " & _
+    '                                        " WHERE COMNO='" & My.Settings.Company & "'" & _
+    '                                            " AND PICKNO='" & CStr(row.Cells("PICKNO").Text) & "'" & _
+    '                                            " AND SHIPTO='" & row.Cells("SHPNO").Text & "'  AND ASNDRM<>9"
+
+    '                        dsSHPPACK = Nothing
+
+    '                        dsSHPPACK = db.RunSql(sSQL, "SHPPACK")
+
+    '                        If Not dsSHPPACK Is Nothing Then
+
+    '                            If dsSHPPACK.Tables("SHPPACK").Rows.Count > 0 Then
+
+    '                                nMsgNo = 1
+
+    '                                nUNH = 0
+
+    '                                sPickList = CStr(row.Cells("PICKNO").Text)
+
+    '                                sFatura = CStr(row.Cells("DHGGNB").Text)
+
+    '                                For i As Integer = 0 To dsSHPPACK.Tables("SHPPACK").Rows.Count - 1
+
+    '                                    sGate = dsSHPPACK.Tables("SHPPACK").Rows(0).Item("KAPI").ToString
+
+    '                                    sMPKOD = ""
+
+    '                                    sMKKOD = ""
+
+    '                                    sMSPKOD = ""
+
+    '                                    sMKPKOD = ""
+
+    '                                    sMURNKOD = ""
+
+    '                                    'Müşteri Kutu, Palet, Separator, Kapak Kodları
+    '                                    sSQL = " SELECT MKKOD,MPKOD,MSPKOD,MKPKOD " & _
+    '                                                " FROM ITMPACK" & _
+    '                                                    " WHERE AMBKOD='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("AMBKOD").ToString & _
+    '                                                        "' AND ITNBR='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString & "'"
+
+    '                                    dsItmPack = Nothing
+
+    '                                    dsItmPack = db.RunSql(sSQL, "ITMPACK")
+
+    '                                    If Not dsItmPack Is Nothing Then
+
+    '                                        If dsItmPack.Tables("ITMPACK").Rows.Count > 0 Then
+
+    '                                            sMPKOD = dsItmPack.Tables("ITMPACK").Rows(0).Item("MPKOD").ToString
+
+    '                                            sMKKOD = dsItmPack.Tables("ITMPACK").Rows(0).Item("MKKOD").ToString
+
+    '                                            sMSPKOD = dsItmPack.Tables("ITMPACK").Rows(0).Item("MSPKOD").ToString
+
+    '                                            sMKPKOD = dsItmPack.Tables("ITMPACK").Rows(0).Item("MKPKOD").ToString
+
+    '                                        End If
+
+    '                                    End If
+
+    '                                    'Müşteri Ürün Kodu, Adı
+    '                                    sSQL = " SELECT ITEM,KNTRT,REFADI FROM KONTRTPF " & _
+    '                                              " WHERE SITE='" & My.Settings.Company & _
+    '                                                    "' AND CUST='" & sCustomer & _
+    '                                                    "' AND SHIPTO='" & sPlant & "'" & _
+    '                                                    " AND KAPI='" & sGate & _
+    '                                                    "' AND BZMITM='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString & "'"
+    '                                    dsKontrtPf = Nothing
+
+    '                                    dsKontrtPf = db.RunSql(sSQL, "KONTRTPF")
+
+    '                                    If Not dsKontrtPf Is Nothing Then
+
+    '                                        If dsKontrtPf.Tables("KONTRTPF").Rows.Count > 0 Then
+
+    '                                            sMURNKOD = dsKontrtPf.Tables("KONTRTPF").Rows(0).Item("ITEM").ToString
+
+    '                                            sKontrat = dsKontrtPf.Tables("KONTRTPF").Rows(0).Item("KNTRT").ToString
+
+    '                                        End If
+
+    '                                    End If
+
+    '                                    nSatir = 1
+
+    '                                    sLine = "UNH " & CStr(nMsgNo).PadRight(14, " ") & " " & "AVIEXP".PadRight(6, " ") & " " & "3".PadRight(3, " ") & " " & "".PadRight(3, " ") & " " & "OD".PadRight(2, " ")
+
+    '                                    objWriter.WriteLine(sLine)
+
+    '                                    nSatir = nSatir + 1
+
+    '                                    nUNH = nUNH + 1
+
+    '                                    sDTM = Now.Date.ToString("yyMMdd")
+
+    '                                    sTime = Now.ToString("HHmm")
+
+    '                                    If sLieferDrm = "0" Then
+
+    '                                        sLine = "MID " & sPickList.PadRight(17, " ") & " " & sDTM.PadRight(6, " ") & sTime.PadRight(4, " ")
+
+    '                                    ElseIf sLieferDrm = "1" Then
+
+    '                                        sLine = "MID " & sFatura.PadRight(17, " ") & " " & sDTM.PadRight(6, " ") & sTime.PadRight(4, " ")
+
+    '                                    End If
+
+    '                                    objWriter.WriteLine(sLine)
+
+    '                                    nSatir = nSatir + 1
+
+    '                                    If sASNTIP = "SAAB" Then
+
+    '                                        sLine = "CDT " & "".PadRight(165, " ") & sDUNS.PadRight(35, " ")
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                    ElseIf (sASNTIP = "TOFAS") Or (sASNTIP = "PORSCHE") Then
+
+    '                                        sLine = "CDT " & sDUNS.PadRight(20, " ")
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                    End If
+
+    '                                    sLine = "CSG " & "".PadRight(201, " ") & sB9CD.PadRight(17, " ") & " " & sGate.PadRight(17, " ")
+
+    '                                    objWriter.WriteLine(sLine)
+
+    '                                    nSatir = nSatir + 1
+
+    '                                    If sASNTIP = "PORSCHE" Then
+
+    '                                        sLine = "DTR " & sDHAABZ.PadRight(17, " ") & "".PadRight(37, " ") & sCarrier.PadRight(20, " ") & "".PadRight(199, " ") & sASN_No.PadRight(17, " ")
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                    End If
+
+    '                                    nMiktar = dsSHPPACK.Tables("SHPPACK").Rows(i).Item("SHIPMIK").ToString
+
+    '                                    If chkAsnYeni.Checked = True Then
+
+    '                                        nKumMiktar = nLookup("ASNKUM", "OFFITEMBL", " AENBK='" & My.Settings.Company & "'" & _
+    '                                                        " AND CANBK='" & sCustomer & "' AND B9CDK='" & sPlant & _
+    '                                                        "' AND AITXK='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString) & "'"
+
+    '                                        nKumMiktar = nKumMiktar + nMiktar
+
+    '                                        sSQL = " UPDATE OFFITEMBL SET ASNKUM=" & CStr(nKumMiktar) & _
+    '                                                  " WHERE AENBK='" & My.Settings.Company & "'" & _
+    '                                                      " AND CANBK='" & sCustomer & _
+    '                                                      "' AND B9CDK='" & sPlant & _
+    '                                                      "' AND AITXK='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString & "'"
+
+    '                                        db.RunSql(sSQL, True)
+
+    '                                    Else
+
+    '                                        nKumMiktar = nLookup("ASNMIK", "SHPPACK", " COMNO='" & My.Settings.Company & "'" & _
+    '                                                      " AND PICKNO='" & CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("PICKNO").ToString) & _
+    '                                                      "' AND SHPNO='" & CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("SHPNO").ToString) & "'" & _
+    '                                                      " AND SHIPTO='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("SHIPTO").ToString & _
+    '                                                      "' AND KAPI='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KAPI").ToString & "'" & _
+    '                                                      " AND ITNBR='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString & "' AND ASNDRM<>9")
+
+    '                                    End If
+
+    '                                    sQTYU = "PCE"
+
+    '                                    sLine = "ARD " & sMURNKOD.PadRight(35, " ") & "".PadRight(217, " ") & CStr(nMiktar).PadLeft(10, "0") & " " & sQTYU.PadRight(3, " ") & " " & sKontrat.PadRight(17, " ")
+
+    '                                    objWriter.WriteLine(sLine)
+
+    '                                    nSatir = nSatir + 1
+
+    '                                    'Kutu
+    '                                    If dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KSAY").ToString <> 0 Then
+
+    '                                        sLine = "ADP " & "".PadRight(115, " ") & "01".PadRight(9, " ")
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        sLine = "TCO " & sMKKOD.PadRight(35, " ") & "".PadRight(40, " ") & CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KSAY").ToString).PadLeft(6, "0") & "".PadRight(1, " ") & CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KMIK").ToString).PadLeft(10, "0")
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                    End If
+
+    '                                    sLine = "UNT " & CStr(nSatir).PadLeft(6, "0") & " " & CStr(nMsgNo).PadRight(14, " ")
+    '                                    'WriteLn(fMessages,sLine) nSatir = nSatir + 1
+
+    '                                    nMsgNo = nMsgNo + 1
+    '                                    If chkAsnYeni.Checked = True Then
+
+    '                                        sSQL = " UPDATE SHPPACK  " & _
+    '                                                    " SET ASNDRM=1, ASNNO='" & CStr(nASN_No) & "'" & _
+    '                                                      " ,ASNMIK=" & CStr(nKumMiktar) & _
+    '                                                  " WHERE COMNO='" & My.Settings.Company & "' AND CUST='" & sCustomer & "' AND PICKNO='" & sPickList & "'" & _
+    '                                                      " AND SHIPTO=" & sPlant & "' AND KAPI='" & sGate & "'" & _
+    '                                                      " AND ITNBR='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString & _
+    '                                                      "' AND ASNDRM<>9"
+    '                                        db.RunSql(sSQL, True)
+    '                                    End If
+
+    '                                Next i
+
+    '                            End If
+
+    '                        End If
+
+    '                        sLine = "PVT " & CStr(nBrtAgr).PadLeft(12, "0")
+
+    '                        objWriter.WriteLine(sLine)
+
+    '                        nSatir = nSatir + 1
+
+    '                        sLine = "UNZ " & CStr(nUNH).PadLeft(6, "0") & " " & sASN_No.PadRight(14, " ")
+
+    '                        objWriter.WriteLine(sLine)
+
+    '                        nSatir = nSatir + 1
+
+    '                        objWriter.Close()
+
+
+    '                        '************************************** VDA-4913 *****************************
+    '                    ElseIf (sASNTIP = "FORD-VDA") Then
+
+    '                        FILE_NAME = sASNDir & "\" & sSDRODID & "\" & "A" & sASN_No & "." & sB9CD
+
+    '                        objWriter = New System.IO.StreamWriter(FILE_NAME)
+
+    '                        If (IO.File.Exists(FILE_NAME)) Then IO.File.Delete(FILE_NAME)
+    '                        '                     if sASNTip='FORD-VDA' then sRCVODID='FORD'
+    '                        If sASNTIP = "FORD-VDA" Then sRCVODID = sUSERF3
+
+    '                        sLine = "71102" & sRCVODID.PadRight(9, " ") & (sDUNS & sUSERF2).PadRight(9, " ") & CStr(nASN_No).PadLeft(5, "0") & CStr(nASN_No).PadLeft(5, "0") & Now.Date.ToString("yyMMdd")
+
+    '                        sLine = sLine.PadRight(126, " ")
+
+    '                        objWriter.WriteLine(sLine)
+
+    '                        sDTM = Now.Date.ToString("yyyyMMdd")
+
+    '                        sTime = Now.ToString("HHmm")
+
+    '                        sPickList = CStr(row.Cells("PICKNO").Text)
+
+    '                        sFatura = CStr(row.Cells("DHGGNB").Text)
+
+    '                        sCarrierID = sLookup("DHCDTX", "SHPPACK", " COMNO='" & My.Settings.Company & "'" & _
+    '                                               " AND CUST='" & sCustomer & "' AND SHIPTO='" & sPlant) & "'"
+
+    '                        sTarih = DateAdd(DateInterval.Day, nYolSuresi, Now.Date)
+
+    '                        If (sLieferDrm = "0") Or (sLieferDrm = "") Then
+    '                            sLine = "71202" & sPickList.PadLeft(8, "0") & "".PadRight(3, " ") & sCarrierID.PadRight(14, " ") & _
+    '                                  sDTM.PadRight(6, " ") & sTime.PadRight(4, " ") & CStr(nBrtAgr).PadLeft(7, "0") & _
+    '                                  CStr(nNetAgr).PadLeft(7, "0") & "".PadRight(3, " ") & CStr(nKapAdet).PadLeft(4, "0") & _
+    '                                  "DK".PadRight(14, " ") & sDHAABZ.PadRight(2, " ") & sPlaka.PadRight(25, " ") & "".PadRight(9, " ") & _
+    '                                  sTarih.PadRight(6, " ")
+    '                        ElseIf sLieferDrm = "1" Then
+    '                            sLine = "71202" & sFatura.PadLeft(8, "0") & "".PadRight(3, " ") & sCarrierID.PadRight(14, " ") & _
+    '                                        sDTM.PadRight(6, " ") & sTime.PadRight(4, " ") & CStr(nBrtAgr).PadLeft(7, "0") & _
+    '                                        CStr(nNetAgr).PadLeft(7, "0") & "".PadRight(3, " ") & CStr(nKapAdet).PadLeft(4, "0") & _
+    '                                        "DK".PadRight(14, " ") & sDHAABZ.PadRight(2, " ") & sPlaka.PadRight(25, " ") & "".PadRight(9, " ") & _
+    '                                        sTarih.PadRight(6, " ")
+    '                        End If
+
+    '                        sLine = sLine.PadRight(126, " ")
+
+    '                        objWriter.WriteLine(sLine)
+
+    '                        sSQL = " SELECT * " & _
+    '                                " FROM SHPPACK " & _
+    '                                " WHERE COMNO='" & My.Settings.Company & "'" & _
+    '                                   " AND PICKNO='" & CStr(row.Cells("PICKNO").Text) & "'" & _
+    '                                   " AND SHIPTO='" & row.Cells("SHPNO").Text & "' AND ASNDRM<>9"
+
+
+    '                        dsSHPPACK = Nothing
+
+    '                        dsSHPPACK = db.RunSql(sSQL, "SHPPACK")
+
+    '                        If Not dsSHPPACK Is Nothing Then
+
+    '                            If dsSHPPACK.Tables("SHPPACK").Rows.Count > 0 Then
+
+    '                                nMsgNo = 1
+
+    '                                nUNH = 0
+
+    '                                nPac = 0
+
+    '                                For i As Integer = 0 To dsSHPPACK.Tables("SHPPACK").Rows.Count - 1
+
+    '                                    sGate = dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KAPI").ToString
+
+    '                                    sMPKOD = ""
+
+    '                                    sMKKOD = ""
+
+    '                                    sMSPKOD = ""
+
+    '                                    sMKPKOD = ""
+
+    '                                    sMURNKOD = ""
+
+    '                                    'Müşteri Kutu, Palet, Separator, Kapak Kodları
+    '                                    sSQL = " SELECT MKKOD,MPKOD,MSPKOD,MKPKOD " & _
+    '                                                " FROM ITMPACK" & _
+    '                                                " WHERE AMBKOD='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("AMBKOD").ToString & _
+    '                                                "' AND ITNBR='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString & "'"
+    '                                    dsItmPack = Nothing
+
+    '                                    dsItmPack = db.RunSql(sSQL, "ITMPACK")
+
+    '                                    If Not dsItmPack Is Nothing Then
+
+    '                                        If dsItmPack.Tables("ITMPACK").Rows.Count > 0 Then
+
+    '                                            sMPKOD = dsItmPack.Tables("ITMPACK").Rows(0).Item("MPKOD").ToString
+
+    '                                            sMKKOD = dsItmPack.Tables("ITMPACK").Rows(0).Item("MKKOD").ToString
+
+    '                                            sMSPKOD = dsItmPack.Tables("ITMPACK").Rows(0).Item("MSPKOD").ToString
+
+    '                                            sMKPKOD = dsItmPack.Tables("ITMPACK").Rows(0).Item("MKPKOD").ToString
+
+    '                                        End If
+
+    '                                    End If
+
+    '                                    'Müşteri Ürün Kodu, Adı
+    '                                    sSQL = " SELECT ITEM,KNTRT,REFADI " & _
+    '                                                " FROM KONTRTPF" & _
+    '                                                    " WHERE SITE='" & My.Settings.Company & _
+    '                                                        "' AND CUST='" & sCustomer & _
+    '                                                        "' AND SHIPTO='" & sPlant & "'" & _
+    '                                                        " AND KAPI='" & sGate & _
+    '                                                        "' AND BZMITM='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString & "'"
+    '                                    dsKontrtPf = Nothing
+
+    '                                    dsKontrtPf = db.RunSql(sSQL, "KONTRTPF")
+
+    '                                    If Not dsKontrtPf Is Nothing Then
+
+    '                                        If dsKontrtPf.Tables("KONTRTPF").Rows.Count > 0 Then
+
+    '                                            sMURNKOD = dsKontrtPf.Tables("KONTRTPF").Rows(0).Item("ITEM").ToString
+
+    '                                            sKontrat = dsKontrtPf.Tables("KONTRTPF").Rows(0).Item("KNTRT").ToString
+
+    '                                        End If
+
+    '                                    End If
+
+    '                                    nSatir = 1
+
+    '                                    If sLieferDrm = "0" Then
+
+    '                                        sLine = "71302" & sPickList.PadLeft(8, "0") & sDTM.PadRight(6, " ") & _
+    '                                                  sGate.PadRight(5, " ") & "03" & "".PadRight(4, " ") & _
+    '                                                  sKontrat.PadRight(6, " ") & "".PadRight(12, " ") & sB9CD.PadRight(17, " ")
+    '                                    ElseIf sLieferDrm = "1" Then
+
+    '                                        sLine = "71302" & sFatura.PadLeft(8, "0") & sDTM.PadRight(6, " ") & _
+    '                                               sGate.PadRight(5, " ") & "03" & "".PadRight(4, " ") & _
+    '                                               sKontrat.PadRight(6, " ") & "".PadRight(12, " ") & sB9CD.PadRight(17, " ")
+
+    '                                    End If
+
+    '                                    sLine = sLine.PadRight(126, " ")
+
+    '                                    objWriter.WriteLine(sLine)
+
+    '                                    nSatir = nSatir + 1
+
+    '                                    nUNH = nUNH + 1
+
+    '                                    nMiktar = dsSHPPACK.Tables("SHPPACK").Rows(i).Item("SHIPMIK").ToString
+
+    '                                    If chkAsnYeni.Checked = True Then
+
+    '                                        nKumMiktar = nLookup("ASNKUM", "OFFITEMBL", " AENBK='" & My.Settings.Company & "'" & _
+    '                                                              " AND CANBK='" & sCustomer & "' AND B9CDK='" & sPlant & "' AND AITXK='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString) & "'"
+
+    '                                        nKumMiktar = nKumMiktar + nMiktar
+    '                                        sSQL = " UPDATE OFFITEMBL SET ASNKUM=" & CStr(nKumMiktar) & " WHERE AENBK='" & My.Settings.Company & "'" & _
+    '                                                      " AND CANBK='" & sCustomer & "' AND B9CDK='" & sPlant & "' AND AITXK='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString & "'"
+
+    '                                        db.RunSql(sSQL, True)
+
+    '                                    Else
+    '                                        nKumMiktar = nLookup("ASNMIK", "SHPPACK", " COMNO='" & My.Settings.Company & "'" & _
+    '                                                              " AND PICKNO='" & CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("PICKNO").ToString) & "'" & _
+    '                                                              " AND SHPNO='" & CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("SHPNO").ToString) & "'" & _
+    '                                                              " AND SHIPTO='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("SHIPTO").ToString & "'" & _
+    '                                                              " AND KAPI='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KAPI").ToString & "'" & _
+    '                                                              " AND ITNBR='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString & "'" & " AND ASNDRM<>9")
+    '                                    End If
+
+    '                                    sQTYU = "ST"
+
+    '                                    sLine = "71402" & sMURNKOD.PadRight(22, " ") & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString.PadRight(22, " ") & "999" & (CStr(nMiktar) & "000").PadLeft(13, "0") & sQTYU.PadRight(2, " ") & (CStr(nKumMiktar) & "000").PadLeft(13, "0") & "".PadRight(6, " ") & "001"
+
+    '                                    sLine = sLine.PadRight(126, " ")
+
+    '                                    objWriter.WriteLine(sLine)
+
+    '                                    nSatir = nSatir + 1
+
+    '                                    'Kutu
+    '                                    If dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KSAY").ToString <> 0 Then
+
+
+    '                                        For k As Integer = 1 To (dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KSAY").AsInteger \ 99)
+
+    '                                            sLine = "71502" & sMKKOD.PadRight(22, " ") & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KKOD").ToString.PadRight(22, " ") & "99".PadRight(13, "0") & "001".PadRight(3, " ")
+
+    '                                            If (sSDRODID = "O0013006576LOREL") Or (sSDRODID = "O0013000057AUDI-INGR21") Then
+
+    '                                                sLine = sLine & CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KMIK").ToString).PadLeft(10, "0") & "000"
+
+    '                                            Else
+
+    '                                                sLine = sLine & CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KMIK").ToString).PadLeft(13, "0")
+
+    '                                            End If
+
+    '                                            sLine = sLine & "0".PadLeft(9, "0") & "0".PadLeft(9, "0") & "0".PadLeft(12, "0") & "1".PadLeft(1, "0") & "".PadRight(15, " ") & "S"
+
+    '                                            sLine = sLine.PadRight(126, " ")
+
+    '                                            objWriter.WriteLine(sLine)
+
+    '                                            nSatir = nSatir + 1
+
+    '                                            nPac = nPac + 1
+
+    '                                        Next k
+
+    '                                        If dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KSAY").AsInteger <> 99 Then
+
+    '                                            sLine = "71502" & sMKKOD.PadRight(22, " ") & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KKOD").ToString.PadRight(22, " ") & CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KSAY").AsInteger Mod 99).PadLeft(13, "0") & "001".PadRight(3, " ")
+
+    '                                            If (sSDRODID = "O0013006576LOREL") Or (sSDRODID = "O0013000057AUDI-INGR21") Then
+
+    '                                                sLine = sLine & CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KMIK").ToString).PadLeft(10, "0") & "000"
+
+    '                                            Else
+
+    '                                                sLine = sLine & CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KMIK").ToString).PadLeft(13, "0")
+
+    '                                            End If
+
+    '                                            sLine = sLine & "0".PadLeft(9, "0") & "0".PadLeft(9, "0") & "0".PadLeft(12, "0") & "1".PadLeft(1, "0") & "".PadRight(15, " ") & "S"
+
+    '                                            sLine = sLine.PadRight(126, " ")
+
+    '                                            objWriter.WriteLine(sLine)
+
+    '                                            nSatir = nSatir + 1
+
+    '                                            nPac = nPac + 1
+
+    '                                        End If
+
+    '                                    End If
+
+    '                                    'Palet
+    '                                    If dsSHPPACK.Tables("SHPPACK").Rows(i).Item("PSAY").ToString <> 0 Then
+
+    '                                        For k As Integer = 1 To (dsSHPPACK.Tables("SHPPACK").Rows(i).Item("PSAY").AsInteger \ 99)
+    '                                            sLine = "71502" & sMPKOD.PadRight(22, " ") & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("PKOD").ToString.PadRight(22, " ") & _
+    '                                                   "99".PadLeft(13, "0") & "001".PadRight(3, " ") & _
+    '                                                   "0".PadLeft(13, "0") & "0".PadLeft(9, "0") & _
+    '                                                   "0".PadLeft(9, "0") & "0".PadLeft(12, "0") & "1".PadLeft(1, "0") & _
+    '                                                   "".PadRight(15, " ") & "M"
+
+    '                                            sLine = sLine.PadRight(126, " ")
+
+    '                                            objWriter.WriteLine(sLine)
+
+    '                                            nSatir = nSatir + 1
+
+    '                                            nPac = nPac + 1
+
+    '                                        Next k
+
+    '                                        If dsSHPPACK.Tables("SHPPACK").Rows(i).Item("PSAY").AsInteger <> 99 Then
+    '                                            sLine = "71502" & sMPKOD.PadRight(22, " ") & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("PKOD").ToString.PadRight(22, " ") & _
+    '                                                   CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("PSAY").ToString Mod 99).PadLeft(13, "0") & "001".PadRight(3, " ") & _
+    '                                                   "0".PadLeft(13, "0") & "0".PadLeft(9, "0") & _
+    '                                                   "0".PadLeft(9, "0") & "0".PadLeft(12, "0") & "1".PadLeft(1, "0") & _
+    '                                                   "".PadRight(15, " ") & "M"
+
+    '                                            sLine = sLine.PadRight(126, " ")
+
+    '                                            objWriter.WriteLine(sLine)
+
+    '                                            nSatir = nSatir + 1
+
+    '                                            nPac = nPac + 1
+
+    '                                        End If
+
+    '                                    End If
+
+    '                                    'Kapak
+    '                                    If dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KPMIK").ToString <> 0 Then
+    '                                        For k As Integer = 1 To (dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KPMIK").AsInteger \ 99)
+
+    '                                            sLine = "71502" & sMKPKOD.PadRight(22, " ") & _
+    '                                                    dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KPKOD").ToString.PadRight(22, " ") & _
+    '                                                    "99".PadLeft(13, "0") & _
+    '                                                    "001".PadRight(3, " ") & _
+    '                                                    "0".PadLeft(13, "0") & _
+    '                                                    "0".PadLeft(9, "0") & _
+    '                                                    "0".PadLeft(9, "0") & _
+    '                                                    "0".PadLeft(12, "0") & _
+    '                                                    "1".PadLeft(1, "0") & _
+    '                                                    "".PadRight(15, " ")
+
+    '                                            sLine = sLine.PadRight(126, " ")
+
+    '                                            objWriter.WriteLine(sLine)
+
+    '                                            nSatir = nSatir + 1
+
+    '                                            nPac = nPac + 1
+
+    '                                        Next k
+
+    '                                        If dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KPMIK").AsInteger <> 99 Then
+
+    '                                            sLine = "71502" & sMKPKOD.PadRight(22, " ") & _
+    '                                                        dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KPKOD").ToString.PadRight(22, " ") & _
+    '                                                        CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("KPMIK").AsInteger Mod 99).PadLeft(13, "0") & _
+    '                                                        "001".PadRight(3, " ") & _
+    '                                                        "0".PadLeft(13, "0") & _
+    '                                                        "0".PadLeft(9, "0") & _
+    '                                                        "0".PadLeft(9, "0") & _
+    '                                                        "0".PadLeft(12, "0") & _
+    '                                                        "1".PadLeft(1, "0") & _
+    '                                                        "".PadRight(15, " ")
+
+    '                                            sLine = sLine.PadRight(126, " ")
+
+    '                                            objWriter.WriteLine(sLine)
+
+    '                                            nSatir = nSatir + 1
+
+    '                                            nPac = nPac + 1
+
+    '                                        End If
+
+    '                                    End If
+
+    '                                    'Separator
+    '                                    If dsSHPPACK.Tables("SHPPACK").Rows(i).Item("SPMIK").ToString <> 0 Then
+
+    '                                        For k As Integer = 1 To (dsSHPPACK.Tables("SHPPACK").Rows(i).Item("SPMIK").AsInteger \ 99)
+
+    '                                            sLine = "71502" & sMSPKOD.PadRight(22, " ") & _
+    '                                                        dsSHPPACK.Tables("SHPPACK").Rows(i).Item("SPKOD").ToString.PadRight(22, " ") & _
+    '                                                        "99".PadLeft(13, "0") & _
+    '                                                        "001".PadRight(3, " ") & _
+    '                                                        "0".PadLeft(13, "0") & _
+    '                                                        "0".PadLeft(9, "0") & _
+    '                                                        "0".PadLeft(9, "0") & _
+    '                                                        "0".PadLeft(12, "0") & _
+    '                                                        "1".PadLeft(1, "0") & _
+    '                                                        "".PadRight(15, " ")
+
+    '                                            sLine = sLine.PadRight(126, " ")
+
+    '                                            objWriter.WriteLine(sLine)
+
+    '                                            nSatir = nSatir + 1
+
+    '                                            nPac = nPac + 1
+
+    '                                        Next k
+
+
+    '                                        sLine = "71502" & sMSPKOD.PadRight(22, " ") & _
+    '                                                      dsSHPPACK.Tables("SHPPACK").Rows(i).Item("SPKOD").ToString.PadRight(22, " ") & _
+    '                                               CStr(dsSHPPACK.Tables("SHPPACK").Rows(i).Item("SPMIK").AsInteger Mod 99).PadLeft(13, "0") & _
+    '                                               "001".PadRight(3, " ") & _
+    '                                               "0".PadLeft(13, "0") & _
+    '                                               "0".PadLeft(9, "0") & _
+    '                                               "0".PadLeft(9, "0") & _
+    '                                               "0".PadLeft(12, "0") & _
+    '                                               "1".PadLeft(1, "0") & _
+    '                                               "".PadRight(15, " ")
+
+    '                                        sLine = sLine.PadRight(126, " ")
+
+    '                                        objWriter.WriteLine(sLine)
+
+    '                                        nSatir = nSatir + 1
+
+    '                                        nPac = nPac + 1
+
+    '                                    End If
+
+    '                                    nMsgNo = nMsgNo + 1
+
+    '                                    If chkAsnYeni.Checked = True Then
+
+    '                                        sSQL = " UPDATE SHPPACK SET ASNDRM=1, ASNNO='" & CStr(nASN_No) & "'" & _
+    '                                                        ",ASNMIK=" & CStr(nKumMiktar) & _
+    '                                        " WHERE COMNO='" & My.Settings.Company & "'" & _
+    '                                            " AND CUST='" & sCustomer & "'" & _
+    '                                            " AND PICKNO='" & sPickList & "'" & _
+    '                                        " AND SHIPTO='" & sPlant & "'" & _
+    '                                        " AND KAPI='" & sGate & "'" & _
+    '                                        " AND ITNBR='" & dsSHPPACK.Tables("SHPPACK").Rows(i).Item("ITNBR").ToString & "'" & _
+    '                                        " AND ASNDRM<>9"
+
+    '                                        db.RunSql(sSQL, True)
+
+    '                                    End If
+
+    '                                Next i
+
+    '                            End If
+
+    '                        End If
+
+    '                        sLine = "71902" + "1".PadLeft(7, "0") & "1".PadLeft(7, "0") & CStr(nUNH).PadLeft(7, "0") & _
+    '                             CStr(nUNH).PadLeft(7, "0") & CStr(nPac).PadLeft(7, "0") & "0".PadLeft(7, "0") & _
+    '                             "0".PadLeft(7, "0") & "1".PadLeft(7, "0") ' 54. karakter 1 yerine 0 olarak degistirildi. KADER 04/11/2004
+
+    '                        sLine = sLine.PadRight(126, " ")
+
+    '                        objWriter.WriteLine(sLine)
+
+    '                        nSatir = nSatir + 1
+
+    '                        objWriter.Close()
+
+    '                    End If
+
+    '                    '                  sSQL=' UPDATE '+SetTableName(dtmEkip.LibNameMapics,'MBDDREP")+' SET DDUUA1='+Cstr(nASN_No)+
+    '                    '                        ' WHERE DDAENB='+My.settings.company+' AND DDUUQ1='+sPickList
+    '                    '                  db.runsql(sSQL,True)
+    '                Else
+
+    '                    mError.Text = mError.Text & "PickList :" & CStr(row.Cells("PICKNO").Text) & "  ASN Mesajı Oluşturulamadı. " & sError & vbNewLine
+
+    '                End If
+
+    '            Next row
+
+    '            If sASNTIP = "OTOSAN" Then
+
+    '                'ShellExecute(Self.Handle, "open", "PostMessage.exe", "", nil, SW_NORMAL)
+
+    '            End If
+
+    '            btnListele_Click(sender, e)
+
+    '        End If 'if message
+
+    '    End If
+    'End Sub

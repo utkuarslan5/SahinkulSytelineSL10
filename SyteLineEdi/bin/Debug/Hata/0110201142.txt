@@ -1,0 +1,3 @@
+Kaynak : RunSql
+Hata : Zaman aşımı süresi doldu. İşlem tamamlanmadan zaman aşımı süresi doldu veya sunucu yanıt vermiyor.
+Sql Cumlecigi : SELECT DEFGATE FROM EDIPRM WHERE  SIRKET='Şahinkul'

@@ -1,0 +1,3 @@
+Kaynak : RunSql
+Hata : Zaman aşımı süresi doldu. İşlem tamamlanmadan zaman aşımı süresi doldu veya sunucu yanıt vermiyor.
+Sql Cumlecigi : SELECT COUNT(*) FROM EDIWRK WHERE  PLANTID=N'IQ' AND GATEID=N'03' AND CUSITM=N'  FK31    2530AB' AND DELDTE=20201005 AND MSGSTAT=N'H' And CRDUSR=N'ekip'

@@ -1,0 +1,4 @@
+Kaynak : RunSql
+Hata : Cannot open database "SL10P_App" requested by the login. The login failed.
+Login failed for user 'sa2'.
+Sql Cumlecigi :  select *  from EDIUSER  where Kullanici='ekip' and Sifre='123'

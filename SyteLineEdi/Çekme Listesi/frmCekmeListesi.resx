@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="GridEXLayout2.LayoutString" xml:space="preserve">
+    <value>&lt;GridEXLayoutData&gt;&lt;RootTable&gt;&lt;AllowGroup&gt;False&lt;/AllowGroup&gt;&lt;Columns Collection="true"&gt;&lt;Column0 ID="Selector"&gt;&lt;Key&gt;Selector&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Width&gt;40&lt;/Width&gt;&lt;ActAsSelector&gt;True&lt;/ActAsSelector&gt;&lt;UseHeaderSelector&gt;False&lt;/UseHeaderSelector&gt;&lt;/Column0&gt;&lt;Column1 ID="ADBJDT"&gt;&lt;Caption&gt;Teslim Tarihi&lt;/Caption&gt;&lt;DataMember&gt;ADBJDT&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;ADBJDT&lt;/Key&gt;&lt;Position&gt;1&lt;/Position&gt;&lt;Width&gt;80&lt;/Width&gt;&lt;/Column1&gt;&lt;Column2 ID="ADCVNB"&gt;&lt;Caption&gt;Sipariş No&lt;/Caption&gt;&lt;DataMember&gt;ADCVNB&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;ADCVNB&lt;/Key&gt;&lt;Position&gt;2&lt;/Position&gt;&lt;Width&gt;70&lt;/Width&gt;&lt;/Column2&gt;&lt;Column3 ID="ADFCNB"&gt;&lt;Caption&gt;Sıra&lt;/Caption&gt;&lt;DataMember&gt;ADFCNB&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;ADFCNB&lt;/Key&gt;&lt;Position&gt;3&lt;/Position&gt;&lt;Width&gt;40&lt;/Width&gt;&lt;/Column3&gt;&lt;Column4 ID="ITEM"&gt;&lt;Caption&gt;Müşteri Malz. No&lt;/Caption&gt;&lt;DataMember&gt;ITEM&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;ITEM&lt;/Key&gt;&lt;Position&gt;4&lt;/Position&gt;&lt;Width&gt;90&lt;/Width&gt;&lt;/Column4&gt;&lt;Column5 ID="ADAITX"&gt;&lt;Caption&gt;Malzeme&lt;/Caption&gt;&lt;DataMember&gt;ADAITX&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;ADAITX&lt;/Key&gt;&lt;Position&gt;5&lt;/Position&gt;&lt;Width&gt;90&lt;/Width&gt;&lt;/Column5&gt;&lt;Column6 ID="ITDSC"&gt;&lt;Caption&gt;Tanım&lt;/Caption&gt;&lt;DataMember&gt;ITDSC&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;ITDSC&lt;/Key&gt;&lt;Position&gt;6&lt;/Position&gt;&lt;Width&gt;150&lt;/Width&gt;&lt;/Column6&gt;&lt;Column7 ID="MOHTQ"&gt;&lt;Caption&gt;Stok&lt;/Caption&gt;&lt;DataMember&gt;MOHTQ&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;FormatString&gt;##,##0&lt;/FormatString&gt;&lt;Key&gt;MOHTQ&lt;/Key&gt;&lt;Position&gt;7&lt;/Position&gt;&lt;Width&gt;50&lt;/Width&gt;&lt;/Column7&gt;&lt;Column8 ID="ADDZVA"&gt;&lt;Caption&gt;Sipariş Miktarı&lt;/Caption&gt;&lt;DataMember&gt;ADDZVA&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;FormatString&gt;##,##0&lt;/FormatString&gt;&lt;Key&gt;ADDZVA&lt;/Key&gt;&lt;Position&gt;8&lt;/Position&gt;&lt;Width&gt;50&lt;/Width&gt;&lt;/Column8&gt;&lt;Column9 ID="ADAQQT"&gt;&lt;Caption&gt;Bakiye&lt;/Caption&gt;&lt;DataMember&gt;ADAQQT&lt;/DataMember&gt;&lt;EditTarget&gt;Text&lt;/EditTarget&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;FormatString&gt;##,##0&lt;/FormatString&gt;&lt;Key&gt;ADAQQT&lt;/Key&gt;&lt;Position&gt;9&lt;/Position&gt;&lt;Width&gt;50&lt;/Width&gt;&lt;/Column9&gt;&lt;Column10 ID="SevkMik"&gt;&lt;Caption&gt;Çekme Miktarı&lt;/Caption&gt;&lt;DataMember&gt;SevkMik&lt;/DataMember&gt;&lt;Key&gt;SevkMik&lt;/Key&gt;&lt;Position&gt;10&lt;/Position&gt;&lt;/Column10&gt;&lt;Column11 ID="KMIK"&gt;&lt;Caption&gt;Kutu İçi Adet&lt;/Caption&gt;&lt;DataMember&gt;KMIK&lt;/DataMember&gt;&lt;FormatString&gt;##,##0&lt;/FormatString&gt;&lt;Key&gt;KMIK&lt;/Key&gt;&lt;Position&gt;11&lt;/Position&gt;&lt;Width&gt;50&lt;/Width&gt;&lt;/Column11&gt;&lt;Column12 ID="KutuAdet"&gt;&lt;Caption&gt;Kutu Adeti&lt;/Caption&gt;&lt;DataMember&gt;KutuAdet&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;KutuAdet&lt;/Key&gt;&lt;Position&gt;12&lt;/Position&gt;&lt;Width&gt;50&lt;/Width&gt;&lt;/Column12&gt;&lt;Column13 ID="PKSIR"&gt;&lt;Caption&gt;Sıra Kutu Sy.&lt;/Caption&gt;&lt;DataMember&gt;PKSIR&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;PKSIR&lt;/Key&gt;&lt;Position&gt;13&lt;/Position&gt;&lt;/Column13&gt;&lt;Column14 ID="PKMIK"&gt;&lt;Caption&gt;Palet Kutu Sy.&lt;/Caption&gt;&lt;DataMember&gt;PKMIK&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;PKMIK&lt;/Key&gt;&lt;Position&gt;14&lt;/Position&gt;&lt;/Column14&gt;&lt;Column15 ID="CJCBTX"&gt;&lt;Caption&gt;S.S.No / Pusno&lt;/Caption&gt;&lt;DataMember&gt;CJCBTX&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;CJCBTX&lt;/Key&gt;&lt;Position&gt;15&lt;/Position&gt;&lt;Width&gt;80&lt;/Width&gt;&lt;/Column15&gt;&lt;Column16 ID="AmbalajDegistir"&gt;&lt;ButtonText&gt;AmbDegistir&lt;/ButtonText&gt;&lt;ButtonStyle&gt;ButtonCell&lt;/ButtonStyle&gt;&lt;Caption&gt;AmbDeğiştir&lt;/Caption&gt;&lt;DataMember&gt;AmbalajDegistir&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;AmbalajDegistir&lt;/Key&gt;&lt;Position&gt;16&lt;/Position&gt;&lt;Width&gt;72&lt;/Width&gt;&lt;/Column16&gt;&lt;Column17 ID="AMBKOD"&gt;&lt;Caption&gt;Ambalaj Kodu&lt;/Caption&gt;&lt;DataMember&gt;AMBKOD&lt;/DataMember&gt;&lt;EditType&gt;MultiColumnCombo&lt;/EditType&gt;&lt;Key&gt;AMBKOD&lt;/Key&gt;&lt;Position&gt;17&lt;/Position&gt;&lt;DropDownIndex&gt;0&lt;/DropDownIndex&gt;&lt;/Column17&gt;&lt;Column18 ID="HNDCODE"&gt;&lt;Caption&gt;HNDCODE&lt;/Caption&gt;&lt;DataMember&gt;HNDCODE&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;HNDCODE&lt;/Key&gt;&lt;Position&gt;18&lt;/Position&gt;&lt;/Column18&gt;&lt;Column19 ID="C6CANB"&gt;&lt;Caption&gt;Müşteri No&lt;/Caption&gt;&lt;DataMember&gt;C6CANB&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;C6CANB&lt;/Key&gt;&lt;Position&gt;19&lt;/Position&gt;&lt;Width&gt;80&lt;/Width&gt;&lt;/Column19&gt;&lt;Column20 ID="CUSNM"&gt;&lt;Caption&gt;Müşteri Adı&lt;/Caption&gt;&lt;DataMember&gt;CUSNM&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;CUSNM&lt;/Key&gt;&lt;Position&gt;20&lt;/Position&gt;&lt;Width&gt;40&lt;/Width&gt;&lt;/Column20&gt;&lt;Column21 ID="C6B9CD"&gt;&lt;Caption&gt;Teslim Alan&lt;/Caption&gt;&lt;DataMember&gt;C6B9CD&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;C6B9CD&lt;/Key&gt;&lt;Position&gt;21&lt;/Position&gt;&lt;Width&gt;40&lt;/Width&gt;&lt;/Column21&gt;&lt;Column22 ID="C6F1CD"&gt;&lt;Caption&gt;Kapı&lt;/Caption&gt;&lt;DataMember&gt;C6F1CD&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;C6F1CD&lt;/Key&gt;&lt;Position&gt;22&lt;/Position&gt;&lt;Width&gt;40&lt;/Width&gt;&lt;/Column22&gt;&lt;Column23 ID="REFADI"&gt;&lt;Caption&gt;REFADI&lt;/Caption&gt;&lt;DataMember&gt;REFADI&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;REFADI&lt;/Key&gt;&lt;Position&gt;23&lt;/Position&gt;&lt;Width&gt;40&lt;/Width&gt;&lt;/Column23&gt;&lt;Column24 ID="C6FNST"&gt;&lt;Caption&gt;Sip. Durumu&lt;/Caption&gt;&lt;DataMember&gt;C6FNST&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;C6FNST&lt;/Key&gt;&lt;Position&gt;24&lt;/Position&gt;&lt;Width&gt;40&lt;/Width&gt;&lt;/Column24&gt;&lt;Column25 ID="CDAFYV"&gt;&lt;Caption&gt;L3P&lt;/Caption&gt;&lt;DataMember&gt;CDAFYV&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;CDAFYV&lt;/Key&gt;&lt;Position&gt;25&lt;/Position&gt;&lt;Width&gt;90&lt;/Width&gt;&lt;/Column25&gt;&lt;Column26 ID="RANNO"&gt;&lt;Caption&gt;RANNO&lt;/Caption&gt;&lt;DataMember&gt;RANNO&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;RANNO&lt;/Key&gt;&lt;Position&gt;26&lt;/Position&gt;&lt;/Column26&gt;&lt;Column27 ID="ADIIST"&gt;&lt;Caption&gt;Kalem Durumu&lt;/Caption&gt;&lt;DataMember&gt;ADIIST&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;ADIIST&lt;/Key&gt;&lt;Position&gt;27&lt;/Position&gt;&lt;Width&gt;40&lt;/Width&gt;&lt;/Column27&gt;&lt;Column28 ID="ADA3CD"&gt;&lt;Caption&gt;Ambar&lt;/Caption&gt;&lt;DataMember&gt;ADA3CD&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;ADA3CD&lt;/Key&gt;&lt;Position&gt;28&lt;/Position&gt;&lt;Width&gt;102&lt;/Width&gt;&lt;/Column28&gt;&lt;Column29 ID="DEF1CD"&gt;&lt;Caption&gt;Nakliyeci&lt;/Caption&gt;&lt;DataMember&gt;DEF1CD&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;DEF1CD&lt;/Key&gt;&lt;Position&gt;29&lt;/Position&gt;&lt;Width&gt;40&lt;/Width&gt;&lt;/Column29&gt;&lt;Column30 ID="DURUM"&gt;&lt;Caption&gt;DURUM&lt;/Caption&gt;&lt;DataMember&gt;DURUM&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;DURUM&lt;/Key&gt;&lt;Position&gt;30&lt;/Position&gt;&lt;Width&gt;40&lt;/Width&gt;&lt;/Column30&gt;&lt;Column31 ID="KANBAN"&gt;&lt;Caption&gt;KANBAN&lt;/Caption&gt;&lt;DataMember&gt;KANBAN&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;KANBAN&lt;/Key&gt;&lt;Position&gt;31&lt;/Position&gt;&lt;/Column31&gt;&lt;Column32 ID="Grp"&gt;&lt;Caption&gt;Grp&lt;/Caption&gt;&lt;DataMember&gt;Grp&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;Grp&lt;/Key&gt;&lt;Position&gt;32&lt;/Position&gt;&lt;/Column32&gt;&lt;Column33 ID="packed"&gt;&lt;Caption&gt;Çekme Durumu&lt;/Caption&gt;&lt;DataMember&gt;packed&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;packed&lt;/Key&gt;&lt;Position&gt;33&lt;/Position&gt;&lt;/Column33&gt;&lt;Column34 ID="qty_packed"&gt;&lt;Caption&gt;Çekme No&lt;/Caption&gt;&lt;DataMember&gt;qty_packed&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;qty_packed&lt;/Key&gt;&lt;Position&gt;34&lt;/Position&gt;&lt;/Column34&gt;&lt;Column35 ID="L3PREF"&gt;&lt;Caption&gt;L3P&lt;/Caption&gt;&lt;DataMember&gt;L3PREF&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;L3PREF&lt;/Key&gt;&lt;Position&gt;35&lt;/Position&gt;&lt;/Column35&gt;&lt;Column36 ID="terms_code"&gt;&lt;Caption&gt;Vade&lt;/Caption&gt;&lt;DataMember&gt;terms_code&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;terms_code&lt;/Key&gt;&lt;Position&gt;36&lt;/Position&gt;&lt;/Column36&gt;&lt;/Columns&gt;&lt;GroupCondition ID="" /&gt;&lt;Groups Collection="true"&gt;&lt;Group0 ID="Group0"&gt;&lt;ColIndex&gt;32&lt;/ColIndex&gt;&lt;GroupInterval&gt;Value&lt;/GroupInterval&gt;&lt;/Group0&gt;&lt;Group1 ID="Group1"&gt;&lt;ColIndex&gt;15&lt;/ColIndex&gt;&lt;GroupInterval&gt;Value&lt;/GroupInterval&gt;&lt;/Group1&gt;&lt;/Groups&gt;&lt;SortKeys Collection="true"&gt;&lt;SortKey0 ID="SortKey0"&gt;&lt;ColIndex&gt;4&lt;/ColIndex&gt;&lt;/SortKey0&gt;&lt;SortKey1 ID="SortKey1"&gt;&lt;ColIndex&gt;1&lt;/ColIndex&gt;&lt;/SortKey1&gt;&lt;/SortKeys&gt;&lt;/RootTable&gt;&lt;DropDowns Collection="true"&gt;&lt;DropDown0&gt;&lt;RootTable&gt;&lt;Columns Collection="true"&gt;&lt;Column0 ID="Ambkod"&gt;&lt;Caption&gt;Ambkod&lt;/Caption&gt;&lt;DataMember&gt;Ambkod&lt;/DataMember&gt;&lt;Key&gt;Ambkod&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;/Column0&gt;&lt;Column1 ID="Ambtan"&gt;&lt;Caption&gt;Ambtan&lt;/Caption&gt;&lt;DataMember&gt;Ambtan&lt;/DataMember&gt;&lt;Key&gt;Ambtan&lt;/Key&gt;&lt;Position&gt;1&lt;/Position&gt;&lt;/Column1&gt;&lt;/Columns&gt;&lt;GroupCondition ID="" /&gt;&lt;/RootTable&gt;&lt;RowWithErrorsFormatStyle&gt;&lt;PredefinedStyle&gt;RowWithErrorsFormatStyle&lt;/PredefinedStyle&gt;&lt;/RowWithErrorsFormatStyle&gt;&lt;LinkFormatStyle&gt;&lt;PredefinedStyle&gt;LinkFormatStyle&lt;/PredefinedStyle&gt;&lt;/LinkFormatStyle&gt;&lt;CardCaptionFormatStyle&gt;&lt;PredefinedStyle&gt;CardCaptionFormatStyle&lt;/PredefinedStyle&gt;&lt;/CardCaptionFormatStyle&gt;&lt;GroupByBoxFormatStyle&gt;&lt;PredefinedStyle&gt;GroupByBoxFormatStyle&lt;/PredefinedStyle&gt;&lt;/GroupByBoxFormatStyle&gt;&lt;GroupByBoxInfoFormatStyle&gt;&lt;PredefinedStyle&gt;GroupByBoxInfoFormatStyle&lt;/PredefinedStyle&gt;&lt;/GroupByBoxInfoFormatStyle&gt;&lt;GroupRowFormatStyle&gt;&lt;PredefinedStyle&gt;GroupRowFormatStyle&lt;/PredefinedStyle&gt;&lt;/GroupRowFormatStyle&gt;&lt;HeaderFormatStyle&gt;&lt;PredefinedStyle&gt;HeaderFormatStyle&lt;/PredefinedStyle&gt;&lt;/HeaderFormatStyle&gt;&lt;PreviewRowFormatStyle&gt;&lt;PredefinedStyle&gt;PreviewRowFormatStyle&lt;/PredefinedStyle&gt;&lt;/PreviewRowFormatStyle&gt;&lt;RowFormatStyle&gt;&lt;PredefinedStyle&gt;RowFormatStyle&lt;/PredefinedStyle&gt;&lt;/RowFormatStyle&gt;&lt;SelectedFormatStyle&gt;&lt;PredefinedStyle&gt;SelectedFormatStyle&lt;/PredefinedStyle&gt;&lt;/SelectedFormatStyle&gt;&lt;SelectedInactiveFormatStyle&gt;&lt;PredefinedStyle&gt;SelectedInactiveFormatStyle&lt;/PredefinedStyle&gt;&lt;/SelectedInactiveFormatStyle&gt;&lt;WatermarkImage /&gt;&lt;Font&gt;Microsoft Sans Serif, 8.25pt&lt;/Font&gt;&lt;ControlStyle /&gt;&lt;VisualStyle&gt;Standard&lt;/VisualStyle&gt;&lt;UpdateMode&gt;CellUpdate&lt;/UpdateMode&gt;&lt;AllowEdit&gt;False&lt;/AllowEdit&gt;&lt;ExpandableGroups&gt;False&lt;/ExpandableGroups&gt;&lt;GroupByBoxVisible&gt;False&lt;/GroupByBoxVisible&gt;&lt;HideSelection&gt;Highlight&lt;/HideSelection&gt;&lt;Key&gt;ddAmbkod&lt;/Key&gt;&lt;DisplayMember&gt;AMBKOD&lt;/DisplayMember&gt;&lt;ValueMember&gt;AMBKOD&lt;/ValueMember&gt;&lt;/DropDown0&gt;&lt;/DropDowns&gt;&lt;/GridEXLayoutData&gt;</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAICAAAAEAGACoDAAAFgAAACgAAAAgAAAAQAAAAAEAGAAAAAAAgAwAAAAAAAAAAAAAAAAAAAAA
+        AAASEhIHCQkLCAoKCQsJCggHCggLCAoJCQkLCQkFCgkHCQkJCQkLCQkHCQoHCQoLCQkJCQkHCQkHCQkE
+        CQgICwkLCQkJCQkLCQkLCQgICgsLCQkJCQkLCQkKCQsLCAoWERIMBwkCAAAAAQEAAAEJBAU/MipNPzNP
+        OjJNPC9MOTFMOzJNOzBKOjNNOzBNPC9NOjJNOjJKOzJPOjJPOjJMOTFNPDNKPDBMPDBMOzJJOjFJOjFR
+        PzQzJyEAAAEAAgIHBwcKCgoHCAYEAwUAAAADAgRDMy2yim7Bk3G7jXW9jnK6jXK7j3K9jnK6jXK8kHO5
+        jnO7j3K6kHO7jHC9jnO5jnO7j3K6jnG7j3K6jXK+j3TFk3Wge2UsJSIBAgACAAAKCQsICQcZIh8zREAI
+        BwkAAAEAAAEpIB2Yc126i2ywiGu1h2izh2i2h2uzh2izh2qxiGiyiWmyhmm0iGuxh2qxh2qyhmm0iGuw
+        hWq0iGm7jW6IZVEfFhMAAQAAAQACAQMMCQsJCQkZHx5BY1guPDYGBwMDAQAAAAAoHxudemC5i2yxhmuw
+        hGyzh2q1hmqwhmmzh2qwhmm1hW2yhWqwhmmyhWqzhmuwhmmxh2q5i2yFZlEXExIAAAEAAAAqIRcpIxgJ
+        CQkKCAgaHx0+X1hBZ1ssOTcIBQcAAgAAAAM4KyOogGe5im+xhmuwhmmwhWqzhmuzh2qwhmmzhmuxh2qx
+        iGixhmuxhmu0h2a5i2yCZFEYExIAAQACAAAVEA97YD4+MSELCQkHCQoYHxo/X1RCZFpBY1gpOjYHBAYA
+        AQAAAAA6LyeogGS6jG2xhmuzh2iyhWqzh2qzh2qzhmuwhmmzh2qyhm60hWm9jnKMa1gXEhEAAAACAAAV
+        EQxmUy6Ob0I8LhwHCggJCQkZIB1CYFU/Y1c/YVY/Y1csPDUFBQUAAAEAAAA6LiSpgGe7i2+xhmuviGiy
+        hmmwhmmxhmuyhmmzhmuwhWq8jW6bdF4jHxoAAAEAAQATDw5nTzGBajqKaz48LCAICAgHCQkYHh0/XlVA
+        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
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+</value>
+  </data>
+</root>

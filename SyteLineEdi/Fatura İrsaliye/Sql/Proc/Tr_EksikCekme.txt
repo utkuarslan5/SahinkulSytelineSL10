@@ -1,0 +1,375 @@
+﻿SET QUOTED_IDENTIFIER ON
+SET ANSI_NULLS ON
+GO
+-- exec [Tr_EksikCekme] 458083
+Alter Proc [dbo].[Tr_EksikCekme] ( @CekmeNo Numeric(7, 0) )
+As --Declare @CekmeNo Numeric(7,0)
+
+--Set @CekmeNo = 451022
+
+    Declare @Kmik int,
+        @Pksay int,
+        @Pksir int,
+        @Miktar Numeric(17, 3),
+        @SevkMik Numeric(17, 3),
+        @EtkNo Numeric(10, 0),
+        @SipNo nvarchar(10),
+        @SipKalem int,
+        @Malzeme nvarchar(30),
+        @Psay int,
+        @Ksay int,
+        @Hksay int,
+        @PalKSay int
+
+    Declare @PltNo Numeric(10, 0),
+        @IBrmAgr Numeric(17, 3),
+        @KbrmAgr Numeric(17, 3),
+        @NetWeight Numeric(17, 3),
+        @Brtweight Numeric(17, 3),
+        @Ksay2 int,
+        @Kmik2 int 
+
+
+    BEGIN TRY 
+
+        Begin Transaction
+
+
+        DECLARE C CURSOR
+            FOR Select  ADCVNB, ADFCNB, ADAITX, ADAQQT, KMIK, PKSAY, PKSIR,
+                        isnull(SevkMik, 0)
+                from    trceklist
+                where   ceklist = @CekmeNo
+                        And isnull(SevkMik, 0) <> ADAQQT
+                        And Kmik <> 0 
+
+
+-- Kutular işaretleniyor
+
+        OPEN C
+        FETCH NEXT FROM C into @SipNo, @SipKalem, @Malzeme, @Miktar, @Kmik,
+            @Pksay, @Pksir, @Sevkmik
+
+
+        WHILE @@FETCH_STATUS = 0
+            BEGIN
+	
+
+                Set @Ksay = Case When @Kmik = 0 Then 0
+                                 Else @Sevkmik / @Kmik
+                            End 
+
+--	Set @Psay = Case When @Pksay=0 Then 0 Else @Ksay / @Pksay End 
+--
+--	Set @PalKSay = (@Psay * @Pksay)+ ((Case When @Pksir=0 Then 0 Else ((@Ksay % @Pksay) / @Pksir) End ) * @Pksir)
+--
+--	Set @Psay= @Psay + Case When @Pksir=0 Then 0 Else Case When ((@Ksay % @Pksay) / @Pksir)>0 Then 1 Else 0 End End
+--
+--	Set @Hksay = Case When @Pksay=0 Then @Ksay Else ((@Ksay % @Pksay) % @Pksir) End 
+
+
+                Update  Etiketdty
+                Set     Durum = Null
+                Where   Pickno = @CekmeNo
+                        And KutuEtk = 1
+                        And Ordno = @SipNo
+                        And Ordseq = @SipKalem
+
+
+	
+                Update  Etiketdty
+                Set     Durum = '3'
+                Where   Pickno = @CekmeNo
+                        And EtkSerino in ( Select Top ( @Ksay )
+                                                    Etkserino
+                                           From     Etiketdty
+                                           Where    Pickno = @CekmeNo
+                                                    And KutuEtk = 1
+                                                    And Ordno = @SipNo
+                                                    And Ordseq = @SipKalem
+                                           Order By EtkSerino Asc )
+
+
+
+
+
+                Update  Etiketdty
+                Set     Durum = 'X'
+                Where   Pickno = @CekmeNo
+                        and Durum is null
+                        And KutuEtk = 1
+                        And Itnbr = @Malzeme
+                        And Ordno = @SipNo
+                        And Ordseq = @SipKalem
+
+
+
+	
+
+
+                FETCH NEXT FROM C into @SipNo, @SipKalem, @Malzeme, @Miktar,
+                    @Kmik, @Pksay, @Pksir, @Sevkmik
+
+            END
+
+        CLOSE C
+        DEALLOCATE C
+
+        Update  Etiketdty
+        Set     Durum = '3'
+        Where   Pickno = @CekmeNo
+                and Durum <> 'X'
+                And KutuEtk = 1
+
+        DECLARE C CURSOR
+            FOR Select  ADAITX, Sum(ADAQQT), Max(KMIK), Max(PKSAY), Max(PKSIR),
+                        Sum(isnull(SevkMik, 0))
+                from    trceklist
+                where   ceklist = @CekmeNo
+                        And Kmik <> 0
+                Group By ADAITX
+                Having  Sum(isnull(SevkMik, 0)) <> Sum(ADAQQT)
+
+        OPEN C
+        FETCH NEXT FROM C into @Malzeme, @Miktar, @Kmik, @Pksay, @Pksir,
+            @Sevkmik
+
+
+        WHILE @@FETCH_STATUS = 0
+            BEGIN
+
+
+                Set @Ksay = Case When @Kmik = 0 Then 0
+                                 Else @Sevkmik / @Kmik
+                            End 
+
+                Set @Psay = Case When @Pksay = 0 Then 0
+                                 Else @Ksay / @Pksay
+                            End 
+
+                Set @PalKSay = ( @Psay * @Pksay )
+                    + ( ( Case When @Pksir = 0 Then 0
+                               Else ( ( @Ksay % @Pksay ) / @Pksir )
+                          End ) * @Pksir )
+
+                Set @Psay = @Psay + Case When @Pksir = 0 Then 0
+                                         Else Case When ( ( @Ksay % @Pksay )
+                                                          / @Pksir ) > 0
+                                                   Then 1
+                                                   Else 0
+                                              End
+                                    End
+
+
+                Set @Hksay = Case When @Pksay = 0
+                                       OR @Ksay = 0 Then @Ksay
+                                  Else CASE WHEN @Pksir = 0
+                                            THEN ( @Ksay % @Pksay )
+                                            ELSE ( ( @Ksay % @Pksay ) % @Pksir )
+                                       End
+                             End 
+
+
+--	Update Etiketdty
+--	Set PltNo=0
+--	Where Pickno=@CekmeNo
+--	And KutuEtk=1
+--	And Itnbr = @Malzeme
+
+                Update  Etiketdty
+                Set     Durum = Null
+                Where   Pickno = @CekmeNo
+                        And PltEtk = 1
+                        And Itnbr = @Malzeme
+
+
+                Update  Etiketdty
+                Set     Pltno = Null
+                Where   Pickno = @CekmeNo
+                        And KutuEtk = 1
+                        And Itnbr = @Malzeme
+
+	
+
+                Update  Etiketdty
+                Set     Pltno = 0
+                Where   Pickno = @CekmeNo
+                        And EtkSerino in ( Select Top ( @PalKSay )
+                                                    Etkserino
+                                           From     Etiketdty
+                                           Where    Pickno = @CekmeNo
+                                                    And KutuEtk = 1
+                                                    And Itnbr = @Malzeme
+                                                    And Pltno is Null
+                                                    And Durum = '3'
+                                           Order By EtkSerino Asc )
+
+	
+	
+
+                DECLARE C1 CURSOR
+                    FOR Select  EtkSeriNo
+                        from    Etiketdty
+                        Where   Pickno = @CekmeNo
+                                And Itnbr = @Malzeme
+                                And PltEtk = 1
+                        Order By EtkSeriNo
+
+
+
+
+                OPEN C1
+
+
+                FETCH NEXT FROM C1 into @EtkNo
+
+                WHILE @@FETCH_STATUS = 0
+                    BEGIN
+
+		
+
+                        Update  Etiketdty
+                        Set     Pltno = @EtkNo
+                        Where   Pickno = @CekmeNo
+                                And EtkSerino in (
+                                Select Top ( @Pksay )
+                                        Etkserino
+                                From    Etiketdty
+                                Where   Pickno = @CekmeNo
+                                        And KutuEtk = 1
+                                        And Itnbr = @Malzeme
+                                        And Pltno = 0
+                                        And Durum = '3'
+                                Order By EtkSerino Asc )
+
+
+
+
+                        FETCH NEXT FROM C1 into @EtkNo
+
+                    END
+
+                CLOSE C1
+                DEALLOCATE C1
+
+                Update  Etiketdty
+                Set     PltNo = -1
+                Where   Pickno = @CekmeNo
+                        and KutuEtk = 1
+                        And PltNo is  Null
+                        And Durum = '3'
+                        And Itnbr = @Malzeme
+
+                Update  Etiketdty
+                Set     Durum = '3'
+                Where   Pickno = @CekmeNo
+                        And EtkSerino in ( Select Distinct
+                                                    PltNo
+                                           From     Etiketdty
+                                           Where    Pickno = @CekmeNo
+                                                    And KutuEtk = 1
+                                                    And Durum = '3'
+                                                    And Itnbr = @Malzeme )
+                        And PltEtk = 1
+
+                Update  Etiketdty
+                Set     Durum = 'X'
+                Where   Pickno = @CekmeNo
+                        and Durum is null
+                        And Itnbr = @Malzeme
+
+
+                FETCH NEXT FROM C into @Malzeme, @Miktar, @Kmik, @Pksay,
+                    @Pksir, @Sevkmik
+
+            END
+
+        CLOSE C
+        DEALLOCATE C
+
+	
+        DECLARE C2 CURSOR
+            FOR Select  Pltno, Max(IBRMAGR) As IBRMAGR,
+                        MAX(KBRMAGR) As KBRMAGR, MAX(NETWEIGHT) As NETWEIGHT,
+                        MAX(BRTWEIGHT) As BRTWEIGHT, Count(ETKSERINO) As KSAY,
+                        Max(KMIK) As Kmik
+--select *
+                From    Etiketdty
+                Where   Pickno = @CekmeNo
+                        and Pltno > 0
+                        and Durum <> 'X'
+                        and Kutuetk = 1
+                Group By Pltno 
+
+        OPEN C2
+
+        FETCH NEXT FROM C2 into @PltNo, @IBrmAgr, @KbrmAgr, @NetWeight,
+            @Brtweight, @Ksay2, @Kmik2
+
+
+        WHILE @@FETCH_STATUS = 0
+            BEGIN
+
+
+                Update  etiketdty
+                Set     Miktar = @Kmik2 * @Ksay2,
+                        KSAY = @Ksay2,
+                        NETWEIGHT = ( @Kmik2 * @Ksay2 ) * @NetWeight,
+                        BRTWEIGHT = ( ( @Kmik2 * @Ksay2 ) * @NetWeight )
+                        + Pbrmagr + KpbrmAgr + Spbrmagr,
+                        DURUM = Case When ( @Kmik2 * @Ksay2 ) = 0 Then 'X'
+                                     Else '3'
+                                End
+                Where   Etkserino = @Pltno
+
+                FETCH NEXT FROM C2 into @PltNo, @IBrmAgr, @KbrmAgr, @NetWeight,
+                    @Brtweight, @Ksay2, @Kmik2
+
+
+
+            END
+
+        CLOSE C2
+        DEALLOCATE C2
+
+
+
+        Commit Transaction
+
+    End Try 
+
+    BEGIN CATCH 
+
+        ROLLBACK Transaction
+
+        declare @severity int 
+
+        set @severity = Error_Severity() 
+
+        declare @msg varchar(255) 
+
+        set @msg = 'Eksik Sevkiyat Hata:'
+            + 'Error(' + CAST(ERROR_NUMBER() AS NVARCHAR(20)) + '):'
+            + ERROR_MESSAGE() + ' Severity = '
+            + CAST(ERROR_SEVERITY() AS NVARCHAR(20)) + ' State = '
+            + CAST(ERROR_STATE() AS NVARCHAR(20)) + ' Procedure = '
+            + ERROR_PROCEDURE() + ' Line num. = '
+            + CAST(ERROR_LINE() AS NVARCHAR(20))
+
+--        INSERT INTO [dbo] . [ErrorLog] 
+--				([ErrorNum] , [ErrorType] , [ErrMsg] , [ErrProc]) 
+--        VALUES 
+--				(ERROR_NUMBER(), 'E', @msg, ERROR_PROCEDURE()) 
+  
+        RAISERROR ( @msg, @severity, 2 ) 
+
+    END CATCH 
+
+
+
+
+
+
+
+
+GO

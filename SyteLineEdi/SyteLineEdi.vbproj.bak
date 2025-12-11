@@ -1,0 +1,946 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{07258CE5-08FC-4D3C-8D90-EB0CE880D863}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>SyteLineEdi.My.MyApplication</StartupObject>
+    <RootNamespace>SyteLineEdi</RootNamespace>
+    <AssemblyName>SyteLineEdi</AssemblyName>
+    <MyType>WindowsForms</MyType>
+    <TargetZone>LocalIntranet</TargetZone>
+    <GenerateManifests>false</GenerateManifests>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+    <ApplicationIcon>Resources\logo_3001.ico</ApplicationIcon>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>sytelineedi.snk</AssemblyOriginatorKeyFile>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <PublishUrl>http://localhost/SyteLineEdi/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>SyteLineEdi.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>SyteLineEdi.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="adodb, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v10.2, Version=10.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DevExpress.XtraCharts.v10.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="Janus.Windows.ButtonBar.v2, Version=2.0.1123.0, Culture=neutral, PublicKeyToken=21d5517571b185bf" />
+    <Reference Include="Janus.Windows.CalendarCombo.v2, Version=2.0.1123.0, Culture=neutral, PublicKeyToken=21d5517571b185bf" />
+    <Reference Include="Janus.Windows.Common.v2, Version=2.0.1123.0, Culture=neutral, PublicKeyToken=21d5517571b185bf" />
+    <Reference Include="Janus.Windows.ExplorerBar.v2, Version=2.0.1123.0, Culture=neutral, PublicKeyToken=21d5517571b185bf" />
+    <Reference Include="Janus.Windows.GridEX.v2, Version=2.0.1123.0, Culture=neutral, PublicKeyToken=21d5517571b185bf" />
+    <Reference Include="Janus.Windows.UI.v2, Version=2.0.1123.0, Culture=neutral, PublicKeyToken=21d5517571b185bf" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>Excel\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="microsoft.stdformat, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.Compatibility" />
+    <Reference Include="Microsoft.VisualBasic.Compatibility.Data" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CrystalControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Edi\frmSayimHareketleri.designer.vb">
+      <DependentUpon>frmSayimHareketleri.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edi\frmSayimHareketleri.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fatura İrsaliye\frmFaturaBirimFiyatGuncelleme.Designer.vb">
+      <DependentUpon>frmFaturaBirimFiyatGuncelleme.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fatura İrsaliye\frmFaturaBirimFiyatGuncelleme.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fatura İrsaliye\frmFaturaGuncelleme.Designer.vb">
+      <DependentUpon>frmFaturaGuncelleme.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fatura İrsaliye\frmFaturaGuncelleme.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FaturaEdi\FAna.Designer.vb">
+      <DependentUpon>FAna.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FaturaEdi\FAna.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FaturaEdi\FDizinBul.Designer.vb">
+      <DependentUpon>FDizinBul.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FaturaEdi\FDizinBul.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fatura İrsaliye\frmNakilIrsaliyesi.designer.vb">
+      <DependentUpon>frmNakilIrsaliyesi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fatura İrsaliye\frmNakilIrsaliyesi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fatura İrsaliye\frmFaturaYazdirmaData.Designer.vb">
+      <DependentUpon>frmFaturaYazdirmaData.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fatura İrsaliye\frmFaturaYazdirmaData.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fatura İrsaliye\frmFiyatFarkiFaturasi.Designer.vb">
+      <DependentUpon>frmFiyatFarkiFaturasi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fatura İrsaliye\frmFiyatFarkiFaturasi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fatura İrsaliye\frmSerbestEtiketBasimi.designer.vb">
+      <DependentUpon>frmSerbestEtiketBasimi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fatura İrsaliye\frmSerbestEtiketBasimi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fatura İrsaliye\frmSatinAlmaIadeFaturasi.Designer.vb">
+      <DependentUpon>frmSatinAlmaIadeFaturasi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fatura İrsaliye\frmSatinAlmaIadeFaturasi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fatura İrsaliye\frmSatinAlmaIadeIrsaliyesi.Designer.vb">
+      <DependentUpon>frmSatinAlmaIadeIrsaliyesi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fatura İrsaliye\frmSatinAlmaIadeIrsaliyesi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FaturaEdi\FrmTanimlar.Designer.vb">
+      <DependentUpon>FrmTanimlar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FaturaEdi\FrmTanimlar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fatura İrsaliye\SaIadeFaturasi.vb" />
+    <Compile Include="FieldAndValue.vb" />
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDeliveryNoteBasimi.designer.vb">
+      <DependentUpon>frmDeliveryNoteBasimi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDeliveryNoteBasimi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGumrukBildirimi.Designer.vb">
+      <DependentUpon>frmGumrukBildirimi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmGumrukBildirimi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ana Menu\frmAnaMenu.Designer.vb">
+      <DependentUpon>frmAnaMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ana Menu\frmAnaMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fatura İrsaliye\frmFaturaSeri.Designer.vb">
+      <DependentUpon>frmFaturaSeri.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fatura İrsaliye\frmFaturaSeri.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fatura İrsaliye\frmFaturaYazdirma.Designer.vb">
+      <DependentUpon>frmFaturaYazdirma.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fatura İrsaliye\frmFaturaYazdirma.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIhracEvraklari.Designer.vb">
+      <DependentUpon>frmIhracEvraklari.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmIhracEvraklari.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRaporGor.designer.vb">
+      <DependentUpon>frmRaporGor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRaporGor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fatura İrsaliye\frmSatinalmaSiparisMektubu.Designer.vb">
+      <DependentUpon>frmSatinalmaSiparisMektubu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fatura İrsaliye\frmSatinalmaSiparisMektubu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module\DataTableHelper.vb" />
+    <Compile Include="Module\Mod_Genel.vb" />
+    <Compile Include="Settings.vb" />
+    <Compile Include="Sevkiyat\frmSevkiyatKalemDetay.Designer.vb">
+      <DependentUpon>frmSevkiyatKalemDetay.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Sevkiyat\frmSevkiyatKalemDetay.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sevkiyat\frmSevkiyatOnay.Designer.vb">
+      <DependentUpon>frmSevkiyatOnay.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Sevkiyat\frmSevkiyatOnay.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TofasEDI\frmTofasIrsaliye.Designer.vb">
+      <DependentUpon>frmTofasIrsaliye.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TofasEDI\frmTofasIrsaliye.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TofasEDI\frmXmlKaydet.Designer.vb">
+      <DependentUpon>frmXmlKaydet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TofasEDI\frmXmlKaydet.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Çekme Listesi\frmMiktarIlerlet.Designer.vb">
+      <DependentUpon>frmMiktarIlerlet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Çekme Listesi\frmMiktarIlerlet.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRaporOzet.Designer.vb">
+      <DependentUpon>frmRaporOzet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRaporOzet.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module\mdlRapor.vb" />
+    <Compile Include="Module\Parametre.vb" />
+    <Compile Include="Module\Print.vb" />
+    <Compile Include="Sevkiyat\frmPaletlemeIptal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sevkiyat\frmSevkiyat.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Çekme Listesi\frmAmbalajIsemriOlustur.Designer.vb">
+      <DependentUpon>frmAmbalajIsemriOlustur.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Çekme Listesi\frmAmbalajIsemriOlustur.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module\RawPrinterHelper.vb" />
+    <Compile Include="Module\DbCore.vb" />
+    <Compile Include="Module\DbCoreForDB2.vb" />
+    <Compile Include="Edi\frmAsnGonder.designer.vb">
+      <DependentUpon>frmAsnGonder.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edi\frmAsnGonder.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Çekme Listesi\frmAyniyatGirisi.Designer.vb">
+      <DependentUpon>frmAyniyatGirisi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Çekme Listesi\frmAyniyatGirisi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fatura İrsaliye\frmAyniyatIade.Designer.vb">
+      <DependentUpon>frmAyniyatIade.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fatura İrsaliye\frmAyniyatIade.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Çekme Listesi\frmCekmeListesi.Designer.vb">
+      <DependentUpon>frmCekmeListesi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Çekme Listesi\frmCekmeListesi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Çekme Listesi\frmCLYenidenBasim.Designer.vb">
+      <DependentUpon>frmCLYenidenBasim.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Çekme Listesi\frmCLYenidenBasim.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edi Tanımlar\frmEdiPrmGiris.Designer.vb">
+      <DependentUpon>frmEdiPrmGiris.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edi Tanımlar\frmEdiPrmGiris.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fatura İrsaliye\frmFatura.Designer.vb">
+      <DependentUpon>frmFatura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fatura İrsaliye\frmFatura.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fatura İrsaliye\frmIrsaliye.Designer.vb">
+      <DependentUpon>frmIrsaliye.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fatura İrsaliye\frmIrsaliye.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fatura İrsaliye\frmIrsaliyeIptal.Designer.vb">
+      <DependentUpon>frmIrsaliyeIptal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fatura İrsaliye\frmIrsaliyeIptal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fatura İrsaliye\frmIrsaliyeSeri.Designer.vb">
+      <DependentUpon>frmIrsaliyeSeri.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fatura İrsaliye\frmIrsaliyeSeri.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Çekme Listesi\frmIsEmriEtiketi.Designer.vb">
+      <DependentUpon>frmIsEmriEtiketi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Çekme Listesi\frmIsEmriEtiketi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Çekme Listesi\frmKutuEtiketBasim.Designer.vb">
+      <DependentUpon>frmKutuEtiketBasim.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Çekme Listesi\frmKutuEtiketBasim.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Çekme Listesi\frmPaletEtiketBasim.Designer.vb">
+      <DependentUpon>frmPaletEtiketBasim.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Çekme Listesi\frmPaletEtiketBasim.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRapor.Designer.vb">
+      <DependentUpon>frmRapor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRapor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edi Tanımlar\frmTatilGunleri.Designer.vb">
+      <DependentUpon>frmTatilGunleri.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edi Tanımlar\frmTatilGunleri.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module\mdlGenel.vb" />
+    <Compile Include="Edi Tanımlar\frmTakvimGirisi.Designer.vb">
+      <DependentUpon>frmTakvimGirisi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edi Tanımlar\frmTakvimGirisi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yetki\frmKullaniciGirisi.designer.vb">
+      <DependentUpon>frmKullaniciGirisi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Yetki\frmKullaniciGirisi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yetki\frmKullanicilar.designer.vb">
+      <DependentUpon>frmKullanicilar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Yetki\frmKullanicilar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yetki\frmLogin.designer.vb">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Yetki\frmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edi\frmMesajSil.Designer.vb">
+      <DependentUpon>frmMesajSil.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edi\frmMesajSil.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edi\frmEdiAktarimIslemi.designer.vb">
+      <DependentUpon>frmEdiAktarimIslemi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edi\frmEdiAktarimIslemi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edi\frmEdiSyteLineAktarimIslemi.designer.vb">
+      <DependentUpon>frmEdiSyteLineAktarimIslemi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edi\frmEdiSyteLineAktarimIslemi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yetki\frmProgramEkle.designer.vb">
+      <DependentUpon>frmProgramEkle.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Yetki\frmProgramEkle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yetki\frmYetkilendirme.designer.vb">
+      <DependentUpon>frmYetkilendirme.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Yetki\frmYetkilendirme.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module\Genel.vb" />
+    <Compile Include="Ana Menu\mdifrmMenu.Designer.vb">
+      <DependentUpon>mdifrmMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ana Menu\mdifrmMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Module\OlayYonetici.vb" />
+    <Compile Include="Module\ReturnValue.vb" />
+    <Compile Include="Çekme Listesi\frmSatinAlmaGirisEtiketi.designer.vb">
+      <DependentUpon>frmSatinAlmaGirisEtiketi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Çekme Listesi\frmSatinAlmaGirisEtiketi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Çekme Listesi\frmUretimBildirimi.Designer.vb">
+      <DependentUpon>frmUretimBildirimi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Çekme Listesi\frmUretimBildirimi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CrystalControl.resx">
+      <DependentUpon>CrystalControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edi\frmSayimHareketleri.resx">
+      <DependentUpon>frmSayimHareketleri.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fatura İrsaliye\frmFaturaBirimFiyatGuncelleme.resx">
+      <DependentUpon>frmFaturaBirimFiyatGuncelleme.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fatura İrsaliye\frmFaturaGuncelleme.resx">
+      <DependentUpon>frmFaturaGuncelleme.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FaturaEdi\FAna.resX">
+      <DependentUpon>FAna.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FaturaEdi\FDizinBul.resX">
+      <DependentUpon>FDizinBul.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fatura İrsaliye\frmNakilIrsaliyesi.resx">
+      <DependentUpon>frmNakilIrsaliyesi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fatura İrsaliye\frmFaturaYazdirmaData.resx">
+      <DependentUpon>frmFaturaYazdirmaData.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fatura İrsaliye\frmFiyatFarkiFaturasi.resx">
+      <DependentUpon>frmFiyatFarkiFaturasi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fatura İrsaliye\frmSerbestEtiketBasimi.resx">
+      <DependentUpon>frmSerbestEtiketBasimi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fatura İrsaliye\frmSatinAlmaIadeFaturasi.resx">
+      <DependentUpon>frmSatinAlmaIadeFaturasi.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fatura İrsaliye\frmSatinAlmaIadeIrsaliyesi.resx">
+      <DependentUpon>frmSatinAlmaIadeIrsaliyesi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FaturaEdi\FrmTanimlar.resX">
+      <DependentUpon>FrmTanimlar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDeliveryNoteBasimi.resx">
+      <DependentUpon>frmDeliveryNoteBasimi.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGumrukBildirimi.resx">
+      <DependentUpon>frmGumrukBildirimi.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ana Menu\frmAnaMenu.resx">
+      <DependentUpon>frmAnaMenu.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edi\frmAsnGonder.resx">
+      <DependentUpon>frmAsnGonder.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRaporGor.resx">
+      <DependentUpon>frmRaporGor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRaporOzet.resx">
+      <DependentUpon>frmRaporOzet.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fatura İrsaliye\frmSatinalmaSiparisMektubu.resx">
+      <DependentUpon>frmSatinalmaSiparisMektubu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="Sevkiyat\frmSevkiyatKalemDetay.resx">
+      <DependentUpon>frmSevkiyatKalemDetay.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sevkiyat\frmPaletlemeIptal.resx">
+      <DependentUpon>frmPaletlemeIptal.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sevkiyat\frmSevkiyat.resx">
+      <DependentUpon>frmSevkiyat.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sevkiyat\frmSevkiyatOnay.resx">
+      <DependentUpon>frmSevkiyatOnay.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TofasEDI\frmTofasIrsaliye.resx">
+      <DependentUpon>frmTofasIrsaliye.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TofasEDI\frmXmlKaydet.resx">
+      <DependentUpon>frmXmlKaydet.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Çekme Listesi\frmAyniyatGirisi.resx">
+      <DependentUpon>frmAyniyatGirisi.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fatura İrsaliye\frmAyniyatIade.resx">
+      <DependentUpon>frmAyniyatIade.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Çekme Listesi\frmCekmeListesi.resx">
+      <DependentUpon>frmCekmeListesi.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Çekme Listesi\frmCLYenidenBasim.resx">
+      <DependentUpon>frmCLYenidenBasim.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edi Tanımlar\frmEdiPrmGiris.resx">
+      <DependentUpon>frmEdiPrmGiris.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fatura İrsaliye\frmFatura.resx">
+      <DependentUpon>frmFatura.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fatura İrsaliye\frmFaturaSeri.resx">
+      <DependentUpon>frmFaturaSeri.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fatura İrsaliye\frmFaturaYazdirma.resx">
+      <DependentUpon>frmFaturaYazdirma.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fatura İrsaliye\frmIrsaliye.resx">
+      <DependentUpon>frmIrsaliye.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fatura İrsaliye\frmIrsaliyeIptal.resx">
+      <DependentUpon>frmIrsaliyeIptal.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fatura İrsaliye\frmIrsaliyeSeri.resx">
+      <DependentUpon>frmIrsaliyeSeri.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Çekme Listesi\frmAmbalajIsemriOlustur.resx">
+      <DependentUpon>frmAmbalajIsemriOlustur.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Çekme Listesi\frmIsEmriEtiketi.resx">
+      <DependentUpon>frmIsEmriEtiketi.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Çekme Listesi\frmKutuEtiketBasim.resx">
+      <DependentUpon>frmKutuEtiketBasim.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIhracEvraklari.resx">
+      <DependentUpon>frmIhracEvraklari.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Çekme Listesi\frmMiktarIlerlet.resx">
+      <DependentUpon>frmMiktarIlerlet.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Çekme Listesi\frmPaletEtiketBasim.resx">
+      <DependentUpon>frmPaletEtiketBasim.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRapor.resx">
+      <DependentUpon>frmRapor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edi Tanımlar\frmTatilGunleri.resx">
+      <DependentUpon>frmTatilGunleri.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edi Tanımlar\frmTakvimGirisi.resx">
+      <DependentUpon>frmTakvimGirisi.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yetki\frmKullaniciGirisi.resx">
+      <DependentUpon>frmKullaniciGirisi.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yetki\frmKullanicilar.resx">
+      <DependentUpon>frmKullanicilar.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yetki\frmLogin.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edi\frmMesajSil.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMesajSil.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edi\frmEdiAktarimIslemi.resx">
+      <DependentUpon>frmEdiAktarimIslemi.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edi\frmEdiSyteLineAktarimIslemi.resx">
+      <DependentUpon>frmEdiSyteLineAktarimIslemi.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yetki\frmProgramEkle.resx">
+      <DependentUpon>frmProgramEkle.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yetki\frmYetkilendirme.resx">
+      <DependentUpon>frmYetkilendirme.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ana Menu\mdifrmMenu.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>mdifrmMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Çekme Listesi\frmSatinAlmaGirisEtiketi.resx">
+      <DependentUpon>frmSatinAlmaGirisEtiketi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Çekme Listesi\frmUretimBildirimi.resx">
+      <DependentUpon>frmUretimBildirimi.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Excel\Hurda_Bildirimi.xls" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\All software is current.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\db_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\email.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\global-calendar_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lists.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mailview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\net_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\offline_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\online_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transmit_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yast_profile-manager.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Options.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\app.manifest" />
+    <None Include="Resources\Close.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FindForm\FindForm.vbproj">
+      <Project>{AA9A84C8-2E4F-42DB-AF69-CFE97AB36B64}</Project>
+      <Name>FindForm</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Table\EdiWrk.sql" />
+    <None Include="Resources\Preview.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Table\EdiMst.sql" />
+    <None Include="Table\EdiPrc.Sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NetByte Design Studio - 0001.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NetByte Design Studio - 0294.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Table\CALNDR.sql" />
+    <None Include="Table\DACIAPF.sql" />
+    <None Include="View\EDISIPCOM.sql" />
+    <None Include="View\ITEMASA.sql" />
+    <None Include="View\ITEMBL.sql" />
+    <None Include="View\ITEMDIM.sql" />
+    <None Include="View\ITMPACK.sql" />
+    <None Include="View\ITMPACKVW.sql" />
+    <None Include="View\KONTPLANT.sql" />
+    <None Include="View\KONTRTPF.sql" />
+    <None Include="View\KONTRTSIP.sql" />
+    <None Include="Table\OFFITEMBL.sql" />
+    <None Include="View\MBADREP.sql" />
+    <None Include="View\MBC6REP.sql" />
+    <None Include="View\MBCDREP.sql" />
+    <None Include="View\MBDEREP.sql" />
+    <None Include="View\PLANTPRM.sql" />
+    <None Include="View\PLANTPRMJL.sql" />
+    <None Include="Resources\NetByte Design Studio - 0671.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="View\MBBFREP.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AsnGonderTest.txt" />
+    <Content Include="Excel\Microsoft.Office.Interop.Excel.dll" />
+    <Content Include="Fatura İrsaliye\Sql\Proc\Tr_EksikCekme.txt" />
+    <None Include="Resources\add-file_128x128.png" />
+    <None Include="Resources\find.png" />
+    <None Include="Resources\dialog-cancel.png" />
+    <None Include="Resources\edit-clear.png" />
+    <Content Include="Resources\Add.gif" />
+    <Content Include="Resources\logo_300.ico" />
+    <Content Include="Resources\logo_3001.ico" />
+    <Content Include="Resources\202px-Excel2007.PNG" />
+    <Content Include="Resources\3616-28881.png" />
+    <Content Include="Resources\3617-5784.png" />
+    <Content Include="Resources\adim.png" />
+    <Content Include="Resources\Application.png" />
+    <Content Include="Resources\arkaalan.JPG" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Resources\barkod.ico" />
+    <None Include="Resources\Checkmark.png" />
+    <None Include="Resources\Close.png" />
+    <Content Include="Resources\Copy %282%29 of add.png" />
+    <Content Include="Resources\Copy %282%29 of address book.png" />
+    <None Include="Resources\Crv_Krnc.ico" />
+    <Content Include="Resources\Error.png" />
+    <None Include="Resources\Error1.png" />
+    <None Include="Resources\img_icon_3.ico" />
+    <Content Include="Resources\kaydet.png" />
+    <Content Include="Resources\NetByte Design Studio - 0105.png" />
+    <Content Include="Resources\NetByte Design Studio - 0117.png" />
+    <Content Include="Resources\NetByte Design Studio - 0156.png" />
+    <None Include="Resources\NetByte Design Studio - 0478.png" />
+    <Content Include="Resources\NetByte Design Studio - 0482.png" />
+    <Content Include="Resources\NetByte Design Studio - 0483.png" />
+    <Content Include="Resources\NetByte Design Studio - 0917.png" />
+    <Content Include="Resources\NetByte Design Studio - 0918.png" />
+    <Content Include="Resources\NetByte Design Studio - 0919.png" />
+    <Content Include="Resources\NetByte Design Studio - 0920.png" />
+    <Content Include="Resources\NetByte Design Studio - 1361.png" />
+    <Content Include="Resources\Notepad.png" />
+    <None Include="Resources\Print1.png" />
+    <None Include="Resources\Print.png" />
+    <None Include="Resources\Save.png" />
+    <None Include="Resources\search_128x128.png" />
+    <None Include="Resources\notepad2.png" />
+    <Content Include="Resources\Select.png" />
+    <None Include="Resources\Stamp.png" />
+    <None Include="Resources\SL_Barkod.ico" />
+    <None Include="Resources\SL_Barkod.png" />
+    <None Include="Resources\show_sticky.gif" />
+    <Content Include="Resources\Sticky Notes.png" />
+    <Content Include="Resources\ToExcel.ico" />
+    <None Include="Resources\Toolbox.png" />
+    <Content Include="Resources\trash_design.png" />
+    <Content Include="SLEDI.mdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="View\FaturaPrn.sql" />
+    <None Include="View\FaturaMstPrn1.sql" />
+    <None Include="View\FaturaMstPrn.sql" />
+    <None Include="View\FaturaMst.sql" />
+    <None Include="View\Tr_Ambalaj_Boyutlari.sql" />
+    <None Include="sytelineedi.snk" />
+    <None Include="View\itemcustprice_Fatura.sql" />
+    <None Include="View\itemcustprice_maxdate.sql" />
+    <None Include="Resources\u12609739.ico" />
+    <None Include="Table\tr_co_ship.sql" />
+    <None Include="Table\tr_co_ship_arc.sql" />
+    <None Include="View\dcitemlotsum.sql" />
+    <None Include="View\lot_loc_net.sql" />
+    <None Include="View\dcitemsum.sql" />
+    <None Include="View\IRSLYMST.sql" />
+    <None Include="Table\SHPPACK.sql" />
+    <None Include="Table\SHPDTY.sql" />
+    <None Include="Table\TR_COUNTER.sql" />
+    <None Include="Resources\Upload From Harddisk.png" />
+    <None Include="View\MBKDCPP.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Çekme Listesi\Sql\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

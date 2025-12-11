@@ -1,0 +1,3 @@
+Kaynak : RunSql
+Hata : Could not find file 'c:\EkipEdi\SLEdi.mdb'.
+Sql Cumlecigi : Delete From tmpIrsaliye

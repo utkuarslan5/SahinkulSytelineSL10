@@ -1,0 +1,3 @@
+Kaynak : RunSql
+Hata : Sunucudan sonuçlar alınırken aktarım düzeyi hatası oluştu. (provider: TCP Sağlayıcısı, error: 0 - Belirtilen ağ adı artık geçersiz.)
+Sql Cumlecigi :  SELECT TARTIP,TTIME,CALID  FROM .dbo.PLANTPRM WHERE CANB=N'  12107' AND B9CD=N'AX'

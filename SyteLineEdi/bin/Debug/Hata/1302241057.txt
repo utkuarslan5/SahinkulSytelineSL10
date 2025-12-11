@@ -1,0 +1,3 @@
+Kaynak : RunSql
+Hata : Invalid object name 'DACIAPF'.
+Sql Cumlecigi : SELECT DACSHP FROM DACIAPF WHERE  DACEDI=N'09317801299870102'

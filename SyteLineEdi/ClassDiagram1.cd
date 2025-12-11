@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SyteLineEdi.frmAnaMenu" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAgAECAYEAECDCCEAEoCwAABBGABAAQAAwIEAAA=</HashCode>
+      <FileName>Ana Menu\frmAnaMenu.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.mdifrmMenu" Collapsed="true">
+    <Position X="4" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAACAaEAECDCCEAAoGwAABAGAAAAQAAwAEAAA=</HashCode>
+      <FileName>Ana Menu\mdifrmMenu.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.CryRepControl" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAiAAAAAAAACAABACAAAEAAAEAIABAAAAAAA=</HashCode>
+      <FileName>CrystalControl.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.frmAmbalajIsemriOlustur" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kwIBAQAAGCCRQAJEAIiACACCCBgAoEJAgAQSgQAgAAA=</HashCode>
+      <FileName>Çekme Listesi\frmAmbalajIsemriOlustur.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.frmAyniyatGirisi" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAACAQAAAAAgKAAAACABAAkAIAEAQAAAAAACA=</HashCode>
+      <FileName>Çekme Listesi\frmAyniyatGirisi.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.frmCekmeListesi" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kUMRgQAInCCQYEJEAgCAKASCABxA4EJAgQQQEQAgABA=</HashCode>
+      <FileName>Çekme Listesi\frmCekmeListesi.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.frmCLYenidenBasim" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kwKhgQAgGCGQQAJEAICACACCCBwAoANAgEYSggAAAQA=</HashCode>
+      <FileName>Çekme Listesi\frmCLYenidenBasim.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.frmKutuEtiketBasim" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kAIAAgAAlCQQAEAEAhCAAIgCQDQAgWIRAQQiDCIAAQA=</HashCode>
+      <FileName>Çekme Listesi\frmKutuEtiketBasim.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.frmPaletEtiketBasim" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAgAAlCAQAEBEAgCAAAgCABQAAAIAAAAACAAAAAA=</HashCode>
+      <FileName>Çekme Listesi\frmPaletEtiketBasim.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.frmAsnGonder" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>koAAAQAqGSEcCABEBYaAAAACCAAIIUBAPARACIgBAcA=</HashCode>
+      <FileName>Edi\frmAsnGonder.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.frmEdiAktarimIslemi" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>GCkpAIQwkjESmAGBBGGAZAAigCIAAgNQAAYAhEx4AiQ=</HashCode>
+      <FileName>Edi\frmEdiAktarimIslemi.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.frmEdiSyteLineAktarimIslemi" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gRgAkYAIUKgQCQBwAACAgADCAiAAIABAAAwABEAAEQo=</HashCode>
+      <FileName>Edi\frmEdiSyteLineAktarimIslemi.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.frmMesajSil" Collapsed="true">
+    <Position X="11" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAMAAIAACAAAAEAAACAAAACAAAAMACAAAAAAAAAACA=</HashCode>
+      <FileName>Edi\frmMesajSil.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.frmEdiPrmGiris" Collapsed="true">
+    <Position X="11" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IREQAAEAECAQgAIABIKASwACADD/sJIAEAQAQABAAAI=</HashCode>
+      <FileName>Edi Tanımlar\frmEdiPrmGiris.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.frmTakvimGirisi" Collapsed="true">
+    <Position X="11" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAoEKQQgAAABACQwBAKCAAAYQKAAAQBAQKQAAI=</HashCode>
+      <FileName>Edi Tanımlar\frmTakvimGirisi.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.frmTatilGunleri" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABEAAAAAACAQAAAAIACAAAACAAAAAAIAAARAAAggACE=</HashCode>
+      <FileName>Edi Tanımlar\frmTatilGunleri.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.frmAyniyatIade" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAACAAAAAAAgKAAAACAAAAEAIAEAAABAAAACA=</HashCode>
+      <FileName>Fatura İrsaliye\frmAyniyatIade.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.frmFatura" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kAIACQAAmCCQQEJEQISALACCABAAoAJAgARQAAAAAQA=</HashCode>
+      <FileName>Fatura İrsaliye\frmFatura.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.frmFaturaSeri" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAECAAAAAAAACAAAACAAAAEABAAQACAAIAACA=</HashCode>
+      <FileName>Fatura İrsaliye\frmFaturaSeri.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.frmFaturaYazdirma" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kAICAQAAmCCQQAJEQoCAKACCABQCoAJAgARQAAAAAQA=</HashCode>
+      <FileName>Fatura İrsaliye\frmFaturaYazdirma.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.frmIrsaliye" Collapsed="true">
+    <Position X="11" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kgMAQQAImCCQQEJEQoCAKACCABwAoIJAgARQAAAEAQA=</HashCode>
+      <FileName>Fatura İrsaliye\frmIrsaliye.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.frmIrsaliyeIptal" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kAIAAQAAmCCQQEJEAKCAKACCABAAoAJAgAQQAAAAAQA=</HashCode>
+      <FileName>Fatura İrsaliye\frmIrsaliyeIptal.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.frmIrsaliyeSeri" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>RAIgAAAAlSAQAEAEAAKAAAACgAAAgAAAAAQABAAAAQA=</HashCode>
+      <FileName>Fatura İrsaliye\frmIrsaliyeSeri.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.Form1" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Form1.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.frmDeliveryNoteBasimi" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAKAQAAAFOAQAAAEQBCAIAACARIAAAuAAAYAAACBAQA=</HashCode>
+      <FileName>frmDeliveryNoteBasimi.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.frmGumrukBildirimi" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kAKAAQAAGCCQQAJEAoCCIAACQBABoAICAEYBAAAAQYA=</HashCode>
+      <FileName>frmGumrukBildirimi.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.frmIhracEvraklari" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kAOAgQAAGCCQQAJEAICAIAACABAAoAIAAIYAAAAAAQA=</HashCode>
+      <FileName>frmIhracEvraklari.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.frmRapor" Collapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAIAASACSAIIgAIACAAAQCAAAAJBgQAgIAAEgEIAA=</HashCode>
+      <FileName>frmRapor.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.frmRaporOzet" Collapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAACAACACAAAAAAIACBAIACAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>frmRaporOzet.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.OlayYonetici" Collapsed="true">
+    <Position X="9.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIAAAAgAAAAAAAKAAAAAAAA=</HashCode>
+      <FileName>Module\OlayYonetici.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.Parametre" Collapsed="true">
+    <Position X="11" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAQAAAIEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Module\Parametre.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.RawPrinterHelper" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgEAAQACAAAAAAgAAABIAABAAAAAAAAAAAAAICAAAAA=</HashCode>
+      <FileName>Module\RawPrinterHelper.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.ReturnValue" Collapsed="true">
+    <Position X="2.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BIIAgABAAAAACAACAAAAAAAAAgAAEAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Module\ReturnValue.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.frmPaletlemeIptal" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQIAABAgACAQAAAAAAAAAAACgCAAFAABACQCAABQgMQ=</HashCode>
+      <FileName>Sevkiyat\frmPaletlemeIptal.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.frmSevkiyat" Collapsed="true">
+    <Position X="9.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AYqEAUIgAPhQgQEAIIEAIEcSgiIEEAABDWQaZABQgwU=</HashCode>
+      <FileName>Sevkiyat\frmSevkiyat.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.frmKullaniciGirisi" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAIQAgEGEFBAAIBACAABACIABAAQABAEYQECAAAAA=</HashCode>
+      <FileName>Yetki\frmKullaniciGirisi.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.frmKullanicilar" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAECgYgAAAAACACACCIAAAMAIAIEQABAAAAAI=</HashCode>
+      <FileName>Yetki\frmKullanicilar.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.frmLogin" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAQQAAACAAAAAAAACAABACAUAAggAAAhCAAAABAAA=</HashCode>
+      <FileName>Yetki\frmLogin.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.frmProgramEkle" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAQAAAAECAQgAAAAACAAACCIAAAMAIAAEQAAAAAAAI=</HashCode>
+      <FileName>Yetki\frmProgramEkle.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.frmYetkilendirme" Collapsed="true">
+    <Position X="2.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAIFiAQiAAAABCCAACCIAAAIAIAAIRABEAAIBI=</HashCode>
+      <FileName>Yetki\frmYetkilendirme.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.Core.Data" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACABAABICAIAAAAIAAEABQAAQQQAQAAAAABAAAgoAA=</HashCode>
+      <FileName>Module\DbCore.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.Core.DataForDB2" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACABAABICAIAAAAIAAEABQAAQQQAQAAAAAAAAAgoIA=</HashCode>
+      <FileName>Module\DbCoreForDB2.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.My.MyApplication" Collapsed="true">
+    <Position X="5.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyteLineEdi.My.MySettings" Collapsed="true">
+    <Position X="7.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACCEAQAAQAABABIAggBAAFAgCiASAABAAAQEA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="SyteLineEdi.EtiketBilgisi" Collapsed="true">
+    <Position X="0.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EACAAAAAAAEIAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Sevkiyat\frmSevkiyat.vb</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="SyteLineEdi.Core.AddParamType" Collapsed="true">
+    <Position X="0.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAYAgAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Module\DbCore.vb</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Module Name="SyteLineEdi.Genel" Collapsed="true">
+    <Position X="0.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EgAPLQAECBAAAQFAAACAAAXIGgASBIUIgwhIgQgQTWg=</HashCode>
+      <FileName>Module\Genel.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="SyteLineEdi.mdlGenel" Collapsed="true">
+    <Position X="2.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAACAAEEAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Module\mdlGenel.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="SyteLineEdi.mdlRapor" Collapsed="true">
+    <Position X="4" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAQCAAQAAAYECAAABDQFUAgCGCAlCIKMIQAAME1ASoQ=</HashCode>
+      <FileName>Module\mdlRapor.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="SyteLineEdi.My.MySettingsProperty" Collapsed="true">
+    <Position X="5.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="SyteLineEdi.My.Resources.Resources" Collapsed="true">
+    <Position X="7.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAiUKKAABFFYQSgQsABEGCLCxAJUgQDaCQAEQDkEIE=</HashCode>
+    </TypeIdentifier>
+  </Module>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

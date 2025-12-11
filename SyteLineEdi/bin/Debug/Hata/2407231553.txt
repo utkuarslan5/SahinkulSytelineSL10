@@ -1,0 +1,3 @@
+Kaynak : RunSql
+Hata : Invalid object name 'EDIUSER'.
+Sql Cumlecigi :  select *  from EDIUSER  where Kullanici='ekip' and Sifre='123'

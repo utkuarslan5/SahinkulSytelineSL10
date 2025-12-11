@@ -1,0 +1,3 @@
+Kaynak : RunSql
+Hata : The conversion of a nvarchar data type to a datetime data type resulted in an out-of-range value.
+Sql Cumlecigi :  Update co_ship Set reason_text=N'15', shipment_id = 15 Where co_num=N'CO00000006' and co_line=1 and co_release=0 and date_seq=2 and  ship_date =N'15/08/2023' and isnull(reason_text ,'') = ''

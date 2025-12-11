@@ -1,0 +1,3 @@
+Kaynak : RunSql
+Hata : Incorrect syntax near '='.
+Sql Cumlecigi :  Select count(*) from TrM_FaturaMst_SL9 where SevkNo = 20018 Group by Item = N'PZ31 12A692 AB'

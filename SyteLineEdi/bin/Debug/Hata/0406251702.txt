@@ -1,0 +1,3 @@
+Kaynak : RunSql
+Hata : Invalid column name 'ITNBR'.
+Sql Cumlecigi : Select cust_num, cust_seq,  co_num, co_line, co_release, qty_shipped,ROUND(dtyPrice * qty_shipped,2) As Tutar, ship_date, date_seq , SevkNo, terms_code, ship_code, ItemTax_Code, item, dtyPrice, description, u_m,tax_rate ,curr_code From TrM_FaturaMst_SL9 Where SEVKNO IN (10035) And ITNBR In ('ET76 A20450 AA')

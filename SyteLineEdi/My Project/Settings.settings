@@ -1,0 +1,75 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="DsnName" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Holding" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Language" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="EDIDepo" Type="System.String" Scope="User">
+      <Value Profile="(Default)">MAIN</Value>
+    </Setting>
+    <Setting Name="EDIYuklAdr" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Receiver" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="LibNameEDI" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Teklas" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source=10.0.100.97;Initial Catalog=SL10P;User ID=sa2;pwd=;Connect Timeout=0</Value>
+    </Setting>
+    <Setting Name="Sirket" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source=10.0.100.97;Initial Catalog=SL10P;User ID=sa2;pwd=;Connect Timeout=0</Value>
+    </Setting>
+    <Setting Name="AccessConnection" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Provider=Microsoft.Jet.OLEDB.4.0;Data Source=c:\EkipEdi\SLEdi.mdb</Value>
+    </Setting>
+    <Setting Name="Database" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Master</Value>
+    </Setting>
+    <Setting Name="DefaultWhse" Type="System.String" Scope="User">
+      <Value Profile="(Default)">5400</Value>
+    </Setting>
+    <Setting Name="ConnectionString" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source=10.0.100.97;Initial Catalog=SL10P;User ID=sa2;pwd=;Connect Timeout=0</Value>
+    </Setting>
+    <Setting Name="UserName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">sa2</Value>
+    </Setting>
+    <Setting Name="Password" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ServerTurkiye" Type="System.String" Scope="User">
+      <Value Profile="(Default)">10.0.100.97</Value>
+    </Setting>
+    <Setting Name="ServerBulgaristan" Type="System.String" Scope="User">
+      <Value Profile="(Default)">10.0.100.97</Value>
+    </Setting>
+    <Setting Name="HesapNo" Type="System.String" Scope="User">
+      <Value Profile="(Default)">60040001</Value>
+    </Setting>
+    <Setting Name="ReportsPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">\\10.0.100.97\SLRaporlar</Value>
+    </Setting>
+    <Setting Name="Company" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Default</Value>
+    </Setting>
+    <Setting Name="ImalatciKodu" Type="System.String" Scope="User">
+      <Value Profile="(Default)">0846</Value>
+    </Setting>
+    <Setting Name="Alici" Type="System.String" Scope="User">
+      <Value Profile="(Default)">TOFAS</Value>
+    </Setting>
+    <Setting Name="SiparisNo" Type="System.String" Scope="User">
+      <Value Profile="(Default)">129</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

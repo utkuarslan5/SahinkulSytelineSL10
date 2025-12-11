@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="GridEXLayout1.LayoutString" xml:space="preserve">
+    <value>&lt;GridEXLayoutData&gt;&lt;RootTable&gt;&lt;Caption&gt;TUR_ApInvoiceLoadSp&lt;/Caption&gt;&lt;Columns Collection="true"&gt;&lt;Column0 ID="Selector"&gt;&lt;Key&gt;Selector&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Width&gt;25&lt;/Width&gt;&lt;ActAsSelector&gt;True&lt;/ActAsSelector&gt;&lt;/Column0&gt;&lt;Column1 ID="DocNum"&gt;&lt;Caption&gt;Döküman No&lt;/Caption&gt;&lt;DataMember&gt;DocNum&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;DocNum&lt;/Key&gt;&lt;Position&gt;1&lt;/Position&gt;&lt;Width&gt;122&lt;/Width&gt;&lt;/Column1&gt;&lt;Column2 ID="Item"&gt;&lt;Caption&gt;Malzeme&lt;/Caption&gt;&lt;DataMember&gt;Item&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;Item&lt;/Key&gt;&lt;Position&gt;2&lt;/Position&gt;&lt;Width&gt;90&lt;/Width&gt;&lt;/Column2&gt;&lt;Column3 ID="Description"&gt;&lt;Caption&gt;Tanım&lt;/Caption&gt;&lt;DataMember&gt;Description&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;Description&lt;/Key&gt;&lt;Position&gt;3&lt;/Position&gt;&lt;Width&gt;110&lt;/Width&gt;&lt;/Column3&gt;&lt;Column4 ID="UM"&gt;&lt;Caption&gt;ÖB&lt;/Caption&gt;&lt;DataMember&gt;UM&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;UM&lt;/Key&gt;&lt;Position&gt;4&lt;/Position&gt;&lt;Width&gt;58&lt;/Width&gt;&lt;/Column4&gt;&lt;Column5 ID="Qty"&gt;&lt;Caption&gt;Miktar&lt;/Caption&gt;&lt;DataMember&gt;Qty&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;FormatString&gt;###,###.#0&lt;/FormatString&gt;&lt;Key&gt;Qty&lt;/Key&gt;&lt;Position&gt;5&lt;/Position&gt;&lt;TextAlignment&gt;Far&lt;/TextAlignment&gt;&lt;Width&gt;105&lt;/Width&gt;&lt;/Column5&gt;&lt;Column6 ID="UnitPrice"&gt;&lt;Caption&gt;Birim Fiyat&lt;/Caption&gt;&lt;DataMember&gt;UnitPrice&lt;/DataMember&gt;&lt;FormatString&gt;###,###.#####0&lt;/FormatString&gt;&lt;Key&gt;UnitPrice&lt;/Key&gt;&lt;Position&gt;6&lt;/Position&gt;&lt;TextAlignment&gt;Far&lt;/TextAlignment&gt;&lt;Width&gt;101&lt;/Width&gt;&lt;CellStyle&gt;&lt;BackColor&gt;255, 255, 192&lt;/BackColor&gt;&lt;/CellStyle&gt;&lt;/Column6&gt;&lt;Column7 ID="Currency"&gt;&lt;Caption&gt;Pr. Birim&lt;/Caption&gt;&lt;DataMember&gt;Currency&lt;/DataMember&gt;&lt;DefaultGroupPrefix&gt;Fatura P.B.&lt;/DefaultGroupPrefix&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;Currency&lt;/Key&gt;&lt;Position&gt;7&lt;/Position&gt;&lt;Width&gt;112&lt;/Width&gt;&lt;/Column7&gt;&lt;Column8 ID="Amount"&gt;&lt;Caption&gt;Tutar&lt;/Caption&gt;&lt;DataMember&gt;Amount&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;FormatString&gt;###,###.#0&lt;/FormatString&gt;&lt;Key&gt;Amount&lt;/Key&gt;&lt;Position&gt;8&lt;/Position&gt;&lt;TextAlignment&gt;Far&lt;/TextAlignment&gt;&lt;Width&gt;59&lt;/Width&gt;&lt;/Column8&gt;&lt;Column9 ID="TaxAmount"&gt;&lt;Caption&gt;Vergi Tutarı&lt;/Caption&gt;&lt;DataMember&gt;TaxAmount&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;FormatString&gt;###,###.#0&lt;/FormatString&gt;&lt;Key&gt;TaxAmount&lt;/Key&gt;&lt;Position&gt;9&lt;/Position&gt;&lt;TextAlignment&gt;Far&lt;/TextAlignment&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;Width&gt;53&lt;/Width&gt;&lt;/Column9&gt;&lt;Column10 ID="Terms_Code"&gt;&lt;Caption&gt;Vade Tipi&lt;/Caption&gt;&lt;DataMember&gt;Terms_Code&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;Terms_Code&lt;/Key&gt;&lt;Position&gt;10&lt;/Position&gt;&lt;Width&gt;95&lt;/Width&gt;&lt;/Column10&gt;&lt;Column11 ID="TransNum"&gt;&lt;Caption&gt;TransNum&lt;/Caption&gt;&lt;DataMember&gt;TransNum&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;FormatString&gt;###,###.#0&lt;/FormatString&gt;&lt;Key&gt;TransNum&lt;/Key&gt;&lt;Position&gt;11&lt;/Position&gt;&lt;TextAlignment&gt;Far&lt;/TextAlignment&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;Width&gt;8&lt;/Width&gt;&lt;/Column11&gt;&lt;Column12 ID="Selected"&gt;&lt;Caption&gt;Selected&lt;/Caption&gt;&lt;DataMember&gt;Selected&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;Selected&lt;/Key&gt;&lt;Position&gt;12&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;Width&gt;8&lt;/Width&gt;&lt;/Column12&gt;&lt;Column13 ID="Kur"&gt;&lt;Caption&gt;Kur&lt;/Caption&gt;&lt;DataMember&gt;Kur&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;Kur&lt;/Key&gt;&lt;Position&gt;13&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;Width&gt;84&lt;/Width&gt;&lt;/Column13&gt;&lt;Column14 ID="TransDate"&gt;&lt;Caption&gt;Hareket Tar.&lt;/Caption&gt;&lt;DataMember&gt;TransDate&lt;/DataMember&gt;&lt;DefaultGroupFormatString&gt;d&lt;/DefaultGroupFormatString&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;FormatString&gt;d&lt;/FormatString&gt;&lt;Key&gt;TransDate&lt;/Key&gt;&lt;Position&gt;14&lt;/Position&gt;&lt;Width&gt;59&lt;/Width&gt;&lt;/Column14&gt;&lt;Column15 ID="TaxRate"&gt;&lt;Caption&gt;TaxRate&lt;/Caption&gt;&lt;DataMember&gt;TaxRate&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;TaxRate&lt;/Key&gt;&lt;Position&gt;15&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column15&gt;&lt;Column16 ID="inv_acct"&gt;&lt;Caption&gt;inv_acct&lt;/Caption&gt;&lt;DataMember&gt;inv_acct&lt;/DataMember&gt;&lt;Key&gt;inv_acct&lt;/Key&gt;&lt;Position&gt;16&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;Width&gt;97&lt;/Width&gt;&lt;/Column16&gt;&lt;Column17 ID="po_num"&gt;&lt;Caption&gt;po_num&lt;/Caption&gt;&lt;DataMember&gt;po_num&lt;/DataMember&gt;&lt;Key&gt;po_num&lt;/Key&gt;&lt;Position&gt;17&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;Width&gt;82&lt;/Width&gt;&lt;/Column17&gt;&lt;Column18 ID="po_line"&gt;&lt;Caption&gt;po_line&lt;/Caption&gt;&lt;DataMember&gt;po_line&lt;/DataMember&gt;&lt;Key&gt;po_line&lt;/Key&gt;&lt;Position&gt;18&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;Width&gt;90&lt;/Width&gt;&lt;/Column18&gt;&lt;/Columns&gt;&lt;GroupCondition ID="" /&gt;&lt;Key&gt;TUR_ApInvoiceLoadSp&lt;/Key&gt;&lt;SortKeys Collection="true"&gt;&lt;SortKey0 ID="SortKey0"&gt;&lt;ColIndex&gt;1&lt;/ColIndex&gt;&lt;/SortKey0&gt;&lt;/SortKeys&gt;&lt;/RootTable&gt;&lt;/GridEXLayoutData&gt;</value>
+  </data>
+  <data name="GridEXLayout2.LayoutString" xml:space="preserve">
+    <value>&lt;GridEXLayoutData&gt;&lt;RootTable&gt;&lt;Columns Collection="true"&gt;&lt;Column0 ID="Voucher"&gt;&lt;Caption&gt;Voucher&lt;/Caption&gt;&lt;DataMember&gt;Voucher&lt;/DataMember&gt;&lt;Key&gt;Voucher&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;/Column0&gt;&lt;/Columns&gt;&lt;GroupCondition ID="" /&gt;&lt;/RootTable&gt;&lt;RowWithErrorsFormatStyle&gt;&lt;PredefinedStyle&gt;RowWithErrorsFormatStyle&lt;/PredefinedStyle&gt;&lt;/RowWithErrorsFormatStyle&gt;&lt;LinkFormatStyle&gt;&lt;PredefinedStyle&gt;LinkFormatStyle&lt;/PredefinedStyle&gt;&lt;/LinkFormatStyle&gt;&lt;CardCaptionFormatStyle&gt;&lt;PredefinedStyle&gt;CardCaptionFormatStyle&lt;/PredefinedStyle&gt;&lt;/CardCaptionFormatStyle&gt;&lt;GroupByBoxFormatStyle&gt;&lt;PredefinedStyle&gt;GroupByBoxFormatStyle&lt;/PredefinedStyle&gt;&lt;/GroupByBoxFormatStyle&gt;&lt;GroupByBoxInfoFormatStyle&gt;&lt;PredefinedStyle&gt;GroupByBoxInfoFormatStyle&lt;/PredefinedStyle&gt;&lt;/GroupByBoxInfoFormatStyle&gt;&lt;GroupRowFormatStyle&gt;&lt;PredefinedStyle&gt;GroupRowFormatStyle&lt;/PredefinedStyle&gt;&lt;/GroupRowFormatStyle&gt;&lt;HeaderFormatStyle&gt;&lt;PredefinedStyle&gt;HeaderFormatStyle&lt;/PredefinedStyle&gt;&lt;/HeaderFormatStyle&gt;&lt;PreviewRowFormatStyle&gt;&lt;PredefinedStyle&gt;PreviewRowFormatStyle&lt;/PredefinedStyle&gt;&lt;/PreviewRowFormatStyle&gt;&lt;RowFormatStyle&gt;&lt;PredefinedStyle&gt;RowFormatStyle&lt;/PredefinedStyle&gt;&lt;/RowFormatStyle&gt;&lt;SelectedFormatStyle&gt;&lt;PredefinedStyle&gt;SelectedFormatStyle&lt;/PredefinedStyle&gt;&lt;/SelectedFormatStyle&gt;&lt;SelectedInactiveFormatStyle&gt;&lt;PredefinedStyle&gt;SelectedInactiveFormatStyle&lt;/PredefinedStyle&gt;&lt;/SelectedInactiveFormatStyle&gt;&lt;WatermarkImage /&gt;&lt;ControlStyle /&gt;&lt;VisualStyle&gt;Office2003&lt;/VisualStyle&gt;&lt;AllowEdit&gt;False&lt;/AllowEdit&gt;&lt;ExpandableGroups&gt;False&lt;/ExpandableGroups&gt;&lt;GroupByBoxVisible&gt;False&lt;/GroupByBoxVisible&gt;&lt;HideSelection&gt;Highlight&lt;/HideSelection&gt;&lt;DisplayMember&gt;voucher&lt;/DisplayMember&gt;&lt;ValueMember&gt;voucher&lt;/ValueMember&gt;&lt;/GridEXLayoutData&gt;</value>
+  </data>
+  <data name="GridEXLayout3.LayoutString" xml:space="preserve">
+    <value>&lt;GridEXLayoutData&gt;&lt;RootTable&gt;&lt;Columns Collection="true"&gt;&lt;Column0 ID="document_num"&gt;&lt;Caption&gt;Döküman No&lt;/Caption&gt;&lt;DataMember&gt;document_num&lt;/DataMember&gt;&lt;Key&gt;document_num&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;/Column0&gt;&lt;/Columns&gt;&lt;GroupCondition ID="" /&gt;&lt;/RootTable&gt;&lt;RowWithErrorsFormatStyle&gt;&lt;PredefinedStyle&gt;RowWithErrorsFormatStyle&lt;/PredefinedStyle&gt;&lt;/RowWithErrorsFormatStyle&gt;&lt;LinkFormatStyle&gt;&lt;PredefinedStyle&gt;LinkFormatStyle&lt;/PredefinedStyle&gt;&lt;/LinkFormatStyle&gt;&lt;CardCaptionFormatStyle&gt;&lt;PredefinedStyle&gt;CardCaptionFormatStyle&lt;/PredefinedStyle&gt;&lt;/CardCaptionFormatStyle&gt;&lt;GroupByBoxFormatStyle&gt;&lt;PredefinedStyle&gt;GroupByBoxFormatStyle&lt;/PredefinedStyle&gt;&lt;/GroupByBoxFormatStyle&gt;&lt;GroupByBoxInfoFormatStyle&gt;&lt;PredefinedStyle&gt;GroupByBoxInfoFormatStyle&lt;/PredefinedStyle&gt;&lt;/GroupByBoxInfoFormatStyle&gt;&lt;GroupRowFormatStyle&gt;&lt;PredefinedStyle&gt;GroupRowFormatStyle&lt;/PredefinedStyle&gt;&lt;/GroupRowFormatStyle&gt;&lt;HeaderFormatStyle&gt;&lt;PredefinedStyle&gt;HeaderFormatStyle&lt;/PredefinedStyle&gt;&lt;/HeaderFormatStyle&gt;&lt;PreviewRowFormatStyle&gt;&lt;PredefinedStyle&gt;PreviewRowFormatStyle&lt;/PredefinedStyle&gt;&lt;/PreviewRowFormatStyle&gt;&lt;RowFormatStyle&gt;&lt;PredefinedStyle&gt;RowFormatStyle&lt;/PredefinedStyle&gt;&lt;/RowFormatStyle&gt;&lt;SelectedFormatStyle&gt;&lt;PredefinedStyle&gt;SelectedFormatStyle&lt;/PredefinedStyle&gt;&lt;/SelectedFormatStyle&gt;&lt;SelectedInactiveFormatStyle&gt;&lt;PredefinedStyle&gt;SelectedInactiveFormatStyle&lt;/PredefinedStyle&gt;&lt;/SelectedInactiveFormatStyle&gt;&lt;WatermarkImage /&gt;&lt;ControlStyle /&gt;&lt;VisualStyle&gt;Office2003&lt;/VisualStyle&gt;&lt;AllowEdit&gt;False&lt;/AllowEdit&gt;&lt;ExpandableGroups&gt;False&lt;/ExpandableGroups&gt;&lt;GroupByBoxVisible&gt;False&lt;/GroupByBoxVisible&gt;&lt;HideSelection&gt;Highlight&lt;/HideSelection&gt;&lt;DisplayMember&gt;document_num&lt;/DisplayMember&gt;&lt;ValueMember&gt;document_num&lt;/ValueMember&gt;&lt;/GridEXLayoutData&gt;</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAICAAAAAAAACoCAAAFgAAACgAAAAgAAAAQAAAAAEACAAAAAAAAAQAAAAAAAAAAAAAAAEAAAAB
+        AAAAAAAACAQAAAgIAAAIDAgAEBwYABgcGAAhGBAAIRwQACkcEAAhHBgAKSAQADEgGAAYICEAGCQhABgo
+        IQAYKCkAGCwpACEwKQA5NCkAEEE5AAAYSgAAHFIAAChaAAAgYwAAJGMAACRrAAAocwAYXVIAKU1CAClV
+        UgApWVIAMVlSADFdUgAYYVIAGGFaABhlWgAhYVIAa11KAGthSgBzYUoAc2VKAHNpUgB7aVIAe21SAIRp
+        OQCEaWMAjHFjAJR1YwCUdWsAlHlrAJx9awCUeXMAKYZ7ACGKewAhjnsAKYp7ADGKewAxjnsAnIprAJyO
+        awCcgnMApY5rAKWGcwClknMApZZzAK2acwAALIQAADiEAAAwjAAAPIwAADyUAAA4nAAIVcYACFnOAAhZ
+        1gAIXdYAKY6EADGOhAAhkoQAIZaEACmShAAploQApY6EALWWjAC1mowAvZqMAL2ejADGopQA1rKlAN62
+        rQDeuq0A5761AOfDtQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACVIzMzMzMzMzMzMzMzMzMzMz
+        MzMzMzM8CwAAAAADAAAAMVxZWVlZWVlZWVlZWVlZWVlZWVlZXFcAAAAAACQNAAAAMltYWFhYWFhYWFhY
+        WFhYWFhYWFpVAgAAAAAAIU0QAAAAL1pYWFhYWFhYWFhYWFhYWFhaVAAAAAgpAAAbTjgNAAAAMVtYWFhY
+        WFhYWFhYWFhYWlUBAAAHPyYAABtMNjQQAAAAMFpYWFhYWFhYWFhYWFpTAAAABz8/JQAAG0w2NjgNAAAA
+        L1tYWFhYWFhYWFhaVQAAAAg7Oz0lAAAbTDY1NjQOAAAAMlpYWFhYWFhYWlQAAAAHPzs6PSUAABtMNTU2
+        NjgOAAAALltYWFhYWFpVAAAACD07Ojo9JQAAG0w2NTU1NjQNAAAAMlpYWFhaVAEAAAc9Ozo6Oj0lAAAb
+        TDU1NTU2NjgQAAAALltYWlUAAAAIPzs6Ojo6PSUAABtMNjU1NTU1NjQNAAAAPlxVAgAACDs7Ojo6Ojo9
+        JQAAG0w1NTU1NTU2NjgQAAAALQAAAAAsPzs6Ojo6Oj0lAAAbTDY1NTU1NTU1NjcFAAAAAAAAAAArPzo6
+        Ojo6PSUAABtMNTU1NTU1NTU2NjgRAAAAAAAAAAAnPzs6Ojo9JQAAG0w2NTU1NTU1NTU2NjcFAAAAAAAA
+        AAArPzo6Oj0lAAAbTDU1NTU1NTU1NTU1NjgEAAAARxoAAAAnPzo6PSUAABtMNjU1NTU1NTU1NTVOHgAA
+        AERJSRcAAAArPzs9JQAAG0w1NTU1NTU1NTU1TCAAAABESUhISxkAAAAnPz0lAAAbTDY1NTU1NTU1NU4f
+        AAAARElISEhISRcAAAArQSUAABtMNTU1NTU1NTVMHwAAAEJLSEhISEhISRkAAAArKQAAG0w2NTU1NTU1
+        TB0AAABESUhISEhISEhISRcAAAASAAAbTDU1NTU1NUwgAAAAQktISEhISEhISEhISRkAAAAAABtMNjU1
+        NTVMHQAAAERJSEhISEhISEhISEhISxcAAAAAG0w1NTU1TCAAAABCSUhISEhISEhISEhISEhISRkAAAAb
+        TDY1NUweAAAARElISEhISEhISEhISEhISEhISxUAABtMNTVOHwAAAEJJSEhISEhISEhISEhISEhISEhJ
+        RQAAG0w2TB8AAABES0hISEhISEhISEhISEhISEhISElDAAAiUVEfAAAAREtJSUlJSUlJSUlJSUlJSUlJ
+        SUlJS0UAABMiHAAAABRGQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NFFgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAA
+</value>
+  </data>
+</root>

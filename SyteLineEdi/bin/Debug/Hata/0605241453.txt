@@ -1,0 +1,3 @@
+Kaynak : RunSql
+Hata : Could not find stored procedure 'Tr_Edi_Uretim_Bildirimi_Load'.
+Sql Cumlecigi : Exec Tr_Edi_Uretim_Bildirimi_Load @Job=N'M000000017'

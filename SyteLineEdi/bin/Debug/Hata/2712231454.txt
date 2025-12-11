@@ -1,0 +1,3 @@
+Kaynak : RunSql
+Hata : Invalid column name 'Uf_ih_Printed'.
+Sql Cumlecigi : UPDATE inv_hdr SET Uf_ih_Printed = 1 , Uf_ih_Aciklama = '', Uf_FaturaSeriNo = '987654321' WHERE inv_num ='           7'

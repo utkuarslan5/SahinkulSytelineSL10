@@ -1,0 +1,3 @@
+Kaynak : RunSql
+Hata : Column name or number of supplied values does not match table definition.
+Sql Cumlecigi :  Delete From ETIKETDTY Where PICKNO=2

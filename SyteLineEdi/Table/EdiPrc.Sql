@@ -1,0 +1,32 @@
+﻿Create Table EDIPRC
+(
+SENDER	nvarchar(	35		 	),
+MSGNUM	nvarchar(	35		 	),
+MSGDTM	numeric(	8	,	0	),
+DUNSID	nvarchar(	35		 	),
+PUSNO	nvarchar(	22		 	),
+PLANTID	nvarchar(	35		 	),
+GATEID	nvarchar(	25		 	),
+CONTNO	nvarchar(	35		 	),
+NETQTY	numeric(	15	,	0	),
+NETDTE	numeric(	8	,	0	),
+TNETQTY	numeric(	15	,	0	),
+MPXITM	nvarchar(	15		 	),
+MPXCUS	nvarchar(	7			),
+MPXCUSSEQ int,
+MPXWHS	nvarchar(	4		 	),
+MPXPRC	numeric(	15	,	3	),
+MPXCUR	nvarchar(	3		 	),
+MPXAMB	nvarchar(	10		 	),
+MPXKADT	numeric(	7	,	0	),
+MPXNAKL	nvarchar(	10		 	),
+MPXPLNM	nvarchar(	35		 	),
+HATADRM	nvarchar(	1		 	),
+MSGSTAT	nvarchar(	1		 	),
+ISLDRM	nvarchar(	1		 	),
+CRDDTE	numeric(	8	,	0	),
+CRDTIM	numeric(	6	,	0	),
+CRDUSR	nvarchar(	10		 	),
+L3PREF	nvarchar(	20		 	)
+
+)

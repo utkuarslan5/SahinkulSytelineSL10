@@ -1,0 +1,3 @@
+Kaynak : RunSql
+Hata : Ölçüt ifadesinde veri türü uyuşmazlığı.
+Sql Cumlecigi : INSERT INTO tmpIrsaliye   (DHCVNB, DHZ969, DHCANB, DHIVNB,  DHB9CD, DHBYTX, DHAFVN, DHCQCD, DHF1CD,  DHCDTX, DDAITX, DDALTX, DDARQT, DDFCNB,  DDAAGP, DDAAGK, DDDHCD, DHA3CD, co_release, date_seq,PICKNO,AMBKOD)Values('CO00000006','0','  12001','2023-08-15 11:41:22.000','129','TOFAŞ','sa','AD','0004340','DHL','TESTA','TESTA TANIM',22.00,1,300.000000,0.000,'AD','MAIN',0,2,0,'')

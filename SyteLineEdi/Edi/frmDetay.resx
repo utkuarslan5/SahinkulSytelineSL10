@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="GridEXLayout1.LayoutString" xml:space="preserve">
+    <value>&lt;GridEXLayoutData&gt;&lt;RootTable&gt;&lt;Columns Collection="true"&gt;&lt;Column0 ID="PICKNO"&gt;&lt;EditButtonDisplayMode&gt;CurrentCell&lt;/EditButtonDisplayMode&gt;&lt;Caption&gt;Çekme No&lt;/Caption&gt;&lt;DataMember&gt;PICKNO&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;PICKNO&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;CellStyle&gt;&lt;BackColor&gt;White&lt;/BackColor&gt;&lt;/CellStyle&gt;&lt;/Column0&gt;&lt;Column1 ID="ITNBR"&gt;&lt;EditButtonDisplayMode&gt;CurrentCell&lt;/EditButtonDisplayMode&gt;&lt;Caption&gt;Malzeme&lt;/Caption&gt;&lt;DataMember&gt;ITNBR&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;ITNBR&lt;/Key&gt;&lt;Position&gt;1&lt;/Position&gt;&lt;CellStyle&gt;&lt;BackColor&gt;White&lt;/BackColor&gt;&lt;/CellStyle&gt;&lt;/Column1&gt;&lt;Column2 ID="MURNKOD"&gt;&lt;Caption&gt;Müşteri Malzeme Kodu&lt;/Caption&gt;&lt;DataMember&gt;MURNKOD&lt;/DataMember&gt;&lt;Key&gt;MURNKOD&lt;/Key&gt;&lt;Position&gt;2&lt;/Position&gt;&lt;/Column2&gt;&lt;Column3 ID="SHIPMIK"&gt;&lt;EditButtonDisplayMode&gt;CurrentCell&lt;/EditButtonDisplayMode&gt;&lt;Caption&gt;Sipariş Miktarı&lt;/Caption&gt;&lt;DataMember&gt;SHIPMIK&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;SHIPMIK&lt;/Key&gt;&lt;Position&gt;3&lt;/Position&gt;&lt;CellStyle&gt;&lt;BackColor&gt;White&lt;/BackColor&gt;&lt;/CellStyle&gt;&lt;/Column3&gt;&lt;Column4 ID="KKOD"&gt;&lt;EditButtonDisplayMode&gt;CurrentCell&lt;/EditButtonDisplayMode&gt;&lt;Caption&gt;Kutu Kodu&lt;/Caption&gt;&lt;DataMember&gt;KKOD&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;KKOD&lt;/Key&gt;&lt;Position&gt;4&lt;/Position&gt;&lt;CellStyle&gt;&lt;BackColor&gt;White&lt;/BackColor&gt;&lt;/CellStyle&gt;&lt;/Column4&gt;&lt;Column5 ID="Koli_Tanimi"&gt;&lt;Caption&gt;Koli Tanimi&lt;/Caption&gt;&lt;DataMember&gt;Koli_Tanimi&lt;/DataMember&gt;&lt;Key&gt;Koli_Tanimi&lt;/Key&gt;&lt;Position&gt;5&lt;/Position&gt;&lt;/Column5&gt;&lt;Column6 ID="KSAY"&gt;&lt;Caption&gt;Kutu Sayısı&lt;/Caption&gt;&lt;DataMember&gt;KSAY&lt;/DataMember&gt;&lt;Key&gt;KSAY&lt;/Key&gt;&lt;Position&gt;6&lt;/Position&gt;&lt;/Column6&gt;&lt;Column7 ID="PSAY"&gt;&lt;Caption&gt;Palet Sayısı&lt;/Caption&gt;&lt;DataMember&gt;PSAY&lt;/DataMember&gt;&lt;EditType&gt;IntegerUpDownCombo&lt;/EditType&gt;&lt;Key&gt;PSAY&lt;/Key&gt;&lt;Position&gt;7&lt;/Position&gt;&lt;UpDownIncrement&gt;10&lt;/UpDownIncrement&gt;&lt;UpDownMaximum&gt;50000&lt;/UpDownMaximum&gt;&lt;CellStyle&gt;&lt;BackColor&gt;255, 255, 192&lt;/BackColor&gt;&lt;/CellStyle&gt;&lt;/Column7&gt;&lt;Column8 ID="KPMIK"&gt;&lt;Caption&gt;Kapak Miktarı&lt;/Caption&gt;&lt;DataMember&gt;KPMIK&lt;/DataMember&gt;&lt;Key&gt;KPMIK&lt;/Key&gt;&lt;Position&gt;8&lt;/Position&gt;&lt;CellStyle&gt;&lt;BackColor&gt;255, 255, 192&lt;/BackColor&gt;&lt;/CellStyle&gt;&lt;/Column8&gt;&lt;Column9 ID="PKOD"&gt;&lt;Caption&gt;Palet Kodu&lt;/Caption&gt;&lt;DataMember&gt;PKOD&lt;/DataMember&gt;&lt;Key&gt;PKOD&lt;/Key&gt;&lt;Position&gt;9&lt;/Position&gt;&lt;/Column9&gt;&lt;Column10 ID="Palet_Tanimi"&gt;&lt;Caption&gt;Palet Tanimi&lt;/Caption&gt;&lt;DataMember&gt;Palet_Tanimi&lt;/DataMember&gt;&lt;Key&gt;Palet_Tanimi&lt;/Key&gt;&lt;Position&gt;10&lt;/Position&gt;&lt;/Column10&gt;&lt;Column11 ID="KPKOD"&gt;&lt;Caption&gt;Kapak Kodu&lt;/Caption&gt;&lt;DataMember&gt;KPKOD&lt;/DataMember&gt;&lt;Key&gt;KPKOD&lt;/Key&gt;&lt;Position&gt;11&lt;/Position&gt;&lt;/Column11&gt;&lt;Column12 ID="Kapak_Tanimi"&gt;&lt;Caption&gt;Kapak Tanimi&lt;/Caption&gt;&lt;DataMember&gt;Kapak_Tanimi&lt;/DataMember&gt;&lt;Key&gt;Kapak_Tanimi&lt;/Key&gt;&lt;Position&gt;12&lt;/Position&gt;&lt;/Column12&gt;&lt;Column13 ID="SEFERNO"&gt;&lt;Caption&gt;Sefer No&lt;/Caption&gt;&lt;DataMember&gt;SEFERNO&lt;/DataMember&gt;&lt;Key&gt;SEFERNO&lt;/Key&gt;&lt;Position&gt;13&lt;/Position&gt;&lt;/Column13&gt;&lt;Column14 ID="NAVLUN"&gt;&lt;Caption&gt;Navlun&lt;/Caption&gt;&lt;DataMember&gt;NAVLUN&lt;/DataMember&gt;&lt;Key&gt;NAVLUN&lt;/Key&gt;&lt;Position&gt;14&lt;/Position&gt;&lt;/Column14&gt;&lt;Column15 ID="PLAKA"&gt;&lt;Caption&gt;Plaka&lt;/Caption&gt;&lt;DataMember&gt;PLAKA&lt;/DataMember&gt;&lt;Key&gt;PLAKA&lt;/Key&gt;&lt;Position&gt;15&lt;/Position&gt;&lt;/Column15&gt;&lt;/Columns&gt;&lt;GroupCondition ID="" /&gt;&lt;/RootTable&gt;&lt;/GridEXLayoutData&gt;</value>
+  </data>
+</root>

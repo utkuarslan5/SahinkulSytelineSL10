@@ -1,0 +1,3 @@
+Kaynak : RunSql
+Hata : 'PICKNO =3 And DHCVNB= N'CO00000008' And DDFCNB=1' sorgu ifadesi içindeki Sözdizimi hatası (eksik işleç)
+Sql Cumlecigi :  Select *  From tmpIrsaliye Where PICKNO =3 And DHCVNB= N'CO00000008' And DDFCNB=1

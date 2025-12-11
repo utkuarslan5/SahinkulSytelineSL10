@@ -1,0 +1,3 @@
+Kaynak : RunSql
+Hata : Invalid column name 'Uf_FaturaNo'.
+Sql Cumlecigi : Update co_ship_mst set Uf_posted = 1 , Uf_FaturaNo = N'           5' WHERE do_num = N'                            12'

@@ -1,0 +1,3 @@
+Kaynak : RunSql
+Hata : Error converting data type nvarchar to numeric.
+Sql Cumlecigi :  SELECT Plaka, Carrier, Trncode,USERF4,cast(USERF5 AS decimal (15,0)) AS USERF5,NAVLUNNO,IRSNO  FROM Shppack WHERE Shpno=130 AND Pickno=107

@@ -1,0 +1,42 @@
+﻿					
+					
+Create Table EDIWRK
+(					
+SENDER	nvarchar(	35		 	),
+RECEIVER	nvarchar(	35		 	),
+MSGNUM	nvarchar(	35		 	),
+MSGDTM	numeric(	8	,	0	),
+MSGTX1	nvarchar(	70		 	),
+MSGTX2	nvarchar(	70		 	),
+MSGTX3	nvarchar(	70		 	),
+DUNSID	nvarchar(	35		 	),
+PUSNO	nvarchar(	22		 	),
+MISSUER	nvarchar(	35		 	),
+PLANTID	nvarchar(	35		 	),
+CUSITM	nvarchar(	35		 	),
+GATEID	nvarchar(	25		 	),
+CONTNO	nvarchar(	35		 	),
+CUMQTY	numeric(	15	,	0	),
+CUMREF	nvarchar(	35		 	),
+CUMDTE	numeric(	8	,	0	),
+DELTYP	nvarchar(	3		 	),
+DELQTY	numeric(	15	,	0	),
+DTETYP	nvarchar(	3		 	),
+DTE_STR	numeric(	8	,	0	),
+DTE_END	numeric(	8	,	0	),
+DELDTE	numeric(	8	,	0	),
+MSGSTAT	nvarchar(	1		 	),
+MATHNDCD	nvarchar(	15		 	),
+KANBANNO	nvarchar(	15		 	),
+CRDDTE	numeric(	8	,	0	),
+CRDTIM	numeric(	6	,	0	),
+CRDUSR	nvarchar(	10		 	),
+USERF1	nvarchar(	15		 	),
+USERF2	nvarchar(	35		 	),
+USERF3	nvarchar(	35		 	),
+USERF4	numeric(	8	,	0	),
+USERF5	numeric(	15	,	0	),
+USERF6	numeric(	15	,	0	),
+L3PREF	nvarchar(	20		 	)
+
+)
