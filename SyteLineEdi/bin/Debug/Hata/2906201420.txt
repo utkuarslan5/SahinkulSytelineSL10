@@ -1,3 +1,0 @@
-Kaynak : RunSql
-Hata : Sunucudan sonuçlar alınırken aktarım düzeyi hatası oluştu. (provider: TCP Sağlayıcısı, error: 0 - Semafor zaman aşımı süresi geçildi.)
-Sql Cumlecigi : SELECT PICKNO,ITNBR,SHIPMIK,KKOD,cust_box_code as Koli_Tanimi,KSAY,PSAY,KPMIK,PKOD,cust_palette_code as Palet_Tanimi, KPKOD,cust_cover_code as Kapak_Tanimi, s.USERF5 SEFERNO ,NAVLUNNO NAVLUN, PLAKA,MURNKOD  FROM SHPPACK s LEFT JOIN TR_itempack_edi p on p.item=s.ITNBR and p.pack_type=AMBKOD WHERE PICKNO IN (106123) order by 2

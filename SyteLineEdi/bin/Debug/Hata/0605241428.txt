@@ -1,3 +1,0 @@
-Kaynak : RunSql
-Hata : Invalid column name 'uf_purplastkodu'.
-Sql Cumlecigi : select uf_purplastkodu from item where item = ''

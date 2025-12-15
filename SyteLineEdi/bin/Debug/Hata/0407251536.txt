@@ -1,3 +1,0 @@
-Kaynak : RunSql
-Hata : Incorrect syntax near '12'.
-Sql Cumlecigi :  Select count(*) from TrM_FaturaMst_SL9 where SevkNo = 20018 and Item = PZ31 12A692 AB

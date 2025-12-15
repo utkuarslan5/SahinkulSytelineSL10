@@ -1,3 +1,0 @@
-Kaynak : RunSql
-Hata : 'tmpIrsaliye' tablosu bir başka kullanıcı tarafından özel kullanımda açılmış durumda veya tablo kullanıcı arabirimi tarafından açılmış durumda ve programla değiştirilemiyor.
-Sql Cumlecigi :  Select *  From tmpIrsaliye  Where PICKNO= 3 And DHCVNB= 'CO00000008' And DDFCNB=1

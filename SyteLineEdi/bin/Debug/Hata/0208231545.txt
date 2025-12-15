@@ -1,3 +1,0 @@
-Kaynak : RunSql
-Hata : Invalid object name 'tmpfatura'.
-Sql Cumlecigi : INSERT INTO tmpfatura VALUES(N'I',0,0,'                             3','2023-08-02 15:45:47', '27','2023-08-02','77','  12001',0,'TOFAŞ TÜRK OTOMOBİL FABRİKASI A.Ş.','Türkiye','Demirtaş Dumlupınar osb Mah.','İstanbul Caddesi No: 574 - 16369 / Osmangazi','','','','Bursa','60','','8460000422','',NULL,16.80,0.00,2.8,0,'CO00000002',1,'0520571030E','00520571030','RIPORTO INF POST FIANCATA SX',7.00000000,'AD',2.00000000,'TL',2.00000000,'EUR','K01',20.00000,14,NULL,NULL,NULL,NULL,NULL,0,0,14.00,0.00000,0)

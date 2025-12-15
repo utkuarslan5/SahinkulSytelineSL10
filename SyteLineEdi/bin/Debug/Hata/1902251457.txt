@@ -1,3 +1,0 @@
-Kaynak : RunSql
-Hata : 'N'MAIN'' sorgu ifadesi içindeki Sözdizimi hatası (eksik işleç)
-Sql Cumlecigi :  INSERT INTO ANSYUKLADR  (SHPID,SHPNM,SHIP1,SHIP2,SHPZP,SCNTR,SCITY)  Values ( N'MAIN','MERKEZ','','','','','')

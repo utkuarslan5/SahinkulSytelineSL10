@@ -1,3 +1,0 @@
-Kaynak : RunSql
-Hata : Violation of PRIMARY KEY constraint 'PK_coitem_mst'. Cannot insert duplicate key in object 'dbo.coitem_mst'. The duplicate key value is (KS00000005, 1, 0, DEFAULT).
-Sql Cumlecigi : exec TR_COITEM_INSERT_CURSOR N'SA0075'

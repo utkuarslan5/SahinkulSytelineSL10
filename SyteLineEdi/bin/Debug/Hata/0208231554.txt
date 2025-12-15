@@ -1,3 +1,0 @@
-Kaynak : RunSql
-Hata : Invalid column name 'Uf_Donum'.
-Sql Cumlecigi : SELECT Uf_Donum FROM co_ship WHERE shipment_id IN (27)

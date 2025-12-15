@@ -1,4 +1,0 @@
-Kaynak : RunSql
-Hata : Violation of PRIMARY KEY constraint 'PK_do_hdr_mst'. Cannot insert duplicate key in object 'dbo.do_hdr_mst'. The duplicate key value is (                             2, Default).
-The statement has been terminated.
-Sql Cumlecigi : Insert into Do_Hdr (do_num, do_hdr_date, stat, cust_num, cust_seq, pickup_date,curr_code  )  Values (N'                             2',getdate(),N'A',N'  12001',0,getdate(),N'TL')

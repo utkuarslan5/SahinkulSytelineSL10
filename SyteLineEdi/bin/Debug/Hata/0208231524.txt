@@ -1,3 +1,0 @@
-Kaynak : RunSql
-Hata : Invalid object name 'TrM_FaturaMst_SL9'.
-Sql Cumlecigi :  Select *, 0 InvPrice, 0 Kur From TrM_FaturaMst_SL9  Where 1=1     and whse='MAIN' and convert(nvarchar(10),ship_date,126) =N'2023-08-02'

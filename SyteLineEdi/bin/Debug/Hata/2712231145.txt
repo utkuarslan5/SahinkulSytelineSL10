@@ -1,3 +1,0 @@
-Kaynak : RunSql
-Hata : String or binary data would be truncated.
-Sql Cumlecigi : Update ShpDty Set DO_NUM=N'000000000000000000000000000049' Where SHPNO In (20)

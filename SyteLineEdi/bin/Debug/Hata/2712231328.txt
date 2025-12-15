@@ -1,3 +1,0 @@
-Kaynak : RunSql
-Hata : Invalid object name 'DIBPF'.
-Sql Cumlecigi : SELECT DIBNO FROM DIBPF

@@ -1,4 +1,0 @@
-Kaynak : RunSql
-Hata : Invalid column name 'DURUM'.
-Invalid column name 'NOT1'.
-Sql Cumlecigi : Update SHPPACK  SET DURUM = 'X' , NOT1 = '' WHERE SHPNO = '29'

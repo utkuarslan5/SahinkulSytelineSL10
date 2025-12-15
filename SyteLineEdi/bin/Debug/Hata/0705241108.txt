@@ -1,9 +1,0 @@
-Kaynak : 
-Hata : Procedure or function 'TrM_Stok_Kontrol_SL9' expects parameter '@site', which was not supplied.
-Sql Cumlecigi : TRM_Stok_Kontrol_SL9
-Parametreler ve Degerleri : 
-  Adi : @item ->  Degeri : LF-008030010801730
- Adi : @loc ->  Degeri : 1000
- Adi : @lot ->  Degeri : nkn
- Adi : @ReturnMessage ->  Degeri : 
-

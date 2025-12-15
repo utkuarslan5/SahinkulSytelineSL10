@@ -1,4 +1,0 @@
-Kaynak : RunSql
-Hata : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_co_mst_cust_num_cust_seq_site_ref". The conflict occurred in database "SL10P", table "dbo.customer_mst".
-The statement has been terminated.
-Sql Cumlecigi : exec TR_KS_COsp N'',0,N'1010245'
